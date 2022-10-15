@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Student` (
   `Odbor` VARCHAR(45) NOT NULL,
   `Pocet_hodin` INT NOT NULL,
   PRIMARY KEY (`idStudent`),
-  INDEX `fk_Student_Katedra_idx` (`Katedra_idKatedra` ASC) VISIBLE,
+  INDEX `fk_Student_Katedra_idx` (`Katedra_idKatedra` ASC),
   CONSTRAINT `fk_Student_Katedra`
     FOREIGN KEY (`Katedra_idKatedra`)
     REFERENCES `mydb`.`Katedra` (`idKatedra`)
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Ucitel` (
   `Mail` VARCHAR(45) NOT NULL,
   `Katedra_idKatedra` INT NOT NULL,
   PRIMARY KEY (`idUcitel`),
-  INDEX `fk_Ucitel_Katedra1_idx` (`Katedra_idKatedra` ASC) VISIBLE,
+  INDEX `fk_Ucitel_Katedra1_idx` (`Katedra_idKatedra` ASC),
   CONSTRAINT `fk_Ucitel_Katedra1`
     FOREIGN KEY (`Katedra_idKatedra`)
     REFERENCES `mydb`.`Katedra` (`idKatedra`)
@@ -107,9 +107,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Prax` (
   `Status` VARCHAR(100) NULL,
   `Komentar` VARCHAR(45) NULL,
   PRIMARY KEY (`idPrax`),
-  INDEX `fk_Prax_Firma1_idx` (`Firma_idFirma` ASC) VISIBLE,
-  INDEX `fk_Prax_Student1_idx` (`Student_idStudent` ASC) VISIBLE,
-  INDEX `fk_Prax_Ucitel1_idx` (`Ucitel_idUcitel` ASC) VISIBLE,
+  INDEX `fk_Prax_Firma1_idx` (`Firma_idFirma` ASC),
+  INDEX `fk_Prax_Student1_idx` (`Student_idStudent` ASC),
+  INDEX `fk_Prax_Ucitel1_idx` (`Ucitel_idUcitel` ASC),
   CONSTRAINT `fk_Prax_Firma1`
     FOREIGN KEY (`Firma_idFirma`)
     REFERENCES `mydb`.`Firma` (`idFirma`)
