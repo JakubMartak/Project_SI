@@ -1,48 +1,39 @@
-body {
-    scroll-behavior: smooth;
+/********** Template CSS **********/
+.container-xxl{
+    margin-top: 5%;
+}
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+.job-item {
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
 }
 
-.gradient-custom {
-    /* fallback for old browsers */
-    background: #6a11cb;
-
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
-}
-
-.image-page1{
-    margin-top: 15px;
-}
-
-.container1 {
-    width: auto;
-    max-width: 680px;
-    padding: 0 15px;
+.job-item:hover {
+    border-color: rgba(0, 0, 0, .08);
+    box-shadow: none;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
 
 
 

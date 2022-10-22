@@ -1,0 +1,37 @@
+.body {
+    scroll-behavior: smooth;
+
+}
+.gradient-custom {
+
+    width: 100%;
+    height: 100%;
+
+    /* fallback for old browsers */
+    background: rgb(17, 203, 101);
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgb(17, 203, 101), rgb(17, 203, 54));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgb(17, 203, 101), rgb(17, 203, 54));
+
+    /*
+    background: rgba(86, 188, 205, 0.8);
+    background: -webkit-linear-gradient(to right, rgba(86, 188, 205, 0.8), rgb(40, 183, 205));
+    background: linear-gradient(to right, rgba(86, 188, 205, 0.8), rgb(40, 183, 205));
+     */
+}
+.card {
+    background: rgb(60, 63, 65);
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10%;
+    float: none;
+
+}
+.card h2, .card p, .mb-3{
+    color: rgba(255, 255, 255, 0.83);
+    width: 100%;
+}
