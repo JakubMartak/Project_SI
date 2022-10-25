@@ -1,8 +1,9 @@
 .navbar{
-    background-color: #3c3f41;
+    background-color: #198654;
 }
 .site-footer
 {
+    /*background-color: #198654;*/
     background-color: rgb(60, 63, 65);
     padding:45px 0 20px;
     font-size:15px;

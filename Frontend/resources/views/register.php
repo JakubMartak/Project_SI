@@ -1,6 +1,6 @@
 <head>
     <style>
-        <?php include __DIR__ .'/../css/loginstyle.css'; ?>
+        <?php include __DIR__ .'/../css/style.css'; ?>
     </style>
 </head>
 
@@ -19,27 +19,27 @@
                         <div class="mb-md-5 mt-md-4 pb-5">
 
                             <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
-                            <div class="mb-3">
+                            <div class="cmb-4">
                                 <label for="exampleInputEmail1" class="form-label">Meno</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
-                            <div class="mb-3">
+                            <div class="cmb-4">
                                 <label for="exampleInputEmail1" class="form-label">Priezvisko</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
-                            <div class="mb-3">
+                            <div class="cmb-4">
                                 <label for="exampleInputEmail1" class="form-label">Telefónne číslo</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
-                            <div class="mb-3">
+                            <div class="cmb-4">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
-                            <div class="mb-3">
+                            <div class="cmb-4">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1">
                             </div>
-
+                            <p></p>
                             <button class="btn btn-outline-light btn-lg px-5" type="submit">Register</button>
 
                         </div>
