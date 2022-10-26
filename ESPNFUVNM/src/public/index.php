@@ -44,7 +44,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__ . '/../resources/views/login.php';
+$app = require_once __DIR__ . '/../resources/views/index.php';
 
 
 /*
