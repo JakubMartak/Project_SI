@@ -51,8 +51,6 @@
     </div>
 </section>
 
-<footer>
-    <?php include_once __DIR__ . '/../parts/footer.php'; ?>
-</footer>
+
 
 </body>
