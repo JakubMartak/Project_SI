@@ -10,7 +10,15 @@
 </header>
 
 <body class="gradient-custom">
-
+<?php
+ //   use Illuminate\Database\Capsule\Manager as DB;
+   // if(DB::connection()->getPDO()){
+     //   echo "success";
+//}
+  //  else {
+    //    echo "fail";
+    //}
+?>
 <section>
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
