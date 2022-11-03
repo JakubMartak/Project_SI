@@ -7,10 +7,12 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/footerstyle.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
-        <?php include __DIR__ .'/../css/style.css'; ?>
+        <?php //include __DIR__ .'/../css/style.css'; ?>
         /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
     </style>
 </head>
@@ -27,7 +29,8 @@
      Spinner End -->
     <!-- Navbar Start -->
     <header>
-        <?php include_once __DIR__ . '/../parts/loggednavbar.php'; ?>
+        <?php //include_once __DIR__ . '/../parts/loggednavbar.php'; ?>
+        @include('parts/loggednavbar')
     </header>
     <!-- Navbar End -->
     <!-- Job Detail Start -->
@@ -68,19 +71,7 @@
                         </ul>
                     </div>
 
-                    <div class="">
-                        <h4 class="mb-4">Apply For The Job</h4>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <textarea class="form-control" rows="5" placeholder="Coverletter"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-success w-100" type="submit">Apply Now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+
                 </div>
 
                 <div class="col-lg-4">
@@ -113,7 +104,8 @@
 
 <!-- Footer Start -->
 <footer>
-    <?php include_once __DIR__ . '/../parts/footer.php'; ?>
+    <?php //include_once __DIR__ . '/../parts/footer.php'; ?>
+    @include('parts/footer')
 </footer>
 <!-- Footer End -->
 

@@ -7,10 +7,12 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/footerstyle.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
-        <?php include __DIR__ .'/../css/style.css'; ?>
+        <?php //include __DIR__ .'/../css/style.css'; ?>
         /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
     </style>
 </head>
@@ -27,7 +29,7 @@
      Spinner End -->
     <!-- Navbar Start -->
     <header>
-        <?php include_once __DIR__ . '/../parts/loggednavbar.php'; ?>
+        @include('parts/loggednavbar')
     </header>
     <!-- Navbar End -->
     <!-- Jobs Start -->
@@ -64,7 +66,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-success" href="infopage.php">Details</a>
+                                        <a class="btn btn-success" href="infopage">Details</a>
                                     </div>
                                     <small class="text-truncate"><i class="far fa-calendar-alt text-success me-2"></i>Date Line: 01 Jan, 2045</small>
                                 </div>
@@ -86,7 +88,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-success" href="infopage.php">Details</a>
+                                        <a class="btn btn-success" href="infopage">Details</a>
                                     </div>
                                     <small class="text-truncate"><i class="far fa-calendar-alt text-success me-2"></i>Date Line: 01 Jan, 2045</small>
                                 </div>
@@ -104,7 +106,7 @@
 
     <!-- Footer Start -->
     <footer>
-        <?php include_once __DIR__ . '/../parts/footer.php'; ?>
+        @include('parts/footer')
     </footer>
     <!-- Footer End -->
 

@@ -1,5 +1,5 @@
 <style>
-    <?php include __DIR__ .'/../css/footerstyle.css'; ?>
+    <?php //include __DIR__ .'/../css/footerstyle.css'; ?>
 </style>
 <!-- Site footer -->
 <footer class="site-footer">

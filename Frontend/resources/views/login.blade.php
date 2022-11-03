@@ -1,16 +1,26 @@
 <head>
+    <link href="css/style.css" rel="stylesheet">
 <style>
-    <?php include __DIR__ .'/../css/style.css'; ?>
+    <?php //include __DIR__ .'/../css/style.css'; ?>
 </style>
 
 </head>
 
 <header>
-    <?php include_once __DIR__ . '/../parts/navbar.php'; ?>
+    @include('parts/navbar')
+    <?php //include_once __DIR__ . '/../parts/navbar.php'; ?>
 </header>
 
 <body class="gradient-custom">
-
+<?php
+ //   use Illuminate\Database\Capsule\Manager as DB;
+   // if(DB::connection()->getPDO()){
+     //   echo "success";
+//}
+  //  else {
+    //    echo "fail";
+    //}
+?>
 <section>
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -33,14 +43,14 @@
                                 <input type="password" class="form-control" id="exampleInputPassword1">
                             </div>
 
-                            <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                            <p></p>
 
                             <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
 
                         </div>
 
                         <div>
-                            <p class="mb-0">Don't have an account? <a href="register.php" class="text-white-50 fw-bold">Sign Up</a>
+                            <p class="mb-0">Don't have an account? <a href="register" class="text-white-50 fw-bold">Sign Up</a>
                             </p>
                         </div>
 
@@ -50,7 +60,6 @@
         </div>
     </div>
 </section>
-
 
 
 </body>

@@ -1,11 +1,14 @@
 <head>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/footerstyle.css" rel="stylesheet">
     <style>
-        <?php include __DIR__ .'/../css/style.css'; ?>
+        <?php //include __DIR__ .'/../css/style.css'; ?>
     </style>
 </head>
 
 <header>
-    <?php include_once __DIR__ . '/../parts/navbar.php'; ?>
+    @include('parts/navbar')
+    <?php //include_once __DIR__ . '/../parts/navbar.php'; ?>
 </header>
 
 <body class="gradient-custom">
@@ -45,7 +48,7 @@
                         </div>
 
                         <div>
-                            <p class="mb-0">Already have an account? <a href="login.php" class="text-white-50 fw-bold">Return to sign in</a>
+                            <p class="mb-0">Already have an account? <a href="login" class="text-white-50 fw-bold">Return to sign in</a>
                             </p>
                         </div>
 
@@ -55,9 +58,5 @@
         </div>
     </div>
 </section>
-
-<footer>
-    <?php include_once __DIR__ . '/../parts/footer.php'; ?>
-</footer>
 
 </body>

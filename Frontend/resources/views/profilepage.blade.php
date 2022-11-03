@@ -2,9 +2,10 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/footerstyle.css" rel="stylesheet">
     <style>
-        <?php include __DIR__ .'/../css/style.css'; ?>
+        <?php //include __DIR__ .'/../css/style.css'; ?>
     </style>
 </head>
 <head>
@@ -19,7 +20,7 @@
 
     <style>
         /* Template Stylesheet */
-        <?php include __DIR__ .'/../css/style.css'; ?>
+        <?php //include __DIR__ .'/../css/style.css'; ?>
         /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
     </style>
 </head>
@@ -36,44 +37,34 @@
      Spinner End -->
     <!-- Navbar Start -->
     <header>
-        <?php include_once __DIR__ . '/../parts/loggednavbar.php'; ?>
+        @include('parts/loggednavbar')
+        <?php //include_once __DIR__ . '/../parts/loggednavbar.php'; ?>
     </header>
     <!-- Navbar End -->
 
-    <!-- Profile Container -->
-    <div class="container emp-profile">
+   <!-- Profile Container -->
+   <div class="container emp-profile">
         <form method="post">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="profile-img">
-                        <img class="img-profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                        <div class="file btn btn-lg btn-primary">
-                            Change Photo
-                            <input type="file" name="file"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="tab-content profile-tab" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label>User Id</label>
+                                    <label>Meno</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Kshiti123</p>
+                                    <p>Janko</p>
                                 </div>
                             </div>
-                            <br>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label>Name</label>
+                                    <label>Priezvisko</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                                    <p>Mrkvicka</p>
                                 </div>
                             </div>
-                            <br>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Email</label>
@@ -82,25 +73,14 @@
                                     <p>kshitighelani@gmail.com</p>
                                 </div>
                             </div>
-                            <br>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Phone</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="tel" class="form-control" id="phonenumber" aria-describedby="emailHelp">
+                                    <p>123 456 7890</p>
                                 </div>
                             </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Profession</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="profession" aria-describedby="emailHelp">
-                                </div>
-                            </div>
-                            <br>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Prax</label>
@@ -111,13 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="">
-                        <button class="btn btn-success" type="submit">Submit</button>
-                        <a class="btn btn-success" href="profilepage.php">Cancel</a>
-                    </div>
 
-
-                    </div>
                 </div>
 
             </div>
@@ -134,7 +108,8 @@
 
 <!-- Footer Start -->
 <footer>
-    <?php include_once __DIR__ . '/../parts/footer.php'; ?>
+    @include('parts/footer')
+    <?php //include_once __DIR__ . '/../parts/footer.php'; ?>
 </footer>
 <!-- Footer End -->
 
