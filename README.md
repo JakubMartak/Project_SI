@@ -12,4 +12,6 @@ php artisan migrate (command príkaz)
 
 php artisan optimize
 
+php artisan cache:clear
+
 https://laravel.com/docs/9.x/authentication
