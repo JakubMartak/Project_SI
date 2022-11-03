@@ -11,3 +11,5 @@ https://github.com/bennett-treptow/laravel-migration-generator
 php artisan migrate (command príkaz)
 
 php artisan optimize
+
+https://laravel.com/docs/9.x/authentication
