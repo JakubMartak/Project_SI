@@ -13,7 +13,7 @@
 <section class="">
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">Fixed navbar</a>
+        <a class="navbar-brand" href="home">Fixed navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +24,7 @@
             <!-- Prihlásený/neprihlásený používatel -->
             <ul class="navbar-nav me-right mb-2 mb-md-0">
                 <img class="flex-shrink-0 img-fluid border rounded" src="" alt="Pic" style="width: 30px; height: 30px;">
-                <a class="nav-link active" href="login.php" >Neprihlásený</a>
+                <a class="nav-link active" href="login" >Neprihlásený</a>
             </ul>
         </div>
     </div>
