@@ -16,6 +16,8 @@ php artisan cache:clear
 
 https://laravel.com/docs/9.x/authentication
 
+Heslo: Laravel123
+
 # Doinštalovať vendora
 
 composer install
