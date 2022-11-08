@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-success" href="infopage">Details</a>
+                                        <a class="btn btn-success" href="infopage.php">Details</a>
                                     </div>
                                     <small class="text-truncate"><i class="far fa-calendar-alt text-success me-2"></i>Date Line: 01 Jan, 2045</small>
                                 </div>
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-success" href="infopage">Details</a>
+                                        <a class="btn btn-success" href="infopage.php">Details</a>
                                     </div>
                                     <small class="text-truncate"><i class="far fa-calendar-alt text-success me-2"></i>Date Line: 01 Jan, 2045</small>
                                 </div>
@@ -106,6 +106,7 @@
 
     <!-- Footer Start -->
     <footer>
+        <?php //include_once __DIR__ . '/../parts/footer.php'; ?>
         @include('parts/footer')
     </footer>
     <!-- Footer End -->

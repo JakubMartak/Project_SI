@@ -1,3 +1,7 @@
 import './bootstrap';
-import './bootstrap.bundle.min';
-import './cheatsheet';
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();

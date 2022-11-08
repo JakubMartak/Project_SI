@@ -48,7 +48,7 @@
                         </div>
 
                         <div>
-                            <p class="mb-0">Already have an account? <a href="login" class="text-white-50 fw-bold">Return to sign in</a>
+                            <p class="mb-0">Already have an account? <a href="login.php" class="text-white-50 fw-bold">Return to sign in</a>
                             </p>
                         </div>
 
@@ -58,5 +58,10 @@
         </div>
     </div>
 </section>
+
+<footer>
+    <?php //include_once __DIR__ . '/../parts/footer.php'; ?>
+    @include('parts/footer')
+</footer>
 
 </body>

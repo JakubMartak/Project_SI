@@ -42,29 +42,40 @@
     </header>
     <!-- Navbar End -->
 
-   <!-- Profile Container -->
-   <div class="container emp-profile">
+    <!-- Profile Container -->
+    <div class="container emp-profile">
         <form method="post">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img class="img-profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
                     <div class="tab-content profile-tab" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label>Meno</label>
+                                    <label>User Id</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Janko</p>
+                                    <p>Kshiti123</p>
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label>Priezvisko</label>
+                                    <label>Name</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Mrkvicka</p>
+                                    <p>Kshiti Ghelani</p>
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Email</label>
@@ -73,6 +84,7 @@
                                     <p>kshitighelani@gmail.com</p>
                                 </div>
                             </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Phone</label>
@@ -81,6 +93,16 @@
                                     <p>123 456 7890</p>
                                 </div>
                             </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Profession</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Web Developer and Designer</p>
+                                </div>
+                            </div>
+                            <br>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Prax</label>
@@ -91,7 +113,9 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-md-2">
+                        <a class="btn btn-success" href="profileeditpage.php">Edit</a>
+                    </div>
                 </div>
 
             </div>

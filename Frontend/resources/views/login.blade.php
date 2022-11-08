@@ -1,5 +1,6 @@
 <head>
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/footerstyle.css" rel="stylesheet">
 <style>
     <?php //include __DIR__ .'/../css/style.css'; ?>
 </style>
@@ -43,7 +44,7 @@
                                 <input type="password" class="form-control" id="exampleInputPassword1">
                             </div>
 
-                            <p></p>
+                            <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
                             <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
 
@@ -61,5 +62,9 @@
     </div>
 </section>
 
+<footer>
+    <?php //include_once __DIR__ . '/../parts/footer.php'; ?>
+    @include('parts/footer')
+</footer>
 
 </body>

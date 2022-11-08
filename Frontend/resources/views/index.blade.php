@@ -9,6 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/footerstyle.css" rel="stylesheet">
+
+    <style>
+        /* Template Stylesheet */
+        <?php //include __DIR__ .'/../css/style.css'; ?>
+        /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
+    </style>
 </head>
 
 <body class="gradient-custom">
@@ -52,22 +58,96 @@
             </div>
         </div>
         <!-- About End -->
-         <!-- Category Start -->
-         <div class="container-xxl py-5" id="category">
+        <!-- Category Start -->
+        <div class="container-xxl py-5" id="category">
             <div class="container">
                 <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Explore By Category</h1>
                 <div class="row g-4">
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="cat-item rounded p-4" href="listpage">
+                        <a class="cat-item rounded p-4" href="listpage.php">
                             <i class="fa fa-3x bi bi-envelope text-success mb-4"></i>
                             <h6 class="mb-3">Fakulta prírodných vied a informatiky</h6>
                             <p class="mb-0">123 Vacancy</p>
                         </a>
                     </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <a class="cat-item rounded p-4" href="listpage.php">
+                            <i class="fa fa-3x fa-headset text-success mb-4"></i>
+                            <h6 class="mb-3">Fakulta sociálnych vied a zdravotníctva</h6>
+                            <p class="mb-0">123 Vacancy</p>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <a class="cat-item rounded p-4" href="listpage.php">
+                            <i class="fa fa-3x bi bi-map text-success mb-4"></i>
+                            <h6 class="mb-3">Fakulta stredoeurópskych študií</h6>
+                            <p class="mb-0">123 Vacancy</p>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <a class="cat-item rounded p-4" href="listpage.php">
+                            <i class="fa fa-3x bi bi-easel text-success mb-4"></i>
+                            <h6 class="mb-3">Filozofická fakulta</h6>
+                            <p class="mb-0">123 Vacancy</p>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <a class="cat-item rounded p-4" href="listpage.php">
+                            <i class="fa fa-3x bi bi-book text-success mb-4"></i>
+                            <h6 class="mb-3">pedagogická fakulta</h6>
+                            <p class="mb-0">123 Vacancy</p>
+                        </a>
+                </div>
             </div>
         </div>
         <!-- Category End -->
-        
+        <!-- Komentáre -->
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <h1 class="text-center mb-5">Our Clients Say!!!</h1>
+                <div class="owl-carousel testimonial-carousel">
+
+
+                    <div class="testimonial-item bg-light rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Client Name</h5>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item bg-light rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Client Name</h5>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item bg-light rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-success mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Client Name</h5>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
 
 
 
@@ -79,7 +159,9 @@
 
         <!-- Footer Start -->
         <footer>
+            <?php //include_once __DIR__ . '/../parts/footer.php'; ?>
             @include('parts/footer')
+
         </footer>
         <!-- Footer End -->
 

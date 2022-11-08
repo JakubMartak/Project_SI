@@ -23,7 +23,7 @@
             </ul>
             <!-- Prihlásený/neprihlásený používatel -->
             <ul class="navbar-nav me-right mb-2 mb-md-0">
-                
+                <img class="flex-shrink-0 img-fluid border rounded" src="" alt="Pic" style="width: 30px; height: 30px;">
                 <a class="nav-link active" href="login" >Neprihlásený</a>
             </ul>
         </div>
