@@ -25,6 +25,7 @@ composer install
 skopírovať .env s .env.example
 
 php artisan migrate z PHP container v Dockeri
+php artisan db:seed z PHP containera
 
 CD do /src adresara
 composer require laravel/breeze --dev
