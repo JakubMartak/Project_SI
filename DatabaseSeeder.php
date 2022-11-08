@@ -26,29 +26,29 @@ class DatabaseSeeder extends Seeder
        DB::table('users')->insert([
            'name'=> 'Martin',
            'email'=> 'martin.kratky@student.ukf.sk',
-           'password'=> 'Martin123',
-           //'password'=> Hash::make('Martin123'),
+           //'password'=> 'Martin123',
+           'password'=> Hash::make('Martin123'),
        ]);
 
         DB::table('users')->insert([
             'name'=> 'Jakub',
             'email'=> 'jakub.martak@student.ukf.sk',
-            'password'=> 'Jakub123',
-            //'password'=> Hash::make('Jakub123'),
+            //'password'=> 'Jakub123',
+            'password'=> Hash::make('Jakub123'),
         ]);
 
         DB::table('users')->insert([
             'name'=> 'Marek',
             'email'=> 'marek.hrabcak@student.ukf.sk',
-            'password'=> 'Marek123',
-            //'password'=> Hash::make('Marek123'),
+            //'password'=> 'Marek123',
+            'password'=> Hash::make('Marek123'),
         ]);
 
         DB::table('users')->insert([
             'name'=> 'Mario',
             'email'=> 'mario.belansky@student.ukf.sk',
-            'password'=> 'Mario123',
-            //'password'=> Hash::make('Mario123'),
+            //'password'=> 'Mario123',
+            'password'=> Hash::make('Mario123'),
         ]);
     }
 }
