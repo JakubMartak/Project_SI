@@ -2,12 +2,6 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-fixed/">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/footerstyle.css" rel="stylesheet">
-    <style>
-        /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
-        <?php //include __DIR__ .'/../css/bootstrap.min.css'; ?>
-        <?php //include __DIR__ .'/../css/footerstyle.css'; ?>
-    </style>
-
 </head>
 
 <section class="">

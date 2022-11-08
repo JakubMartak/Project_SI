@@ -1,10 +1,6 @@
 <head>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/footerstyle.css" rel="stylesheet">
-<style>
-    <?php //include __DIR__ .'/../css/style.css'; ?>
-</style>
-
 </head>
 
 <header>
@@ -13,15 +9,6 @@
 </header>
 
 <body class="gradient-custom">
-<?php
- //   use Illuminate\Database\Capsule\Manager as DB;
-   // if(DB::connection()->getPDO()){
-     //   echo "success";
-//}
-  //  else {
-    //    echo "fail";
-    //}
-?>
 <section>
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -47,7 +34,7 @@
                             <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
                             <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-
+-
                         </div>
 
                         <div>
@@ -61,10 +48,5 @@
         </div>
     </div>
 </section>
-
-<footer>
-    <?php //include_once __DIR__ . '/../parts/footer.php'; ?>
-    @include('parts/footer')
-</footer>
 
 </body>
