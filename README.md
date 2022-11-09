@@ -30,6 +30,10 @@ php artisan db:seed
 
 Manualne pridat subor z Githubu SI/DatabaseSeeder.php do adresara ESPNFUVNM/src/database/seeders
 
+Spustit v terminali npm install && npm run dev
+
+
+!!! Toto uz nespustat, lebo sa prepisuje adresar /resources
 CD do /src adresara
 composer require laravel/breeze --dev
 php artisan breeze:install
