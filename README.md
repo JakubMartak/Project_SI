@@ -24,8 +24,11 @@ composer install
 
 skopírovať .env s .env.example
 
-php artisan migrate z PHP container v Dockeri
-php artisan db:seed z PHP containera
+Spustit v PHP container v Dockeri
+php artisan migrate 
+php artisan db:seed
+
+Manualne pridat subor z Githubu SI/DatabaseSeeder.php do adresara ESPNFUVNM/src/database/seeders
 
 CD do /src adresara
 composer require laravel/breeze --dev
