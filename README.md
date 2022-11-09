@@ -16,7 +16,7 @@ php artisan cache:clear
 
 https://laravel.com/docs/9.x/authentication
 
-Heslo: Laravel123
+https://laravel.com/docs/9.x/queries
 
 # Doinštalovať vendora
 
