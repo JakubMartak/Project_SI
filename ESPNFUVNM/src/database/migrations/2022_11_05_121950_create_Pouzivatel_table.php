@@ -17,7 +17,7 @@ class CreatePouzivatelTable extends Migration
             $table->integer('idPouzivatel', true);
             $table->string('Meno', 45);
             $table->string('Priezvisko', 45);
-            $table->string('Cislo', 45);
+            $table->string('Cislo', 45)->nullable();
             $table->string('Mail', 45);
             $table->string('Rola_pouzivatela', 45);
         });

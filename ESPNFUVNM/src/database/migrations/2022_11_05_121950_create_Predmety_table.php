@@ -17,6 +17,7 @@ class CreatePredmetyTable extends Migration
             $table->integer('idPredmety', true);
             $table->string('Nazov', 45);
             $table->string('Skratka', 45);
+            $table->integer('Studijny_program_idStudijny_program')->index('fk_Predmety_Studijny_program1_idx');
         });
     }
 

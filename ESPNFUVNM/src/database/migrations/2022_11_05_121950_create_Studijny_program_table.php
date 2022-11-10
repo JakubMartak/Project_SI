@@ -17,7 +17,7 @@ class CreateStudijnyProgramTable extends Migration
             $table->integer('idStudijny_program', true);
             $table->string('Nazov', 45);
             $table->string('Skratka', 45);
-            $table->integer('Predmety_idPredmety')->index('fk_Studijny_program_Predmety1_idx');
+            //$table->integer('Predmety_idPredmety')->index('fk_Studijny_program_Predmety1_idx');
         });
     }
 
