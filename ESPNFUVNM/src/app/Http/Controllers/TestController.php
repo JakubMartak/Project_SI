@@ -44,4 +44,14 @@ class TestController extends Controller
     public function listpage(){
         return view('listpage');
     }
+
+    public function test4(){
+        $praxy = DB::table('Prax')->get();
+
+        foreach ($praxy as $prax) {
+            //echo $prax->pozicia;
+
+        }
+
+    }
 }

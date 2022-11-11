@@ -2,6 +2,7 @@
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestController3;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
