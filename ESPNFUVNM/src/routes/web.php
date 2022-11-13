@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
@@ -33,6 +33,20 @@ Route::get('/myinfopage', [TestController::class, 'myinfopage']);
 Route::get('/infopage', [TestController::class, 'infopage']);
 Route::get('/listpage', [TestController::class, 'listpage']);
 Route::get('/createprax', [TestController::class, 'createpraxpage']);
+
+/* student routes */
+Route::get('/stuPracList', [TestController::class, 'stuPracList']);
+
+/* responsible preson functions */
+Route::get('/respCompList', [TestController::class, 'respCompList']);
+Route::get('/respCompAdd', [TestController::class, 'respCompAdd']);
+Route::get('/respCompUpd', [TestController::class, 'respCompUpd']);
+
+/* admin routes */
+Route::get('/admStuLIst', [TestController::class, 'admStuLIst']);
+Route::get('/admStuAdd', [TestController::class, 'admStuAdd']);
+Route::get('/admStuEdit', [TestController::class, 'admStuEdit']);
+
 
 require __DIR__.'/auth.php';
 

@@ -1,6 +1,6 @@
-<style>
-    <?php //include __DIR__ .'/../css/footerstyle.css'; ?>
-</style>
+<head>
+    <link href="css/footerstyle.css" rel="stylesheet">
+</head>
 <!-- Site footer -->
 <footer class="site-footer">
     <div class="container">

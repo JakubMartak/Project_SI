@@ -5,14 +5,6 @@ namespace App\Http\Controllers;
 class TestController extends Controller
 {
 
-    public function test(){
-        echo 22;
-    }
-
-    public function test2(){
-        echo 23;
-    }
-
     public function home(){
         return view('index');
     }
@@ -43,6 +35,35 @@ class TestController extends Controller
 
     public function listpage(){
         return view('listpage');
+    }
+
+    /* student functions */
+    public function stuPracList(){
+        return view('stuPracList');
+    }
+
+    /* responsible preson functions */
+    public function respCompList(){
+        return view('respCompList');
+    }
+
+    public function respCompAdd(){
+        return view('respCompAdd');
+    }
+
+    public function respCompUpd(){
+        return view('respCompUpd');
+    }
+
+    /* admin functions */
+    public function admStuLIst(){
+        return view('admStuLIst');
+    }
+    public function admStuEdit(){
+        return view('admStuEdit');
+    }
+    public function admStuAdd(){
+        return view('admStuAdd');
     }
 
     public function test4(){

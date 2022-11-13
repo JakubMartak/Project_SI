@@ -29,8 +29,7 @@
      Spinner End -->
     <!-- Navbar Start -->
     <header>
-        <?php //include_once __DIR__ . '/../parts/loggednavbar.php'; ?>
-        @include('parts/loggednavbar')
+        @include('parts.stunavbar')
     </header>
     <!-- Navbar End -->
     <!-- Job Detail Start -->
@@ -76,9 +75,6 @@
                         <form>
                             <div class="row g-3">
                                 <div class="col-12">
-                                    <textarea class="form-control" rows="5" placeholder="Coverletter"></textarea>
-                                </div>
-                                <div class="col-12">
                                     <button class="btn btn-success w-100" type="submit">Apply Now</button>
                                 </div>
                             </div>
@@ -116,7 +112,6 @@
 
 <!-- Footer Start -->
 <footer>
-    <?php //include_once __DIR__ . '/../parts/footer.php'; ?>
     @include('parts/footer')
 </footer>
 <!-- Footer End -->

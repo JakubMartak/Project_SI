@@ -30,7 +30,7 @@
     <!-- Navbar Start -->
     <header>
         <?php //include_once __DIR__ . '/../parts/loggednavbar.php'; ?>
-        @include('parts/loggednavbar')
+        @include('parts.stunavbar')
     </header>
     <!-- Navbar End -->
     <!-- Job Detail Start -->
