@@ -42,6 +42,75 @@ class TestController extends Controller
         return view('stuPracList');
     }
 
+    /* head of workplace functions */
+    public function headCompList(){
+        return view('headCompList');
+    }
+
+    public function headStudList(){
+        return view('headStudList');
+    }
+
+    public function headPracList(){
+        return view('headPracList');
+    }
+
+    public function headPracFinishList(){
+        return view('headPracFinishList');
+    }
+
+    public function headReportList(){
+        return view('headReportList');
+    }
+
+    public function headReportAdd(){
+        return view('headReportAdd');
+    }
+
+    public function headReportUpd(){
+        return view('headReportUpd');
+    }
+
+    public function headFeedRead(){
+        return view('headFeedRead');
+    }
+
+    public function headCertList(){
+        return view('headCertList');
+    }
+
+    public function headRespList(){
+        return view('headCertList');
+    }
+
+    public function headRespUpd(){
+        return view('headCertList');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* responsible preson functions */
     public function respCompList(){
         return view('respCompList');
@@ -68,11 +137,8 @@ class TestController extends Controller
 
     public function test4(){
         $praxy = DB::table('Prax')->get();
-
         foreach ($praxy as $prax) {
             //echo $prax->pozicia;
-
         }
-
     }
 }

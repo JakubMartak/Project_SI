@@ -37,6 +37,19 @@ Route::get('/createprax', [TestController::class, 'createpraxpage']);
 /* student routes */
 Route::get('/stuPracList', [TestController::class, 'stuPracList']);
 
+/* head of workplace routes */
+Route::get('/headCompList', [TestController::class, 'headCompList']);
+Route::get('/headStudList', [TestController::class, 'headStudList']);
+Route::get('/headPracList', [TestController::class, 'headPracList']);
+Route::get('/headPracFinishList', [TestController::class, 'headPracFinishList']);
+Route::get('/headReportList', [TestController::class, 'headReportList']);
+Route::get('/headReportAdd', [TestController::class, 'headReportAdd']);
+Route::get('/headReportUpd', [TestController::class, 'headReportUpd']);
+Route::get('/headFeedRead', [TestController::class, 'headFeedRead']);
+Route::get('/headCertList', [TestController::class, 'headCertList']);
+Route::get('/headRespList', [TestController::class, 'headRespList']);
+Route::get('/headRespUpd', [TestController::class, 'headRespUpd']);
+
 /* responsible preson functions */
 Route::get('/respCompList', [TestController::class, 'respCompList']);
 Route::get('/respCompAdd', [TestController::class, 'respCompAdd']);
