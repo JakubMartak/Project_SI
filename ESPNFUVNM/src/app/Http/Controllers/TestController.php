@@ -80,11 +80,11 @@ class TestController extends Controller
     }
 
     public function headRespList(){
-        return view('headCertList');
+        return view('headRespList');
     }
 
     public function headRespUpd(){
-        return view('headCertList');
+        return view('headRespUpd');
     }
 
 

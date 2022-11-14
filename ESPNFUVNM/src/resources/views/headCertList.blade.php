@@ -32,9 +32,9 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-                <div class="d-flex mb-3">
+{{--                <div class="d-flex mb-3">
                     <a class="btn btn-success" href="respCompAdd">Pridať Firmu</a>
-                </div>
+                </div>--}}
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
@@ -43,10 +43,10 @@
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Skratka</th>
-                                <th scope="col">Adresa</th>
-                                <th scope="col">Mesto</th>
+                                <th scope="col">Názov osvedčenia</th>
+                                <th scope="col">Popis</th>
+                                <th scope="col">Dátum vydania</th>
+                                <th scope="col">Poznámka</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
@@ -54,20 +54,20 @@
                             <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Príklad nazov</td>
-                                <td>Príklad skratka</td>
-                                <td>Príklad adresa</td>
-                                <td>Príklad mesto</td>
+                                <td>Príklad </td>
+                                <td>Príklad </td>
+                                <td>Príklad </td>
+                                <td>Príklad </td>
                                 <td>
-                                    <div class="d-flex mb-3">
+{{--                                    <div class="d-flex mb-3">
                                         <a class="btn btn-primary" href="respCompUpd">Edit</a>
-                                    </div>
+                                    </div>--}}
                                 </td>
 
                                 <td>
-                                    <div class="d-flex mb-3">
+{{--                                    <div class="d-flex mb-3">
                                         <a class="btn btn-danger" href="#">Remove</a>
-                                    </div>
+                                    </div>--}}
                                 </td>
                             </tr>
                             </tbody>

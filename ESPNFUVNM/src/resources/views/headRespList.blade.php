@@ -32,9 +32,9 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-                <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="respCompAdd">Pridať Firmu</a>
-                </div>
+{{--                <div class="d-flex mb-3">
+                    <a class="btn btn-success" href="respCompAdd">Pridať poverenie</a>
+                </div>--}}
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
@@ -43,10 +43,10 @@
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Skratka</th>
-                                <th scope="col">Adresa</th>
-                                <th scope="col">Mesto</th>
+                                <th scope="col">Meno</th>
+                                <th scope="col">Priezvisko</th>
+                                <th scope="col">Poverenie na pracovisko</th>
+                                <th scope="col">Dátum účinnosti poverenia</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
@@ -54,19 +54,19 @@
                             <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Príklad nazov</td>
-                                <td>Príklad skratka</td>
-                                <td>Príklad adresa</td>
-                                <td>Príklad mesto</td>
+                                <td>Príklad </td>
+                                <td>Príklad </td>
+                                <td>Príklad </td>
+                                <td>Príklad </td>
                                 <td>
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="respCompUpd">Edit</a>
+                                        <a class="btn btn-primary" href="respCompUpd">Editovať</a>
                                     </div>
                                 </td>
 
                                 <td>
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="#">Remove</a>
+                                        <a class="btn btn-danger" href="#">Zmazať</a>
                                     </div>
                                 </td>
                             </tr>

@@ -32,9 +32,9 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-                <div class="d-flex mb-3">
+{{--                <div class="d-flex mb-3">
                     <a class="btn btn-success" href="respCompAdd">Pridať Firmu</a>
-                </div>
+                </div>--}}
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
@@ -59,15 +59,15 @@
                                 <td>Príklad adresa</td>
                                 <td>Príklad mesto</td>
                                 <td>
-                                    <div class="d-flex mb-3">
+{{--                                    <div class="d-flex mb-3">
                                         <a class="btn btn-primary" href="respCompUpd">Edit</a>
-                                    </div>
+                                    </div>--}}
                                 </td>
 
                                 <td>
-                                    <div class="d-flex mb-3">
+{{--                                    <div class="d-flex mb-3">
                                         <a class="btn btn-danger" href="#">Remove</a>
-                                    </div>
+                                    </div>--}}
                                 </td>
                             </tr>
                             </tbody>
