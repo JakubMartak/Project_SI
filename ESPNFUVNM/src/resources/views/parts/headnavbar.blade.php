@@ -11,7 +11,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <!--Tlačidlo Zoznam praxí, ktoré smeruje na dashboard-->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="respCompList">Zoznam firiem</a>
+                        <a class="nav-link active" aria-current="page" href="headCompList">Zoznam firiem a organizácií</a>
                     </li>
 
 

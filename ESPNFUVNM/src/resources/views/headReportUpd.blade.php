@@ -23,7 +23,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.respnavbar')
+        @include('parts.headnavbar')
     </header>
     <!-- Navbar End -->
 

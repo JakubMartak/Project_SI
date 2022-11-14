@@ -13,6 +13,12 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="stuPracList">Student zobrazenie</a>
                     </li>
+
+                    <!--Tlačidlo na zobrazenie veduci pracoviska-->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="headCompList">Veduci pracoviska</a>
+                    </li>
+
                     <!--Tlačidlo na zobrazenie admin-->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="admStuLIst">Admin zobrazenie</a>
