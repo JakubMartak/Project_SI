@@ -13,7 +13,27 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="headCompList">Zoznam firiem a organizácií</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="headStudList">Zoznam študentov na praxi podľa odborov</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="headPracList">Aktuálny stav praxe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="headPracFinishList">Zoznam schválených a ukončených praxí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="headReportList">Report za pracovisko</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="headFeedRead">Spätná väzba</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="headCertList">Zoznam osvedčení</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="headRespList">Poverení pracovníci pracoviska</a>
+                    </li>
 
 
                 </ul>
