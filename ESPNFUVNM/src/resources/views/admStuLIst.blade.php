@@ -52,24 +52,29 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Príklad Meno</td>
-                                <td>Príklad Priezvisko</td>
-                                <td>Príklad cislo</td>
-                                <td>Príklad email</td>
+                            <?php
+                                $studenti = DB::table('Pouzivatel')->where('Rola_pouzivatela', '=', 1)->get();
+                                foreach ($studenti as $student) {
+                                    echo "<tr>
+                                <th scope='row'>".$student->idPouzivatel."</th>
+                                <td>".$student->Meno."</td>
+                                <td>".$student->Priezvisko."</td>
+                                <td>".$student->Cislo."</td>
+                                <td>".$student->Mail."</td>
                                 <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="admStuEdit">Edit</a>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-primary' href='admStuEdit'>Edit</a>
                                     </div>
                                 </td>
 
                                 <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="admStuAdd">Remove</a>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-danger' href='admStuAdd'>Remove</a>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr>";
+                                }
+                            ?>
                             </tbody>
                         </table>
                     </div>
