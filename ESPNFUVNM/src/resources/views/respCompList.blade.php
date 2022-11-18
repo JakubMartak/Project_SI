@@ -51,26 +51,41 @@
                                 <th scope="col"></th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Príklad nazov</td>
-                                <td>Príklad skratka</td>
-                                <td>Príklad adresa</td>
-                                <td>Príklad mesto</td>
-                                <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="respCompUpd">Edit</a>
-                                    </div>
-                                </td>
+                            <tbody >
+                                <?php
+                                    //use Illuminate\Support\Facades\DB;
+                                    $firmy = DB::table('Firma')
+                                        ->join('Mesto', 'Firma.Mesto_idMesto', '=', 'Mesto.idMesto')
+                                        ->select('Firma.*', 'Mesto.*')
+                                        ->get();
+                                    /*$mesto = DB::table('Mesto')
+                                        ->join('Firma','Mesto.idMesto', '=', 'Firma.Mesto_idMesto')
+                                        ->select('Mesto.Nazov')
+                                        ->get();*/
 
-                                <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="#">Remove</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
+                                foreach ($firmy as $firm) {
+                                    echo'
+                            <tr >
+                                <th >'. $firm->idFirma .' </th >
+                                <td >'. $firm->Názov_firmy  .'</td >
+                                <td >'. $firm->Skratka .'</td >
+                                <td >'. $firm->Adresa .'</td >
+                                <td >'. $firm->Nazov .'</td >
+                                <td >
+                                    <div class="d-flex mb-3" >
+                                        <a class="btn btn-primary" href = "respCompUpd" > Edit</a >
+                                    </div >
+                                </td >
+
+                                <td >
+                                    <div class="d-flex mb-3" >
+                                        <a class="btn btn-danger" href = "#" > Remove</a >
+                                    </div >
+                                </td >
+                            </tr >';
+                                }
+                            ?>
+                            </tbody >
                         </table>
                     </div>
                 </div>
