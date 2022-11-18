@@ -47,6 +47,10 @@ class TestController extends Controller
         return view('headCompList');
     }
 
+    public function headCompAdd(){
+        return view('headCompAdd');
+    }
+
     public function headStudList(){
         return view('headStudList');
     }
@@ -85,6 +89,10 @@ class TestController extends Controller
 
     public function headRespUpd(){
         return view('headRespUpd');
+    }
+
+    public function headRespAdd(){
+        return view('headRespAdd');
     }
 
 
@@ -141,4 +149,12 @@ class TestController extends Controller
             //echo $prax->pozicia;
         }
     }
+
+    public function insertHead(){
+        $prac = DB::table('Prax')->insert([
+            'Priezvisko' => '$Priezvisko2',
+            'Pozicia' => 'Pozicia2'
+        ]);
+        }
+
 }

@@ -43,33 +43,33 @@
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Skratka</th>
+                                <th scope="col">Meno</th>
+                                <th scope="col">Priezvisko</th>
                                 <th scope="col">Stav praxe</th>
-                                <th scope="col">Poznámka</th>
+                                <th scope="col">Ukončenie praxe</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>
-{{--                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="respCompUpd">Edit</a>
-                                    </div>--}}
-                                </td>
+                            <?php
+                            $practise = DB::table('Prax')
+                                ->join('Pouzivatel', 'Student_idPouzivatel', '=', 'idPouzivatel')
+                                ->join('Firma', 'Firma_idFirma', '=', 'idFirma')
+                                ->where('Aktuálny_stav', 'IS NOT NULL')
+                                ->get();
 
-                                <td>
-{{--                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="#">Remove</a>
-                                    </div>--}}
-                                </td>
-                            </tr>
+
+                            foreach ($practise as $prac) {
+                                echo "<tr>";
+                                echo "<th scope='row'>$prac->idPouzivatel</th>";
+                                echo "<td>$prac->Meno</td>";
+                                echo "<td>$prac->Priezvisko</td>";
+                                echo "<td>$prac->Názov_firmy</td>";
+                                echo "<td>$prac->Aktuálny_stav</td>";
+                                echo "</tr>";
+                            };
+                            ?>
                             </tbody>
                         </table>
                     </div>

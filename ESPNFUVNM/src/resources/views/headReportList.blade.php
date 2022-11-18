@@ -33,7 +33,7 @@
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
                 <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="respCompAdd">Pridať Report</a>
+                    <a class="btn btn-success" href="headCompAdd">Pridať Report</a>
                 </div>
                 <!-- Tabulka -->
                 <div class="">

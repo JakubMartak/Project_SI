@@ -32,9 +32,9 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-{{--                <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="respCompAdd">Pridať poverenie</a>
-                </div>--}}
+                <div class="d-flex mb-3">
+                    <a class="btn btn-success" href="headRespAdd">Pridať povereného pracovníka</a>
+                </div>
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
@@ -60,7 +60,7 @@
                                 <td>Príklad </td>
                                 <td>
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="respCompUpd">Editovať</a>
+                                        <a class="btn btn-primary" href="headRespUpd">Editovať</a>
                                     </div>
                                 </td>
 
