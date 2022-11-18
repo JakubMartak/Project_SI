@@ -187,30 +187,6 @@ class TestController extends Controller
         return view('headRespAdd');
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /* responsible preson functions */
     public function respCompList(){
         return view('respCompList');
@@ -235,7 +211,7 @@ class TestController extends Controller
         return view('admStuAdd');
     }
 
-    public function test4(){
+    /*public function test4(){
         $praxy = DB::table('Prax')->get();
         foreach ($praxy as $prax) {
             //echo $prax->pozicia;
@@ -248,5 +224,5 @@ class TestController extends Controller
             'Pozicia' => 'Pozicia2'
         ]);
         }
-
+    }*/
 }

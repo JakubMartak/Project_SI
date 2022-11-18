@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <link href="css/style.css" rel="stylesheet">
 
 
@@ -41,7 +42,10 @@
 
                 </ul>
                 <div class="tab-content">
-
+                    <div class="d-flex mb-3">
+                        <a class="btn btn-success mx-3" href="respCompAdd">Pridať Frimu</a>
+                        <a class="btn btn-success mx-3" href="respCompAdd">Pridať Kontaktnú osobu</a>
+                    </div>
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <!-- Bakalár -->
                         <?php

@@ -13,7 +13,30 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="stuPracList">Zoznam praxí</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="stuPracProgList">Zoznam praxí podľa študijných programov</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="stuContrTypeList">Moje typy zmlúv o spolupráci</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="stuContrList">Moje dohody o praxi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="stuPracProgList">Zoznam praxí podľa študijných programov</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="stuContReportList">Záznamy o vykonaní praxe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="stuPracReportRead">Moje výkazy o vykonaní praxe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="stuFeedRead">Spatná väzba</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="stuPracCertRead">Moje osvedčenie o absolvovaní praxe</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="myinfopage">Moja Prax</a>
                     </li>
