@@ -36,6 +36,8 @@
                     <a class="btn btn-success" href="respCompAdd">Pridať Firmu</a>
                 </div>--}}
                 <!-- Tabulka -->
+
+
                 <div class="">
                     <div class="text-start ps-4">
 
@@ -52,32 +54,35 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Príklad nazov</td>
-                                <td>Príklad skratka</td>
-                                <td>Príklad adresa</td>
-                                <td>Príklad mesto</td>
-                                <td>
-{{--                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="respCompUpd">Edit</a>
-                                    </div>--}}
-                                </td>
-
-                                <td>
-{{--                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="#">Remove</a>
-                                    </div>--}}
-                                </td>
-                            </tr>
+                            <?php
+                                $companies = DB::table('Firma')
+                                    ->join('Mesto', 'Mesto_idMesto', '=', 'idMesto')
+                                    ->get();
+                                foreach ($companies as $comp) {
+                                    echo "<tr>";
+                                    echo "<th scope='row'>$comp->idFirma</th>";
+                                    echo "<td>$comp->Názov_firmy</td>";
+                                    echo "<td>$comp->Skratka</td>";
+                                    echo "<td>$comp->Adresa</td>";
+                                    echo "<td>$comp->Nazov</td>";
+                                    echo "</tr>";
+                                };
+                                ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- buttons -->
 
+
+
+
+
+
+                <!-- buttons -->
             </div>
+
+
         </div>
 
     </div>

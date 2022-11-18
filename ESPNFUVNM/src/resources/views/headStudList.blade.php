@@ -45,31 +45,29 @@
                                 <th scope="col">#id</th>
                                 <th scope="col">Meno</th>
                                 <th scope="col">Priezvisko</th>
+                                <th scope="col">Pozicia na praxi</th>
                                 <th scope="col">Odbor</th>
-                                <th scope="col">Firma na prax</th>
-                                <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>
-{{--                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="respCompUpd">Edit</a>
-                                    </div>--}}
-                                </td>
+                            <?php
+                            $students = DB::table('Pouzivatel')
+                                ->join('prax', 'Firma_idFirma', '=', 'Firma_idFirma')
+                                ->join('predmety', 'Predmety_idPredmety', '=', 'idPredmety')
+                                ->get();
 
-                                <td>
-{{--                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="#">Remove</a>
-                                    </div>--}}
-                                </td>
-                            </tr>
+
+                            foreach ($students as $stud) {
+                                echo "<tr>";
+                                echo "<th scope='row'>$stud->idPouzivatel</th>";
+                                echo "<td>$stud->Meno</td>";
+                                echo "<td>$stud->Priezvisko</td>";
+                                echo "<td>$stud->Pozicia</td>";
+                                echo "<td>$stud->Nazov</td>";
+                                echo "</tr>";
+                            };
+                            ?>
                             </tbody>
                         </table>
                     </div>
