@@ -42,9 +42,105 @@ class TestController extends Controller
         return view('stuPracList');
     }
 
+    public function stuPracProgList(){
+        return view('stuPracProgList');
+    }
+
+    public function stuCompAdd(){
+        return view('stuCompAdd');
+    }
+
+    public function stuCompUpd(){
+        return view('stuCompUpd');
+    }
+
+    public function stuCompDel(){
+        return view('stuCompDel');
+    }
+
+    public function stuPersAdd(){
+        return view('stuPersAdd');
+    }
+
+    public function stuPersUpd(){
+        return view('stuPersUpd');
+    }
+
+    public function stuPersDel(){
+        return view('stuPersDel');
+    }
+
+    public function stuContrTypeList(){
+        return view('stuContrTypeList');
+    }
+
+    public function stuContrTypeUpd(){
+        return view('stuContrTypeUpd');
+    }
+
+    public function stuContrList(){
+        return view('stuContrList');
+    }
+
+    public function stuContrAdd(){
+        return view('stuContrAdd');
+    }
+
+    public function stuContrUpd(){
+        return view('stuContrUpd');
+    }
+
+    public function stuContrDel(){
+        return view('stuContrDel');
+    }
+
+    public function stuContReportList(){
+        return view('stuContReportList');
+    }
+
+    public function stuContReportAdd(){
+        return view('stuContReportAdd');
+    }
+
+    public function stuContReportUpd(){
+        return view('stuContReportUpd');
+    }
+
+    public function stuContractRepDel(){
+        return view('stuContractRepDel');
+    }
+
+    public function stuPracReportRead(){
+        return view('stuPracReportRead');
+    }
+
+    public function stuFeedRead(){
+        return view('stuFeedRead');
+    }
+
+    public function stuFeedAdd(){
+        return view('stuFeedAdd');
+    }
+
+    public function stuFeedUpd(){
+        return view('stuFeedUpd');
+    }
+
+    public function stuFeedDel(){
+        return view('stuFeedDel');
+    }
+
+    public function stuPracCertRead(){
+        return view('stuPracCertRead');
+    }
+
     /* head of workplace functions */
     public function headCompList(){
         return view('headCompList');
+    }
+
+    public function headCompAdd(){
+        return view('headCompAdd');
     }
 
     public function headStudList(){
@@ -85,6 +181,10 @@ class TestController extends Controller
 
     public function headRespUpd(){
         return view('headRespUpd');
+    }
+
+    public function headRespAdd(){
+        return view('headRespAdd');
     }
 
 
@@ -141,4 +241,12 @@ class TestController extends Controller
             //echo $prax->pozicia;
         }
     }
+
+    public function insertHead(){
+        $prac = DB::table('Prax')->insert([
+            'Priezvisko' => '$Priezvisko2',
+            'Pozicia' => 'Pozicia2'
+        ]);
+        }
+
 }
