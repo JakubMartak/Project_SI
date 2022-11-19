@@ -11,7 +11,27 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <!--Tlačidlo Zoznam študentov-->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admStuLIst">Zoznam študentov</a>
+                        <a class="nav-link active" aria-current="page" href="admStuLIst">Správa študentov</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="admWpList">Správa pracovísk</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="admWkList">Správa poverených pracovníkov</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="admCompList">Správa firiem a organizácí</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="admRepList">Reporty za fakultu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="admGraphList">Grafy o aspektoch praxe</a>
                     </li>
 
 

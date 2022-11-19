@@ -47,8 +47,8 @@
                                 <th scope="col">Priezvisko</th>
                                 <th scope="col">Cislo</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Edit</th>
-                                <th scope="col">Remove</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -63,13 +63,13 @@
                                 <td>".$student->Mail."</td>
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='admStuEdit'>Edit</a>
+                                        <a class='btn btn-primary' href='admStuEdit'>Editovať</a>
                                     </div>
                                 </td>
 
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-danger' href='admStuAdd'>Remove</a>
+                                        <a class='btn btn-danger' href='admStuAdd'>Zmazať</a>
                                     </div>
                                 </td>
                             </tr>";

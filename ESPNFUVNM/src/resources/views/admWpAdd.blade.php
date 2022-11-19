@@ -11,7 +11,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/footerstyle.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
@@ -21,7 +20,7 @@
 </head>
 
 <body class="gradient-custom">
-<div class="container-xxl bg-white p-0">
+    <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
         @include('parts.admnavbar')
@@ -31,9 +30,11 @@
     <!-- Container -->
     <div class="container">
 
-        <div class="job-item p-4 mb-4">
+            <div class="job-item p-4 mb-4">
             <div class="row g-4">
-
+                <div class="d-flex mb-3">
+                    <a class="btn btn-success" href="">Pridať pracovisko</a>
+                </div>
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
@@ -51,26 +52,24 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <form>
-                                <th scope="row">1</th>
+                            <form>
+                                <th scope="row">#</th>
                                 <td><input type="text" size="10"> </input></td>
                                 <td><input type="text" size="10"> </input></td>
-                                <td><input type="number" size="10"> </input></td>
-                                <td><input type="email" size="10"> </input></td>
+                                <td><input type="text" size="10"> </input></td>
+                                <td><input type="date" size="10"> </input></td>
                                 <td>
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="admStuEdit">Potvrdiť</a>
+                                        <a class="btn btn-primary" href="admWpList">Pridať</a>
                                     </div>
                                 </td>
 
                                 <td>
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="admStuLIst">Zrušiť</a>
+                                        <a class="btn btn-danger" href="admWpList">Zrušiť</a>
                                     </div>
                                 </td>
-                                </form>
-                            </tr>
+                            </form>
                             </tbody>
                         </table>
                     </div>
@@ -79,15 +78,21 @@
                 <!-- buttons -->
 
             </div>
-        </div>
+            </div>
 
     </div>
 
 
-</div>
+    </div>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-success btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>
 
-
+<!-- Footer Start -->
+<footer>
+    @include('parts/footer')
+</footer>
+<!-- Footer End -->
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -11,7 +11,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/footerstyle.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
@@ -33,7 +32,9 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
+                <div class="d-flex mb-3">
 
+                </div>
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
@@ -42,10 +43,10 @@
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Meno</th>
-                                <th scope="col">Priezvisko</th>
-                                <th scope="col">Cislo</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">Názov reportu</th>
+                                <th scope="col">Popis reportu</th>
+                                <th scope="col">Aktivovaný</th>
+                                <th scope="col">Posledná zmena</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
@@ -53,22 +54,22 @@
                             <tbody>
                             <tr>
                                 <form>
-                                <th scope="row">1</th>
-                                <td><input type="text" size="10"> </input></td>
-                                <td><input type="text" size="10"> </input></td>
-                                <td><input type="number" size="10"> </input></td>
-                                <td><input type="email" size="10"> </input></td>
-                                <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="admStuEdit">Potvrdiť</a>
-                                    </div>
-                                </td>
+                                    <th scope="row">1</th>
+                                    <td><input type="text" size="10"> </input></td>
+                                    <td><input type="text" size="10"> </input></td>
+                                    <td><input type="text" size="10"> </input></td>
+                                    <td><input type="text" size="10"> </input></td>
+                                    <td>
+                                        <div class="d-flex mb-3">
+                                            <a class="btn btn-primary" href="admRepList">Potvrdiť</a>
+                                        </div>
+                                    </td>
 
-                                <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="admStuLIst">Zrušiť</a>
-                                    </div>
-                                </td>
+                                    <td>
+                                        <div class="d-flex mb-3">
+                                            <a class="btn btn-danger" href="admRepList">Zrušiť</a>
+                                        </div>
+                                    </td>
                                 </form>
                             </tr>
                             </tbody>
@@ -85,9 +86,15 @@
 
 
 </div>
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-success btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>
 
-
+<!-- Footer Start -->
+<footer>
+    @include('parts/footer')
+</footer>
+<!-- Footer End -->
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

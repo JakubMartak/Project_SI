@@ -59,13 +59,13 @@
                                     <td><input type="email" size="10"> </input></td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="admStuEdit">Create</a>
+                                            <a class="btn btn-primary" href="admStuEdit">Vytvoriť</a>
                                         </div>
                                     </td>
 
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="admStuLIst">Cancel</a>
+                                            <a class="btn btn-danger" href="admStuLIst">Zrušiť</a>
                                         </div>
                                     </td>
                                 </form>
