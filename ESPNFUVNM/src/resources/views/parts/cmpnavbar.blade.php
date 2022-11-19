@@ -9,29 +9,22 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <!--Tlačidlo na zobrazenie student-->
+                    <!--Tlačidlo Zoznam študentov-->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="stuPracList">Student zobrazenie</a>
+                        <a class="nav-link active" aria-current="page" href="cmpRegDetail">Registrácia</a>
                     </li>
 
-                    <!--Tlačidlo na zobrazenie veduci pracoviska-->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headCompList">Veduci pracoviska</a>
+                        <a class="nav-link active" aria-current="page" href="cmpStudRead">Spätná väzba k praxi študenta</a>
                     </li>
 
-                    <!--Tlačidlo na zobrazenie admin-->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admStuLIst">Admin zobrazenie</a>
-                    </li>
-                    <!--Tlačidlo na zobrazenie poverený pracovník  pracoviska -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="respCompList">poverený pracovník zobrazenie</a>
-                    </li>
-                    <!--Tlačidlo na zobrazenie Zástupca firmy a organizácie -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="cmpRegDetail">Zástupca firmy a organizácie zobrazenie</a>
+                        <a class="nav-link active" aria-current="page" href="cmpReporList">Pracovné výkazy</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="cmpFeedList">Spätná väzba k účelu praxe</a>
+                    </li>
 
                 </ul>
                 <!-- Prihlásený/neprihlásený používatel -->
