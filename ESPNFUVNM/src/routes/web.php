@@ -84,6 +84,32 @@ Route::get('/respCompUpd', [TestController::class, 'respCompUpd']);
 Route::get('/admStuLIst', [TestController::class, 'admStuLIst']);
 Route::get('/admStuAdd', [TestController::class, 'admStuAdd']);
 Route::get('/admStuEdit', [TestController::class, 'admStuEdit']);
+Route::get('/admWpList', [TestController::class, 'admWpList']);
+Route::get('/admWpAdd', [TestController::class, 'admWpAdd']);
+Route::get('/admWpUpd', [TestController::class, 'admWpUpd']);
+Route::get('/admWkList', [TestController::class, 'admWkList']);
+Route::get('/admWkAdd', [TestController::class, 'admWkAdd']);
+Route::get('/admWkUpd', [TestController::class, 'admWkUpd']);
+Route::get('/admCompList', [TestController::class, 'admCompList']);
+Route::get('/admCompNameUpd', [TestController::class, 'admCompNameUpd']);
+Route::get('/admRepList', [TestController::class, 'admRepList']);
+Route::get('/admRepAdd', [TestController::class, 'admRepAdd']);
+Route::get('/admRepUdp', [TestController::class, 'admRepUdp']);
+
+Route::get('/admGraphList', [TestController::class, 'admGraphList']);
+
+/* Zástupca firmy a organizácie */
+Route::get('/cmpRegDetail', [TestController::class, 'cmpRegDetail']);
+Route::get('/cmpAdd', [TestController::class, 'cmpAdd']);
+Route::get('/cmpUpd', [TestController::class, 'cmpUpd']);
+Route::get('/cmpStudRead', [TestController::class, 'cmpStudRead']);
+Route::get('/cmpStuAdd', [TestController::class, 'cmpStuAdd']);
+Route::get('/cmpStuUpd', [TestController::class, 'cmpStuUpd']);
+Route::get('/cmpReporList', [TestController::class, 'cmpReporList']);
+Route::get('/cmpReportUpd', [TestController::class, 'cmpReportUpd']);
+Route::get('/cmpFeedList', [TestController::class, 'cmpFeedList']);
+Route::get('/cmpFeedAdd', [TestController::class, 'cmpFeedAdd']);
+Route::get('/cmpFeedUpd', [TestController::class, 'cmpFeedUpd']);
 
 
 require __DIR__.'/auth.php';

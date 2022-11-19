@@ -210,6 +210,78 @@ class TestController extends Controller
     public function admStuAdd(){
         return view('admStuAdd');
     }
+    public function admWpList(){
+        return view('admWpList');
+    }
+    public function admWpAdd(){
+        return view('admWpAdd');
+    }
+    public function admWpUpd(){
+        return view('admWpUpd');
+    }
+
+    public function admWkList(){
+        return view('admWkList');
+    }
+    public function admWkAdd(){
+        return view('admWkAdd');
+    }
+    public function admWkUpd(){
+        return view('admWkUpd');
+    }
+
+    public function admCompList(){
+        return view('admCompList');
+    }
+    public function admCompNameUpd(){
+        return view('admCompNameUpd');
+    }
+
+    public function admRepList(){
+        return view('admRepList');
+    }
+    public function admRepAdd(){
+        return view('admRepAdd');
+    }
+    public function admRepUdp(){
+        return view('admRepUdp');
+    }
+
+    public function admGraphList(){
+        return view('admGraphList');
+    }
+
+    /* Zástupca firmy a organizácie */
+    public function cmpRegDetail(){
+        return view('cmpRegDetail');
+    }
+    public function cmpAdd(){
+        return view('cmpAdd');
+    }
+    public function cmpStudRead(){
+        return view('cmpStudRead');
+    }
+    public function cmpStuAdd(){
+        return view('cmpStuAdd');
+    }
+    public function cmpStuUpd(){
+        return view('cmpStuUpd');
+    }
+    public function cmpReporList(){
+        return view('cmpReporList');
+    }
+    public function cmpReportUpd(){
+        return view('cmpReportUpd');
+    }
+    public function cmpFeedList(){
+        return view('cmpFeedList');
+    }
+    public function cmpFeedAdd(){
+        return view('cmpFeedAdd');
+    }
+    public function cmpFeedUpd(){
+        return view('cmpFeedUpd');
+    }
 
     /*public function test4(){
         $praxy = DB::table('Prax')->get();
