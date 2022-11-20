@@ -43,8 +43,8 @@
                 </ul>
                 <div class="tab-content">
                     <div class="d-flex mb-3">
-                        <a class="btn btn-success mx-3" href="respCompAdd">Pridať Frimu</a>
-                        <a class="btn btn-success mx-3" href="respCompAdd">Pridať Kontaktnú osobu</a>
+                        <a class="btn btn-success mx-3" href="stuCompAdd">Pridať Frimu</a>
+                        <a class="btn btn-success mx-3" href="stuPersAdd">Pridať Kontaktnú osobu</a>
                     </div>
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <!-- Bakalár -->

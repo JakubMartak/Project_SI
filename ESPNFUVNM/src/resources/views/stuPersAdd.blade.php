@@ -13,9 +13,9 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        /* Template Stylesheet */
-        <?php //include __DIR__ .'/../css/style.css'; ?>
-        /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
+        <?php
+         $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', '3')->orderBy('idPouzivatel')->get();
+         ?>
     </style>
 </head>
 
@@ -35,6 +35,7 @@
                 <div class="d-flex mb-3">
 
                 </div>
+
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
@@ -49,6 +50,46 @@
                                 <th scope="col">e-mail</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach ($osoby as $osoba) {
+                                echo"<tr>"."
+                                <th scope='row'>".$osoba->idPouzivatel."</th>"."
+                                <td>".$osoba->Meno."</td>"."
+                                <td>".$osoba->Priezvisko."</td>"."
+                                <td>".$osoba->Cislo."</td>"."
+                                <td>".$osoba->Mail."</td>"."
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-primary' href='stuPersUpd'>Edit</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-danger' href='#'>Remove</a>
+                                    </div>
+                                </td>"."
+                            </tr>";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Tabulka -->
+                <div class="">
+                    <div class="text-start ps-4">
+
+                        <table class="table table-w">
+                            <thead>
+                            <tr>
+                                <th scope="col">#id</th>
+                                <th scope="col">Meno</th>
+                                <th scope="col">Priezvisko</th>
+                                <th scope="col">Cislo</th>
+                                <th scope="col">e-mail</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -76,7 +117,6 @@
                         </table>
                     </div>
                 </div>
-
                 <!-- buttons -->
 
             </div>

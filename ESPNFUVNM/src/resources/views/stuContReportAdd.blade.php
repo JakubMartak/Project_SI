@@ -1,4 +1,4 @@
-stuContReportList.blade.php<head>
+<head>
     <meta charset="utf-8">
     <title>JobEntry - Job Portal Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">

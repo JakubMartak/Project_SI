@@ -17,15 +17,6 @@
                         <a class="nav-link active" aria-current="page" href="stuPracProgList">Zoznam praxí podľa študijných programov</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="stuContrTypeList">Moje typy zmlúv o spolupráci</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="stuContrList">Moje dohody o praxi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="stuPracProgList">Zoznam praxí podľa študijných programov</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="stuContReportList">Záznamy o vykonaní praxe</a>
                     </li>
                     <li class="nav-item">

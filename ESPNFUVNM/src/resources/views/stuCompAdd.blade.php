@@ -13,9 +13,9 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        /* Template Stylesheet */
-        <?php //include __DIR__ .'/../css/style.css'; ?>
-        /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
+        <?php
+        $firmy = DB::table('Firma')->join('Mesto', 'Mesto.idMesto', '=', 'Firma.Mesto_idMesto')->orderBy('idFirma')->get();
+        ?>
     </style>
 </head>
 
@@ -35,6 +35,51 @@
                 <div class="d-flex mb-3">
 
                 </div>
+
+                <!-- Tabulka -->
+                <div class="">
+                    <div class="text-start ps-4">
+
+                        <table class="table table-w">
+                            <thead>
+                            <tr>
+                                <th scope="col">#id</th>
+                                <th scope="col">Názov Firmy</th>
+                                <th scope="col">Skratka</th>
+                                <th scope="col">Adresa</th>
+                                <th scope="col">Mesto</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach ($firmy as $firma) {
+                                echo"<tr>"."
+                                <th scope='row'>".$firma->idFirma."</th>"."
+                                <td>".$firma->Názov_firmy."</td>"."
+                                <td>".$firma->Skratka."</td>"."
+                                <td>".$firma->Adresa."</td>"."
+                                <td>".$firma->Nazov."</td>"."
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-primary' href='stuCompUpd'>Edit</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-danger' href='#'>Remove</a>
+                                    </div>
+                                </td>"."
+                            </tr>";
+                            }
+                            ?>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">

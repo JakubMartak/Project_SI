@@ -60,7 +60,7 @@
                                 <td>".$prax->Nazov."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='respCompUpd'>Edit</a>
+                                        <a class='btn btn-primary' href='stuFeedUpd'>Edit</a>
                                     </div>
                                 </td>
                                 <td>

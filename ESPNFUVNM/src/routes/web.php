@@ -41,7 +41,7 @@ Route::get('/stuCompAdd', [TestController::class, 'stuCompAdd']);
 Route::get('/stuCompUpd', [TestController::class, 'stuCompUpd']);
 Route::get('/stuCompDel', [TestController::class, 'stuCompDel']);
 Route::get('/stuPersAdd', [TestController::class, 'stuPersAdd']);
-Route::get('/stuPersUpd', [TestController::class, 'TestController']);
+Route::get('/stuPersUpd', [TestController::class, 'stuPersUpd']);
 Route::get('/stuPersDel', [TestController::class, 'stuPersDel']);
 Route::get('/stuContrList', [TestController::class, 'stuContrList']);
 Route::get('/stuContrTypeUpd', [TestController::class, 'stuContrTypeUpd']);
