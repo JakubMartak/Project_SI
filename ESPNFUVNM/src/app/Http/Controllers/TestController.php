@@ -199,6 +199,70 @@ class TestController extends Controller
     public function respCompUpd(){
         return view('respCompUpd');
     }
+    
+    public function respCompDel(){
+        return view('respCompDel');
+    }
+
+    public function respPracRead(){
+        return view('respPracRead');
+    }
+
+    public function respPracUpd(){
+        return view('respPracUpd');
+    }
+
+    public function respFeedList(){
+        return view('respFeedList');
+    }
+
+    public function respFeedAdd(){
+        return view('respFeedAdd');
+    }
+
+    public function respFeedUpd(){
+        return view('respFeedUpd');
+    }
+
+    public function respFeedDel(){
+        return view('respFeedDel');
+    }
+
+    public function respReportRead(){
+        return view('respReportRead');
+    }
+
+    public function respReportAdd(){
+        return view('respReportAdd');
+    }
+
+    public function respReportUpd(){
+        return view('respReportUpd');
+    }
+
+    public function respReportDel(){
+        return view('respReportDel');
+    }
+
+    public function respPracArchRead(){
+        return view('respPracArchRead');
+    }
+
+    public function respStuRatingList(){
+        return view('respStuRatingList');
+    }
+
+    public function respStuRatingAdd(){
+        return view('respStuRatingAdd');
+    }
+
+    public function respStuRatingUpd(){
+        return view('respStuRatingUpd');
+    }
+
+    public function respStuRatingDel(){
+        return view('respStuRatingDel');
+    }
 
     /* admin functions */
     public function admStuLIst(){
