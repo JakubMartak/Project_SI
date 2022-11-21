@@ -75,10 +75,27 @@ Route::get('/headRespList', [TestController::class, 'headRespList']);
 Route::get('/headRespUpd', [TestController::class, 'headRespUpd']);
 Route::get('/headRespAdd', [TestController::class, 'headRespAdd']);
 
-/* responsible preson functions */
+/* responsible person functions */
 Route::get('/respCompList', [TestController::class, 'respCompList']);
 Route::get('/respCompAdd', [TestController::class, 'respCompAdd']);
 Route::get('/respCompUpd', [TestController::class, 'respCompUpd']);
+Route::get('/respCompDel', [TestController::class, 'respCompDel']);
+Route::get('/respPracRead', [TestController::class, 'respPracRead']);
+Route::get('/respPracUpd', [TestController::class, 'respPracUpd']);
+Route::get('/respFeedList', [TestController::class, 'respFeedList']);
+Route::get('/respFeedAdd', [TestController::class, 'respFeedAdd']);
+Route::get('/respFeedUpd', [TestController::class, 'respFeedUpd']);
+Route::get('/respFeedDel', [TestController::class, 'respFeedDel']);
+Route::get('/respReportRead', [TestController::class, 'respReportRead']);
+Route::get('/respReportAdd', [TestController::class, 'respReportAdd']);
+Route::get('/respReportUpd', [TestController::class, 'respReportUpd']);
+Route::get('/respReportDel', [TestController::class, 'respReportDel']);
+Route::get('/respPracArchRead', [TestController::class, 'respPracArchRead']);
+Route::get('/respStuRatingList', [TestController::class, 'respStuRatingList']);
+Route::get('/respStuRatingAdd', [TestController::class, 'respStuRatingAdd']);
+Route::get('/respStuRatingUpd', [TestController::class, 'respStuRatingUpd']);
+Route::get('/respStuRatingDel', [TestController::class, 'respStuRatingDel']);
+
 
 /* admin routes */
 Route::get('/admStuLIst', [TestController::class, 'admStuLIst']);
