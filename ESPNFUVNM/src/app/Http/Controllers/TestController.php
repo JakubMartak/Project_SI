@@ -42,6 +42,98 @@ class TestController extends Controller
         return view('stuPracList');
     }
 
+    public function stuPracProgList(){
+        return view('stuPracProgList');
+    }
+
+    public function stuCompAdd(){
+        return view('stuCompAdd');
+    }
+
+    public function stuCompUpd(){
+        return view('stuCompUpd');
+    }
+
+    public function stuCompDel(){
+        return view('stuCompDel');
+    }
+
+    public function stuPersAdd(){
+        return view('stuPersAdd');
+    }
+
+    public function stuPersUpd(){
+        return view('stuPersUpd');
+    }
+
+    public function stuPersDel(){
+        return view('stuPersDel');
+    }
+
+    public function stuContrTypeList(){
+        return view('stuContrTypeList');
+    }
+
+    public function stuContrTypeUpd(){
+        return view('stuContrTypeUpd');
+    }
+
+    public function stuContrList(){
+        return view('stuContrList');
+    }
+
+    public function stuContrAdd(){
+        return view('stuContrAdd');
+    }
+
+    public function stuContrUpd(){
+        return view('stuContrUpd');
+    }
+
+    public function stuContrDel(){
+        return view('stuContrDel');
+    }
+
+    public function stuContReportList(){
+        return view('stuContReportList');
+    }
+
+    public function stuContReportAdd(){
+        return view('stuContReportAdd');
+    }
+
+    public function stuContReportUpd(){
+        return view('stuContReportUpd');
+    }
+
+    public function stuContractRepDel(){
+        return view('stuContractRepDel');
+    }
+
+    public function stuPracReportRead(){
+        return view('stuPracReportRead');
+    }
+
+    public function stuFeedRead(){
+        return view('stuFeedRead');
+    }
+
+    public function stuFeedAdd(){
+        return view('stuFeedAdd');
+    }
+
+    public function stuFeedUpd(){
+        return view('stuFeedUpd');
+    }
+
+    public function stuFeedDel(){
+        return view('stuFeedDel');
+    }
+
+    public function stuPracCertRead(){
+        return view('stuPracCertRead');
+    }
+
     /* head of workplace functions */
     public function headCompList(){
         return view('headCompList');
@@ -95,30 +187,6 @@ class TestController extends Controller
         return view('headRespAdd');
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /* responsible preson functions */
     public function respCompList(){
         return view('respCompList');
@@ -131,6 +199,70 @@ class TestController extends Controller
     public function respCompUpd(){
         return view('respCompUpd');
     }
+    
+    public function respCompDel(){
+        return view('respCompDel');
+    }
+
+    public function respPracRead(){
+        return view('respPracRead');
+    }
+
+    public function respPracUpd(){
+        return view('respPracUpd');
+    }
+
+    public function respFeedList(){
+        return view('respFeedList');
+    }
+
+    public function respFeedAdd(){
+        return view('respFeedAdd');
+    }
+
+    public function respFeedUpd(){
+        return view('respFeedUpd');
+    }
+
+    public function respFeedDel(){
+        return view('respFeedDel');
+    }
+
+    public function respReportRead(){
+        return view('respReportRead');
+    }
+
+    public function respReportAdd(){
+        return view('respReportAdd');
+    }
+
+    public function respReportUpd(){
+        return view('respReportUpd');
+    }
+
+    public function respReportDel(){
+        return view('respReportDel');
+    }
+
+    public function respPracArchRead(){
+        return view('respPracArchRead');
+    }
+
+    public function respStuRatingList(){
+        return view('respStuRatingList');
+    }
+
+    public function respStuRatingAdd(){
+        return view('respStuRatingAdd');
+    }
+
+    public function respStuRatingUpd(){
+        return view('respStuRatingUpd');
+    }
+
+    public function respStuRatingDel(){
+        return view('respStuRatingDel');
+    }
 
     /* admin functions */
     public function admStuLIst(){
@@ -142,8 +274,80 @@ class TestController extends Controller
     public function admStuAdd(){
         return view('admStuAdd');
     }
+    public function admWpList(){
+        return view('admWpList');
+    }
+    public function admWpAdd(){
+        return view('admWpAdd');
+    }
+    public function admWpUpd(){
+        return view('admWpUpd');
+    }
 
-    public function test4(){
+    public function admWkList(){
+        return view('admWkList');
+    }
+    public function admWkAdd(){
+        return view('admWkAdd');
+    }
+    public function admWkUpd(){
+        return view('admWkUpd');
+    }
+
+    public function admCompList(){
+        return view('admCompList');
+    }
+    public function admCompNameUpd(){
+        return view('admCompNameUpd');
+    }
+
+    public function admRepList(){
+        return view('admRepList');
+    }
+    public function admRepAdd(){
+        return view('admRepAdd');
+    }
+    public function admRepUdp(){
+        return view('admRepUdp');
+    }
+
+    public function admGraphList(){
+        return view('admGraphList');
+    }
+
+    /* Zástupca firmy a organizácie */
+    public function cmpRegDetail(){
+        return view('cmpRegDetail');
+    }
+    public function cmpAdd(){
+        return view('cmpAdd');
+    }
+    public function cmpStudRead(){
+        return view('cmpStudRead');
+    }
+    public function cmpStuAdd(){
+        return view('cmpStuAdd');
+    }
+    public function cmpStuUpd(){
+        return view('cmpStuUpd');
+    }
+    public function cmpReporList(){
+        return view('cmpReporList');
+    }
+    public function cmpReportUpd(){
+        return view('cmpReportUpd');
+    }
+    public function cmpFeedList(){
+        return view('cmpFeedList');
+    }
+    public function cmpFeedAdd(){
+        return view('cmpFeedAdd');
+    }
+    public function cmpFeedUpd(){
+        return view('cmpFeedUpd');
+    }
+
+    /*public function test4(){
         $praxy = DB::table('Prax')->get();
         foreach ($praxy as $prax) {
             //echo $prax->pozicia;
@@ -156,5 +360,5 @@ class TestController extends Controller
             'Pozicia' => 'Pozicia2'
         ]);
         }
-
+    }*/
 }

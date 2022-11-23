@@ -27,6 +27,10 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="respCompList">poverený pracovník zobrazenie</a>
                     </li>
+                    <!--Tlačidlo na zobrazenie Zástupca firmy a organizácie -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="cmpRegDetail">Zástupca firmy a organizácie zobrazenie</a>
+                    </li>
 
 
                 </ul>

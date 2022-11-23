@@ -33,6 +33,10 @@ class DatabaseSeeder extends Seeder
             Studijny_program_Seed::class,
             Users::class,
             Zmluva_Seed::class,
+            
+            Dokumenty_Seed::class,
+            Prax_has_Dokumenty_Seed::class,
+            Dodatocne_Prax_Seed::class,
         ]);
     }
 }
