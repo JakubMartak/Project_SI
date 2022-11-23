@@ -53,7 +53,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <form>
+                                <form action="respCompAdd.blade.php" method="post">
                                     <th scope="row">1</th>
                                     <td><input type="text" size="10"> </input></td>
                                     <td><input type="text" size="10"> </input></td>
