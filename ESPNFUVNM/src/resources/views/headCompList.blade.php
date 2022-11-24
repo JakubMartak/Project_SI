@@ -55,9 +55,6 @@
                             </thead>
                             <tbody>
                             <?php
-                                $companies = DB::table('Firma')
-                                    ->join('Mesto', 'Mesto_idMesto', '=', 'idMesto')
-                                    ->get();
                                 foreach ($companies as $comp) {
                                     echo "<tr>";
                                     echo "<th scope='row'>$comp->idFirma</th>";

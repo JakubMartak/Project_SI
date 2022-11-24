@@ -61,8 +61,11 @@ Route::get('/stuFeedDel', [TestController::class, 'stuFeedDel']);
 Route::get('/stuPracCertRead', [TestController::class, 'stuPracCertRead']);
 
 /* head of workplace routes */
-Route::get('/headCompList', [TestController::class, 'headCompList']);
+Route::get('/headCompList', [TestController::class, 'headCompList'])->name("headCompList");
 Route::get('/headCompAdd', [TestController::class, 'headCompAdd']);
+
+Route::post('/headCompSave', [TestController::class, 'headCompSave'])->name("headCompSave");
+
 Route::get('/headStudList', [TestController::class, 'headStudList']);
 Route::get('/headPracList', [TestController::class, 'headPracList']);
 Route::get('/headPracFinishList', [TestController::class, 'headPracFinishList']);

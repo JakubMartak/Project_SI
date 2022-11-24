@@ -127,12 +127,12 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <form>
+                                <form method="post" action="{{route('headCompSave')}}">
                                     <th scope="row">#</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
+                                    <td><input type="text" size="10" name="nazov_firmy"></td>
+                                    <td><input type="text" size="10" name="skratka"></td>
+                                    <td><input type="text" size="10" name="adresa"></td>
+                                    <td><input type="text" size="10" name="mesto"></td>
                                     <td>
                                         <div class="d-flex mb-3">
                                             <a class="btn btn-primary" href="headReportList">Add</a>

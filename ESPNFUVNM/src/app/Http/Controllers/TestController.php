@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\DB;
+
+
 class TestController extends Controller
 {
 
@@ -136,8 +140,29 @@ class TestController extends Controller
 
     /* head of workplace functions */
     public function headCompList(){
-        return view('headCompList');
+        $companies = DB::table('Firma')
+            ->join('Mesto', 'Mesto_idMesto', '=', 'idMesto')
+            ->get();
+        return view('headCompList', ['companies'=>$companies]);
     }
+
+    public function headCompSave(Request $request) {
+        dd(22);
+        $nazov = $request->input('nazov_firmy');
+        $skratka = $request->input('skratka');
+        $adresa = $request->input('adresa');
+        $mesto = $request->input('mesto');
+
+        DB::table('Firma')->insert([
+            'Názov_firmy' => $nazov,
+            'Skratka' => $skratka,
+            'Adresa' => $adresa,
+            'Mesto_idMesto' => $mesto,
+        ]);
+
+        return redirect()->route("headCompList");
+    }
+
 
     public function headCompAdd(){
         return view('headCompAdd');
