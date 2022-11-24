@@ -50,7 +50,7 @@
                         <!-- Bakalár -->
                         <?php
                         //use Illuminate\Support\Facades\DB;
-                        $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 1)->get();
+                        //$praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 1)->get();
                         foreach ($praxy as $prax) {
                             echo"<div class='job-item p-4 mb-4'>"."
                                 <div class='row g-4'>"."
@@ -67,7 +67,7 @@
                                         <div class='d-flex mb-3'>"."
                                             <a class='btn btn-success' href='infopage'>Details</a>"."
                                         </div>"."
-                                        <small class='text-truncate'><i class='far fa-calendar-alt text-success me-2'></i>Date Line:". $prax->Datum_start."</small>"."
+                                        <small class='text-truncate'><i class='far fa-calendar-alt text-success me-2'></i>Date Line: ". $prax->Datum_start."</small>"."
                                     </div>"."
                                 </div>"."
                             </div>";
@@ -95,7 +95,7 @@
                                         <div class='d-flex mb-3'>"."
                                             <a class='btn btn-success' href='infopage'>Details</a>"."
                                         </div>"."
-                                        <small class='text-truncate'><i class='far fa-calendar-alt text-success me-2'></i>Date Line:". $prax->Datum_start."</small>"."
+                                        <small class='text-truncate'><i class='far fa-calendar-alt text-success me-2'></i>Date Line: ". $prax->Datum_start."</small>"."
                                     </div>"."
                                 </div>"."
                             </div>";

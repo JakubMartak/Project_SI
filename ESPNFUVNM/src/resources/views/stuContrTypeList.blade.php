@@ -15,7 +15,7 @@
     <style>
         /* Template Stylesheet */
         <?php
-            $zmluvy = DB::table('Zmluva')->get();
+            //$zmluvy = DB::table('Zmluva')->get();
         ?>
          /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
     </style>

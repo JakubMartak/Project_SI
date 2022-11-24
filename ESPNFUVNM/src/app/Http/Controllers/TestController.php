@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class TestController extends Controller
@@ -43,11 +44,15 @@ class TestController extends Controller
 
     /* student functions */
     public function stuPracList(){
-        return view('stuPracList');
+        $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 1)->get();
+        return view('stuPracList', ['praxy'=>$praxy]);
+        //return view('stuPracList');
     }
 
     public function stuPracProgList(){
-        return view('stuPracProgList');
+        $praxy = DB::table('Prax')->select('*', 'Predmety.Nazov as X', 'Studijny_program.Nazov as Y')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->join('Predmety', 'Predmety.idPredmety', '=', 'Prax.Predmety_idPredmety')->join('Studijny_program', 'Studijny_program.idStudijny_program', '=', 'Predmety.Studijny_program_idStudijny_program')->orderBy('Y')->orderBy('X')->orderBy('idPrax')->get();
+        return view('stuPracProgList', ['praxy'=>$praxy]);
+        //return view('stuPracProgList');
     }
 
     public function stuCompAdd(){
@@ -75,6 +80,8 @@ class TestController extends Controller
     }
 
     public function stuContrTypeList(){
+        $zmluvy = DB::table('Zmluva')->get();
+        return view('stuContrTypeList', ['zmluvy'=>$zmluvy]);
         return view('stuContrTypeList');
     }
 
@@ -83,7 +90,9 @@ class TestController extends Controller
     }
 
     public function stuContrList(){
-        return view('stuContrList');
+        $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Student_idPouzivatel', Auth::user()->id )->orderBy('idPrax')->get();
+        return view('stuContrList', ['praxy'=>$praxy]);
+        //return view('stuContrList');
     }
 
     public function stuContrAdd(){
@@ -99,7 +108,9 @@ class TestController extends Controller
     }
 
     public function stuContReportList(){
-        return view('stuContReportList');
+        $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Student_idPouzivatel', Auth::user()->id )->orderBy('idPrax')->get();
+        return view('stuContReportList', ['praxy'=>$praxy]);
+        //return view('stuContReportList');
     }
 
     public function stuContReportAdd(){
@@ -115,11 +126,15 @@ class TestController extends Controller
     }
 
     public function stuPracReportRead(){
-        return view('stuPracReportRead');
+        $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Student_idPouzivatel', Auth::user()->id)->where('Dokumenty_idDokumenty', '1')->orderBy('idPrax')->get();
+        return view('stuPracReportRead', ['praxy'=>$praxy]);
+        //return view('stuPracReportRead');
     }
 
     public function stuFeedRead(){
-        return view('stuFeedRead');
+        $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Student_idPouzivatel', Auth::user()->id)->where('Dokumenty_idDokumenty', '2')->orderBy('idPrax')->get();
+        return view('stuFeedRead', ['praxy'=>$praxy]);
+        //return view('stuFeedRead');
     }
 
     public function stuFeedAdd(){
@@ -135,7 +150,9 @@ class TestController extends Controller
     }
 
     public function stuPracCertRead(){
-        return view('stuPracCertRead');
+        $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Student_idPouzivatel', Auth::user()->id)->where('Dokumenty_idDokumenty', '3')->orderBy('idPrax')->get();
+        return view('stuPracCertRead', ['praxy'=>$praxy]);
+        //return view('stuPracCertRead');
     }
 
     /* head of workplace functions */
