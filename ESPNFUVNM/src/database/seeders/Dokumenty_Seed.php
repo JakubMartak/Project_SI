@@ -13,7 +13,7 @@ class Dokumenty_Seed extends Seeder
         ]);
 
         DB::table('Dokumenty')->insert([
-            'Typ_doc' => 'Spätná väzba',
+            'Typ_doc' => 'Spatna_vazba',
         ]);
 
         DB::table('Dokumenty')->insert([

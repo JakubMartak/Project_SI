@@ -15,7 +15,7 @@
     <style>
         /* Template Stylesheet */
         <?php
-            $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Student_idPouzivatel', Auth::user()->id)->where('Typ_doc', 'Vykaz_o_vykonani_praxe')->orderBy('idPrax')->get();
+            $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Student_idPouzivatel', Auth::user()->id)->where('Dokumenty_idDokumenty', '1')->orderBy('idPrax')->get();
         ?>
          /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
     </style>
