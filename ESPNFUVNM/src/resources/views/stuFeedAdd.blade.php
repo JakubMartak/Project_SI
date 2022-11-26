@@ -35,12 +35,13 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
+                        <form action="stuFeedSave" method="POST">
+                            @csrf
                         <table class="table table-w">
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Pozícia</th>
+                                <th scope="col">Prax</th>
                                 <th scope="col">Spätná väzba</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
@@ -48,25 +49,23 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <form>
-                                    <th scope="row">1</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="stuFeedRead">Confirm</a>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="stuFeedRead">Cancel</a>
-                                        </div>
-                                    </td>
-                                </form>
+                                <th scope="row">#</th>
+                                <td><input type="text" name="Prax" size="10"></td>
+                                <td><input type="text" name="Spatna_vazba" size="50"></td>
+                                <td>
+                                    <div class="d-flex mb-3">
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex mb-3">
+                                        <a class="btn btn-danger" href="stuFeedRead">Cancel</a>
+                                    </div>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
+                        </form>
                     </div>
                 </div>
 

@@ -112,22 +112,22 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Skratka</th>
-                                <th scope="col">Adresa</th>
-                                <th scope="col">Mesto</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form method="post" action="{{route('headCompSave')}}">
+                        <form method="post" action="{{route('headCompSave')}}">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Názov Firmy</th>
+                                    <th scope="col">Skratka</th>
+                                    <th scope="col">Adresa</th>
+                                    <th scope="col">Mesto</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
                                     <th scope="row">#</th>
                                     <td><input type="text" size="10" name="nazov_firmy"></td>
                                     <td><input type="text" size="10" name="skratka"></td>
@@ -135,7 +135,7 @@
                                     <td><input type="text" size="10" name="mesto"></td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="headReportList">Add</a>
+                                            <button type="submit"class="btn btn-primary">Add</button>
                                         </div>
                                     </td>
 
@@ -144,10 +144,10 @@
                                             <a class="btn btn-danger" href="respCompList">Cancel</a>
                                         </div>
                                     </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
 

@@ -14,7 +14,7 @@
 
     <style>
         <?php
-        $firmy = DB::table('Firma')->join('Mesto', 'Mesto.idMesto', '=', 'Firma.Mesto_idMesto')->orderBy('idFirma')->get();
+        //$firmy = DB::table('Firma')->join('Mesto', 'Mesto.idMesto', '=', 'Firma.Mesto_idMesto')->orderBy('idFirma')->get();
         ?>
     </style>
 </head>
@@ -83,42 +83,41 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Skratka</th>
-                                <th scope="col">Adresa</th>
-                                <th scope="col">Mesto</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form>
+                        <form action="stuCompSave" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#id</th>
+                                        <th scope="col">Názov Firmy</th>
+                                        <th scope="col">Skratka</th>
+                                        <th scope="col">Adresa</th>
+                                        <th scope="col">Mesto</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
                                     <th scope="row">#</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
+                                    <td><input type="text" name="Nazov_firmy" size="10"></td>
+                                    <td><input type="text" name="Skratka" size="10"></td>
+                                    <td><input type="text" name="Adresa" size="10"></td>
+                                    <td><input type="text" name="Nazov" size="10"></td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="respCompList">Add</a>
+                                            <button type="submit" class="btn btn-primary">Add</button>
                                         </div>
                                     </td>
-
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="respCompList">Cancel</a>
+                                            <a class="btn btn-danger" href="stuPracList">Cancel</a>
                                         </div>
                                     </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
 

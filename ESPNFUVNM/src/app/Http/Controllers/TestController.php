@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,17 +45,26 @@ class TestController extends Controller
     public function stuPracList(){
         $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 1)->get();
         return view('stuPracList', ['praxy'=>$praxy]);
-        //return view('stuPracList');
     }
 
     public function stuPracProgList(){
         $praxy = DB::table('Prax')->select('*', 'Predmety.Nazov as X', 'Studijny_program.Nazov as Y')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->join('Predmety', 'Predmety.idPredmety', '=', 'Prax.Predmety_idPredmety')->join('Studijny_program', 'Studijny_program.idStudijny_program', '=', 'Predmety.Studijny_program_idStudijny_program')->orderBy('Y')->orderBy('X')->orderBy('idPrax')->get();
         return view('stuPracProgList', ['praxy'=>$praxy]);
-        //return view('stuPracProgList');
     }
 
     public function stuCompAdd(){
-        return view('stuCompAdd');
+        $firmy = DB::table('Firma')->join('Mesto', 'Mesto.idMesto', '=', 'Firma.Mesto_idMesto')->orderBy('idFirma')->get();
+        return view('stuCompAdd', ['firmy'=>$firmy]);
+    }
+
+    public function stuCompSave(Request $req){
+        DB::table('Firma')->insert([
+            'Názov_firmy' => $req->Nazov_firmy,
+            'Skratka' => $req->Skratka,
+            'Adresa' => $req->Adresa,
+            'Mesto_idMesto' => $req->Nazov,
+        ]);
+        return redirect('stuCompAdd');
     }
 
     public function stuCompUpd(){
@@ -68,7 +77,19 @@ class TestController extends Controller
     }
 
     public function stuPersAdd(){
-        return view('stuPersAdd');
+        $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', '3')->orderBy('idPouzivatel')->get();
+        return view('stuPersAdd', ['osoby'=>$osoby]);
+    }
+
+    public function stuPersSave(Request $req){
+        DB::table('Pouzivatel')->insert([
+            'Meno' => $req->Meno,
+            'Priezvisko' => $req->Priezvisko,
+            'Cislo' => $req->Cislo,
+            'Mail' => $req->Mail,
+            'Rola_pouzivatela' => "3",
+        ]);
+        return redirect('stuPersAdd');
     }
 
     public function stuPersUpd(){
@@ -116,6 +137,22 @@ class TestController extends Controller
         return view('stuContReportAdd');
     }
 
+    public function stuContReportSave (Request $req){
+        DB::table('Prax')->insert([
+            'Pozicia' => $req->Pozicia,
+            'Student_idPouzivatel' => Auth::user()->id,
+            'Datum_start' => $req->Datum_Zaciatku,
+            'Datum_end' => $req->Datum_Konca,
+            'Firma_idFirma' => $req->Nazov_firmy,
+            'Kontaktna_osoba_idPouzivatel' => $req->Kontaktna_Osoba,
+            'Aktuálny_stav' => $req->Aktualny_stav,
+            'Predmety_idPredmety' => $req->Predmety,
+            'Pracovnik_FPVaI_idPouzivatel' => $req->Pracovnik_FPVaI,
+            'Zmluva_idZmluva' => $req->Typ_Zmluvy
+        ]);
+        return redirect('stuContReportList');
+    }
+
     public function stuContReportUpd(){
         return view('stuContReportUpd');
     }
@@ -139,6 +176,16 @@ class TestController extends Controller
 
     public function stuFeedAdd(){
         return view('stuFeedAdd');
+    }
+
+    public function stuFeedSave (Request $req){
+        DB::table('Prax_has_Dokumenty')->insert([
+            'Prax_idPrax' => $req->Prax,
+            'Dokumenty_idDokumenty' => "2",
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Spatna_vazba
+        ]);
+        return redirect('stuFeedRead');
     }
 
     public function stuFeedUpd(){
@@ -165,7 +212,7 @@ class TestController extends Controller
     }
 
     public function headCompSave(Request $request) {
-        dd(22);
+        //dd(22);
         $nazov = $request->input('nazov_firmy');
         $skratka = $request->input('skratka');
         $adresa = $request->input('adresa');

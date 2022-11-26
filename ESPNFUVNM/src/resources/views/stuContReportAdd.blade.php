@@ -32,50 +32,52 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-                <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="stuContReportAdd">Pridať Firmu</a>
-                </div>
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
+                        <form action="stuContReportSave" method="POST">
+                            @csrf
                         <table class="table table-w">
                             <thead>
                             <tr>
-                                <th scope="col">#id</th>
                                 <th scope="col">Pozícia</th>
                                 <th scope="col">Názov Firmy</th>
-                                <th scope="col">Typ Zmlovy</th>
+                                <th scope="col">Typ Zmluvy</th>
                                 <th scope="col">Dátum Začiatku</th>
                                 <th scope="col">Dátum Konca</th>
+                                <th scope="col">Kontaktná Osoba</th>
+                                <th scope="col">Aktuálny stav</th>
+                                <th scope="col">Predmety</th>
+                                <th scope="col">Pracovník FPVaI</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <form>
-                                    <th scope="row">1</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="stuContReportList">Confirm</a>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="stuContReportList">Cancel</a>
-                                        </div>
-                                    </td>
-                                </form>
+                                <td><input type="text" name="Pozicia" size="8"></td>
+                                <td><input type="text" name="Nazov_firmy" size="8"></td>
+                                <td><input type="text" name="Typ_Zmluvy" size="8"></td>
+                                <td><input type="text" name="Datum_Zaciatku" size="8"></td>
+                                <td><input type="text" name="Datum_Konca" size="8"></td>
+                                <td><input type="text" name="Kontaktna_Osoba" size="8"></td>
+                                <td><input type="text" name="Aktualny_stav" size="8"></td>
+                                <td><input type="text" name="Predmety" size="8"></td>
+                                <td><input type="text" name="Pracovnik_FPVaI" size="8"></td>
+                                <td>
+                                    <div class="d-flex mb-3">
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex mb-3">
+                                        <a class="btn btn-danger" href="stuContReportList">Cancel</a>
+                                    </div>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
+                        </form>
                     </div>
                 </div>
 
