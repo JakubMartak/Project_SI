@@ -68,7 +68,7 @@
                                 </td>
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-danger' href='#'>Remove</a>
+                                        <a class='btn btn-danger' href='stuPersDel/".$osoba->idPouzivatel."'>Remove</a>
                                     </div>
                                 </td>"."
                             </tr>";

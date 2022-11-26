@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-
 class TestController extends Controller
 {
 
@@ -63,8 +62,9 @@ class TestController extends Controller
         return view('stuCompUpd');
     }
 
-    public function stuCompDel(){
-        return view('stuCompDel');
+    public function stuCompDel($id){
+        DB::table('Firma')->where('idFirma', $id)->delete();
+        return redirect('stuCompAdd');
     }
 
     public function stuPersAdd(){
@@ -75,14 +75,14 @@ class TestController extends Controller
         return view('stuPersUpd');
     }
 
-    public function stuPersDel(){
-        return view('stuPersDel');
+    public function stuPersDel($id){
+        DB::table('Firma')->where('idPouzivatel', $id)->delete();
+        return redirect('stuPersAdd');
     }
 
     public function stuContrTypeList(){
         $zmluvy = DB::table('Zmluva')->get();
         return view('stuContrTypeList', ['zmluvy'=>$zmluvy]);
-        return view('stuContrTypeList');
     }
 
     public function stuContrTypeUpd(){
@@ -92,7 +92,6 @@ class TestController extends Controller
     public function stuContrList(){
         $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Student_idPouzivatel', Auth::user()->id )->orderBy('idPrax')->get();
         return view('stuContrList', ['praxy'=>$praxy]);
-        //return view('stuContrList');
     }
 
     public function stuContrAdd(){
@@ -103,14 +102,14 @@ class TestController extends Controller
         return view('stuContrUpd');
     }
 
-    public function stuContrDel(){
-        return view('stuContrDel');
+    public function stuContrDel($id){
+        DB::table('Prax')->where('idPrax', $id)->delete();
+        return redirect('stuContrList');
     }
 
     public function stuContReportList(){
         $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Student_idPouzivatel', Auth::user()->id )->orderBy('idPrax')->get();
         return view('stuContReportList', ['praxy'=>$praxy]);
-        //return view('stuContReportList');
     }
 
     public function stuContReportAdd(){
@@ -121,8 +120,9 @@ class TestController extends Controller
         return view('stuContReportUpd');
     }
 
-    public function stuContractRepDel(){
-        return view('stuContractRepDel');
+    public function stuContReportDel($id){
+        DB::table('Prax')->where('idPrax', $id)->delete();
+        return redirect('stuContReportList');
     }
 
     public function stuPracReportRead(){
@@ -145,8 +145,9 @@ class TestController extends Controller
         return view('stuFeedUpd');
     }
 
-    public function stuFeedDel(){
-        return view('stuFeedDel');
+    public function stuFeedDel($id){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', 2)->delete();
+        return redirect('stuFeedRead');
     }
 
     public function stuPracCertRead(){
