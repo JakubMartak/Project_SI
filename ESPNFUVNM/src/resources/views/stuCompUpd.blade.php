@@ -10,7 +10,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
@@ -23,7 +23,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.stunavbar')
+        @include('parts.stunavbarforupdate')
     </header>
     <!-- Navbar End -->
 
@@ -33,47 +33,60 @@
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
                 <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="#">Pridať Firmu</a>
+                    <a class="btn btn-success" href="/StuCompAdd">Pridať Firmu</a>
                 </div>
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Skratka</th>
-                                <th scope="col">Adresa</th>
-                                <th scope="col">Mesto</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form>
-                                    <th scope="row">1</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
+                        <form action="/stuCompUpd2" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Názov Firmy</th>
+                                    <th scope="col">Skratka</th>
+                                    <th scope="col">Adresa</th>
+                                    <th scope="col">Mesto</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <?php
+                                    $mesta = DB::table('Mesto')->get();
+                                    foreach ($firma as $fr) echo"<th scope='row'>".$fr->idFirma."</th>
+                                    <input type='hidden' name='idFirma' value='".$fr->idFirma."'>
+                                    <td><input type='text' name='Nazov_firmy' size='10' value='".$fr->Názov_firmy."'></td>
+                                    <td><input type='text' name='Skratka' size='10' value='".$fr->Skratka."'></td>
+                                    <td><input type='text' name='Adresa' size='10' value='".$fr->Adresa."'></td>
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="stuCompList">Confirm</a>
+                                    <select name='Nazov' id='Nazov'>";
+
+
+                                            foreach ($mesta as $mesto){
+                                                echo "<option value='".$mesto->idMesto."'>".$mesto->Nazov."</option>";
+                                            }
+                                            echo"
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div class='d-flex mb-3'>
+                                            <button type='submit' class='btn btn-primary'>Confirm</button>
                                         </div>
                                     </td>
 
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="stuCompList">Cancel</a>
+                                        <div class='d-flex mb-3'>
+                                            <a class='btn btn-danger' href='/stuCompAdd'>Cancel</a>
                                         </div>
-                                    </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+                                    </td>";
+                                    ?>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
 
@@ -92,7 +105,7 @@
 
 <!-- Footer Start -->
 <footer>
-    @include('parts/footer')
+    @include('parts/footerforupdate')
 </footer>
 <!-- Footer End -->
 
@@ -107,6 +120,3 @@
 <!-- Template Javascript -->
 <script src="/../js/main.js"></script>
 </body>
-
-
-

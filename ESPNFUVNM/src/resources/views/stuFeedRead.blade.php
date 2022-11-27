@@ -60,7 +60,7 @@
                                 <td>".$prax->Nazov."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuFeedUpd'>Edit</a>
+                                        <a class='btn btn-primary' href='stuFeedUpd/".$prax->idPrax."'>Edit</a>
                                     </div>
                                 </td>
                                 <td>

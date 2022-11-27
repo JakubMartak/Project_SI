@@ -66,7 +66,7 @@
                                 <td>".$prax->Datum_end."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuContReportUpd'>Edit</a>
+                                        <a class='btn btn-primary' href='stuContReportUpd/".$prax->idPrax."'>Edit</a>
                                     </div>
                                 </td>
                                 <td>

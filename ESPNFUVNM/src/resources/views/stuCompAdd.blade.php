@@ -63,7 +63,7 @@
                                 <td>".$firma->Nazov."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuCompUpd'>Edit</a>
+                                        <a class='btn btn-primary' href='stuCompUpd/".$firma->idFirma."'>Edit</a>
                                     </div>
                                 </td>
                                 <td>
@@ -87,15 +87,15 @@
                             @csrf
                             <table class="table table-w">
                                 <thead>
-                                    <tr>
-                                        <th scope="col">#id</th>
-                                        <th scope="col">Názov Firmy</th>
-                                        <th scope="col">Skratka</th>
-                                        <th scope="col">Adresa</th>
-                                        <th scope="col">Mesto</th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                    </tr>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Názov Firmy</th>
+                                    <th scope="col">Skratka</th>
+                                    <th scope="col">Adresa</th>
+                                    <th scope="col">Mesto</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
@@ -103,7 +103,16 @@
                                     <td><input type="text" name="Nazov_firmy" size="10"></td>
                                     <td><input type="text" name="Skratka" size="10"></td>
                                     <td><input type="text" name="Adresa" size="10"></td>
-                                    <td><input type="text" name="Nazov" size="10"></td>
+                                    <td>
+                                        <select name="Nazov" id="Nazov">
+                                            <?php
+                                            $mesta = DB::table('Mesto')->get();
+                                            foreach ($mesta as $mesto){
+                                                echo "<option value='".$mesto->idMesto."'>".$mesto->Nazov."</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </td>
                                     <td>
                                         <div class="d-flex mb-3">
                                             <button type="submit" class="btn btn-primary">Add</button>
