@@ -10,7 +10,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
@@ -23,7 +23,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.headnavbar')
+        @include('parts.stunavbarforupdate')
     </header>
     <!-- Navbar End -->
 
@@ -33,47 +33,50 @@
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
                 <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="StuPersAdd">Pridať Kontaktnú Osobu</a>
+                    <a class="btn btn-success" href="/StuPersAdd">Pridať Kontaktnú Osobu</a>
                 </div>
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Meno</th>
-                                <th scope="col">Priezvisko</th>
-                                <th scope="col">Cislo</th>
-                                <th scope="col">e-mail</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form>
-                                    <th scope="row">1</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
+                        <form action="/stuPersUpd2" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Meno</th>
+                                    <th scope="col">Priezvisko</th>
+                                    <th scope="col">Cislo</th>
+                                    <th scope="col">e-mail</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr><?php
+                                    foreach ($osoba as $os) echo"
+                                    <th scope='row'>".$os->idPouzivatel."</th>
+                                    <input type='hidden' name='idPouzivatel' value='".$os->idPouzivatel."'>
+                                    <td><input type='text' name='Meno' size='10' value='".$os->Meno."'></td>
+                                    <td><input type='text' name='Priezvisko' size='10' value='".$os->Priezvisko."'></td>
+                                    <td><input type='text' name='Cislo' size='10' value='".$os->Cislo."'></td>
+                                    <td><input type='text' name='Mail' size='20' value='".$os->Mail."'></td>
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="stuPracList">Confirm</a>
+                                        <div class='d-flex mb-3'>
+                                            <button type='submit' class='btn btn-primary'>Confirm</button>
                                         </div>
                                     </td>
 
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="stuPracList">Cancel</a>
+                                        <div class='d-flex mb-3'>
+                                            <a class='btn btn-danger' href='/stuPersAdd'>Cancel</a>
                                         </div>
-                                    </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+                                     </td>"
+                                    ?>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
 
@@ -92,7 +95,7 @@
 
 <!-- Footer Start -->
 <footer>
-    @include('parts.footer')
+    @include('parts.footerforupdate')
 </footer>
 <!-- Footer End -->
 

@@ -10,7 +10,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
@@ -23,7 +23,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.stunavbar')
+        @include('parts.stunavbarforupdate')
     </header>
     <!-- Navbar End -->
 
@@ -33,49 +33,59 @@
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
                 <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="stuContReportAdd">Pridať Záznam o vykonaní praxe</a>
+                    <a class="btn btn-success" href="/stuContReportAdd">Pridať Záznam o vykonaní praxe</a>
                 </div>
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Pozícia</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Typ Zmlovy</th>
-                                <th scope="col">Dátum Začiatku</th>
-                                <th scope="col">Dátum Konca</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form>
-                                    <th scope="row">1</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
+                        <form action="/stuContReportUpd2" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Pozícia</th>
+                                    <th scope="col">Názov Firmy</th>
+                                    <th scope="col">Typ Zmluvy</th>
+                                    <th scope="col">Dátum Začiatku</th>
+                                    <th scope="col">Dátum Konca</th>
+                                    <th scope="col">Kontaktná Osoba</th>
+                                    <th scope="col">Aktuálny stav</th>
+                                    <th scope="col">Predmety</th>
+                                    <th scope="col">Pracovník FPVaI</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <?php
+                                    foreach ($prax as $pr) echo"<input type='hidden' name='idPrax' value='".$pr->idPrax."'>
+                                    <td><input type='text' name='Pozicia' size='8' value='".$pr->Pozicia."'></td>
+                                    <td><input type='text' name='Nazov_firmy' size='8' value='".$pr->Firma_idFirma."'></td>
+                                    <td><input type='text' name='Typ_Zmluvy' size='8' value='".$pr->Zmluva_idZmluva."'></td>
+                                    <td><input type='text' name='Datum_Zaciatku' size='8' value='".$pr->Datum_start."'></td>
+                                    <td><input type='text' name='Datum_Konca' size='8' value='".$pr->Datum_end."'></td>
+                                    <td><input type='text' name='Kontaktna_Osoba' size='8' value='".$pr->Kontaktna_osoba_idPouzivatel."'></td>
+                                    <td><input type='text' name='Aktualny_stav' size='8' value='".$pr->Aktuálny_stav."'></td>
+                                    <td><input type='text' name='Predmety' size='8' value='".$pr->Predmety_idPredmety."'></td>
+                                    <td><input type='text' name='Pracovnik_FPVaI' size='8' value='".$pr->Pracovnik_FPVaI_idPouzivatel."'></td>
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="stuContReportList">Confirm</a>
+                                        <div class='d-flex mb-3'>
+                                            <button type='submit' class='btn btn-primary'>Confirm</button>
                                         </div>
                                     </td>
 
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="stuContReportList">Cancel</a>
+                                        <div class='d-flex mb-3'>
+                                            <a class='btn btn-danger' href='/stuCompreportList'>Cancel</a>
                                         </div>
-                                    </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+                                    </td>"
+                                    ?>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+
                     </div>
                 </div>
 
@@ -94,7 +104,7 @@
 
 <!-- Footer Start -->
 <footer>
-    @include('parts.footer')
+    @include('parts.footerforupdate')
 </footer>
 <!-- Footer End -->
 

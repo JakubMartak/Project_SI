@@ -67,8 +67,19 @@ class TestController extends Controller
         return redirect('stuCompAdd');
     }
 
-    public function stuCompUpd(){
-        return view('stuCompUpd');
+    public function stuCompUpd($id){
+        $firma = DB::table('Firma')->join('Mesto', 'Mesto.idMesto', '=', 'Firma.Mesto_idMesto')->where('idFirma', $id)->get();
+        return view('stuCompUpd', ['firma'=>$firma]);
+    }
+
+    public function stuCompUpd2(Request $req){
+        DB::table('Firma')->where('idFirma', $req->idFirma)->update([
+            'Názov_firmy' => $req->Nazov_firmy,
+            'Skratka' => $req->Skratka,
+            'Adresa' => $req->Adresa,
+            'Mesto_idMesto' => $req->Nazov,
+        ]);
+        return redirect('stuCompAdd');
     }
 
     public function stuCompDel($id){
@@ -92,8 +103,20 @@ class TestController extends Controller
         return redirect('stuPersAdd');
     }
 
-    public function stuPersUpd(){
-        return view('stuPersUpd');
+    public function stuPersUpd($id){
+        $osoba = DB::table('Pouzivatel')->where('idPouzivatel', $id)->get();
+        return view('stuPersUpd', ['osoba'=>$osoba]);
+    }
+
+    public function stuPersUpd2(Request $req){
+        DB::table('Pouzivatel')->where('idPouzivatel', $req->idPouzivatel)->update([
+            'Meno' => $req->Meno,
+            'Priezvisko' => $req->Priezvisko,
+            'Cislo' => $req->Cislo,
+            'Mail' => $req->Mail,
+            'Rola_pouzivatela' => "3",
+        ]);
+        return redirect('stuPersAdd');
     }
 
     public function stuPersDel($id){
@@ -119,8 +142,9 @@ class TestController extends Controller
         return view('stuContrAdd');
     }
 
-    public function stuContrUpd(){
-        return view('stuContrUpd');
+    public function stuContrUpd($id){
+        $prax = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('idPrax', $id)->get();
+        return view('stuContrUpd', ['prax'=>$prax]);
     }
 
     public function stuContrDel($id){
@@ -153,8 +177,25 @@ class TestController extends Controller
         return redirect('stuContReportList');
     }
 
-    public function stuContReportUpd(){
-        return view('stuContReportUpd');
+    public function stuContReportUpd($id){
+        $prax = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('idPrax', $id)->get();
+        return view('stuContReportUpd', ['prax'=>$prax]);
+    }
+
+    public function stuContReportUpd2 (Request $req){
+        DB::table('Prax')->where('idPrax', $req->idPrax)->update([
+            'Pozicia' => $req->Pozicia,
+            'Student_idPouzivatel' => Auth::user()->id,
+            'Datum_start' => $req->Datum_Zaciatku,
+            'Datum_end' => $req->Datum_Konca,
+            'Firma_idFirma' => $req->Nazov_firmy,
+            'Kontaktna_osoba_idPouzivatel' => $req->Kontaktna_Osoba,
+            'Aktuálny_stav' => $req->Aktualny_stav,
+            'Predmety_idPredmety' => $req->Predmety,
+            'Pracovnik_FPVaI_idPouzivatel' => $req->Pracovnik_FPVaI,
+            'Zmluva_idZmluva' => $req->Typ_Zmluvy
+        ]);
+        return redirect('stuContReportList');
     }
 
     public function stuContReportDel($id){
@@ -188,8 +229,17 @@ class TestController extends Controller
         return redirect('stuFeedRead');
     }
 
-    public function stuFeedUpd(){
-        return view('stuFeedUpd');
+    public function stuFeedUpd($id){
+        $prax = DB::table('Prax_has_Dokumenty')->join('Prax', 'Prax.idPrax', '=', 'Prax_has_Dokumenty.Prax_idPrax')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', "2")->get();
+        return view('stuFeedUpd', ['prax'=>$prax]);
+    }
+
+    public function stuFeedUpd2 (Request $req){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $req->PraxidPrax)->where('Dokumenty_idDokumenty', "2")->update([
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Spatna_vazba
+        ]);
+        return redirect('stuFeedRead');
     }
 
     public function stuFeedDel($id){

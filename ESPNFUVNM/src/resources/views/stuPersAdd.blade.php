@@ -14,8 +14,8 @@
 
     <style>
         <?php
-         //$osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', '3')->orderBy('idPouzivatel')->get();
-         ?>
+        //$osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', '3')->orderBy('idPouzivatel')->get();
+        ?>
     </style>
 </head>
 
@@ -63,7 +63,7 @@
                                 <td>".$osoba->Mail."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuPersUpd'>Edit</a>
+                                        <a class='btn btn-primary' href='stuPersUpd/".$osoba->idPouzivatel."'>Edit</a>
                                     </div>
                                 </td>
                                 <td>
@@ -83,18 +83,18 @@
                     <div class="text-start ps-4">
                         <form action="stuPersSave" method="POST">
                             @csrf
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Meno</th>
-                                <th scope="col">Priezvisko</th>
-                                <th scope="col">Cislo</th>
-                                <th scope="col">e-mail</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Meno</th>
+                                    <th scope="col">Priezvisko</th>
+                                    <th scope="col">Cislo</th>
+                                    <th scope="col">e-mail</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
                                     <th scope="row">#</th>
                                     <td><input type="text" name="Meno" size="10"></td>
                                     <td><input type="text" name="Priezvisko" size="10"></td>
@@ -111,9 +111,9 @@
                                         </div>
                                     </td>
 
-                            </tr>
-                            </tbody>
-                        </table>
+                                </tr>
+                                </tbody>
+                            </table>
                         </form>
                     </div>
                 </div>
