@@ -22,15 +22,18 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="headPracFinishList">Zoznam schválených a ukončených praxí</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headReportList">Report za pracovisko</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headFeedRead">Spätná väzba</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headCertList">Zoznam osvedčení</a>
-                    </li>
+{{--Descopovane--}}
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link active" aria-current="page" href="headReportList">Report za pracovisko</a>--}}
+{{--                    </li>--}}
+{{--Descopovane--}}
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link active" aria-current="page" href="headFeedRead">Spätná väzba</a>--}}
+{{--                    </li>--}}
+{{--Descopovane--}}
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link active" aria-current="page" href="headCertList">Zoznam osvedčení</a>--}}
+{{--                    </li>--}}
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="headRespList">Poverení pracovníci pracoviska</a>
                     </li>

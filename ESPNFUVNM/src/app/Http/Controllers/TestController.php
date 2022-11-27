@@ -234,15 +234,32 @@ class TestController extends Controller
     }
 
     public function headStudList(){
-        return view('headStudList');
+        $students = DB::table('Pouzivatel')
+            ->join('prax', 'Firma_idFirma', '=', 'Firma_idFirma')
+            ->join('predmety', 'Predmety_idPredmety', '=', 'idPredmety')
+            ->get();
+
+        return view('headStudList', ['students'=>$students]);
+
     }
 
     public function headPracList(){
-        return view('headPracList');
+        $practise = DB::table('Prax')
+            ->join('Pouzivatel', 'Student_idPouzivatel', '=', 'idPouzivatel')
+            ->join('Firma', 'Firma_idFirma', '=', 'idFirma')
+            ->get();
+
+        return view('headPracList', ['practise'=>$practise]);
     }
 
     public function headPracFinishList(){
-        return view('headPracFinishList');
+        $practise = DB::table('Prax')
+            ->join('Pouzivatel', 'Student_idPouzivatel', '=', 'idPouzivatel')->where('Aktuálny_stav', 'done')
+            ->join('Firma', 'Firma_idFirma', '=', 'idFirma')
+
+            ->get();
+
+        return view('headPracFinishList', ['practise'=>$practise]);
     }
 
     public function headReportList(){

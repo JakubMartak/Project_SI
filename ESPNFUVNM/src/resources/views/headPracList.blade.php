@@ -52,12 +52,6 @@
                             </thead>
                             <tbody>
                             <?php
-                            $practise = DB::table('Prax')
-                                ->join('Pouzivatel', 'Student_idPouzivatel', '=', 'idPouzivatel')
-                                ->join('Firma', 'Firma_idFirma', '=', 'idFirma')
-                                ->get();
-
-
                             foreach ($practise as $prac) {
                                 echo "<tr>";
                                 echo "<th scope='row'>$prac->idPouzivatel</th>";

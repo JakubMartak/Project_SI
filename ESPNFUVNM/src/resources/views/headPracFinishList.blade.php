@@ -45,21 +45,13 @@
                                 <th scope="col">#id</th>
                                 <th scope="col">Meno</th>
                                 <th scope="col">Priezvisko</th>
+                                <th scope="col">Firma na prax</th>
                                 <th scope="col">Stav praxe</th>
-                                <th scope="col">Ukončenie praxe</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
+
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            $practise = DB::table('Prax')
-                                ->join('Pouzivatel', 'Student_idPouzivatel', '=', 'idPouzivatel')
-                                ->join('Firma', 'Firma_idFirma', '=', 'idFirma')
-                                ->where('Aktuálny_stav', 'IS NOT NULL')
-                                ->get();
-
-
                             foreach ($practise as $prac) {
                                 echo "<tr>";
                                 echo "<th scope='row'>$prac->idPouzivatel</th>";
