@@ -80,6 +80,7 @@ Route::get('/headCertList', [TestController::class, 'headCertList']);
 Route::get('/headRespList', [TestController::class, 'headRespList']);
 Route::get('/headRespUpd', [TestController::class, 'headRespUpd']);
 Route::get('/headRespAdd', [TestController::class, 'headRespAdd']);
+Route::post('/headRespAddSave', [TestController::class, 'headRespAddSave'])->name("headRespAddSave");
 
 /* responsible person functions */
 Route::get('/respCompList', [TestController::class, 'respCompList']);

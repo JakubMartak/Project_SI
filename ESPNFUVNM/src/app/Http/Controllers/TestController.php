@@ -283,7 +283,12 @@ class TestController extends Controller
     }
 
     public function headRespList(){
-        return view('headRespList');
+        $heads = DB::table('Prax')
+            ->join('Firma', 'Firma_idFirma', '=', 'Prax.Zmluva_idZmluva')->join('Názov_firmy', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')
+            ->where('Student_idPouzivatel', Auth::user()->id )
+            ->orderBy('idPrax')->get();
+
+        return view('headRespList', ['practise'=>$practise]);
     }
 
     public function headRespUpd(){
@@ -292,6 +297,11 @@ class TestController extends Controller
 
     public function headRespAdd(){
         return view('headRespAdd');
+    }
+
+    public function headRespAddSave(Request $request) {
+//        dd(22);
+        return view('headRespList');
     }
 
     /* responsible preson functions */

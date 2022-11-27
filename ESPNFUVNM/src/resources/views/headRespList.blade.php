@@ -42,13 +42,8 @@
                         <table class="table table-w">
                             <thead>
                             <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Meno</th>
-                                <th scope="col">Priezvisko</th>
                                 <th scope="col">Poverenie na pracovisko</th>
-                                <th scope="col">Dátum účinnosti poverenia</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
+                                <th scope="col">Priezvisko vedúceho pracovníka</th>
                             </tr>
                             </thead>
                             <tbody>
