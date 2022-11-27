@@ -29,13 +29,86 @@
 
     <!-- Container -->
     <div class="container">
-
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
 {{--                <div class="d-flex mb-3">--}}
 {{--                    <a class="btn btn-success" href="#">Pridať Firmu</a>--}}
 {{--                </div>--}}
-                <!-- Tabulka -->
+{{--                TEST Zaciatok--}}
+                <form action="headRespAddSave" method="POST">
+                    @csrf
+                    <table class="table table-w">
+                        <thead>
+                        <tr>
+                            <th scope="col">Priezvisko vedúceho pracovníka</th>
+                            <th scope="col">Poverenie na pracovisko</th>
+                            <th scope="col">Test</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <?php
+                                $practices = DB::table('Prax')
+                                    ->join('Pouzivatel', 'Pracovnik_FPVaI_idPouzivatel', '=', 'idPouzivatel')
+                                    ->get();
+//                            echo "<label for=''>Meno:</label>";
+                                echo "<select name='Meno' id='color'>";
+                                echo "	<option value=''>--- Choose a color ---</option>";
+                                foreach ($practices as $prac) {
+                                    echo "<option value='Priezvisko2'>$prac->Priezvisko</option>";
+                                }
+                                echo " </select>";
+                                ?>
+
+
+
+                            </td>
+                            <td><input type="text" name="Priezvisko" size="8"></td>
+                            <td><input type="text" name="Nazov_firmy" size="8"></td>
+                            <td>
+                            <?php
+                            $practices = DB::table('Prax')
+                                ->join('Pouzivatel', 'Pracovnik_FPVaI_idPouzivatel', '=', 'idPouzivatel')
+                                ->get();
+//                            echo "<label for=''>Meno:</label>";
+                            echo "<select name='Meno' id='color'>";
+                            echo "	<option value=''>--- Choose a color ---</option>";
+                            foreach ($practices as $prac) {
+                                echo "<option value='Priezvisko2'>$prac->Priezvisko</option>";
+                            }
+                            echo " </select>";
+                            ?>
+                            </td>
+
+                            <td>
+                                <div class="d-flex mb-3">
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex mb-3">
+                                    <a class="btn btn-danger" href="headRespList">Cancel</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+
+
+                {{--                Test Koniec--}}
+
+
+
+
+
+
+
+
+
+                <!-- Tabulka STARA -->
                 <div class="">
                     <div class="text-start ps-4">
 
