@@ -49,24 +49,18 @@
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <!-- Bakalár -->
                         <?php
-                        //use Illuminate\Support\Facades\DB;
-                        //$praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 1)->get();
+                        $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 1)->get();
                         foreach ($praxy as $prax) {
                             echo"<div class='job-item p-4 mb-4'>"."
                                 <div class='row g-4'>"."
-                                    <div class='col-sm-12 col-md-8 d-flex align-items-center'>"/*."
-                                        <img class='flex-shrink-0 img-fluid border rounded' src='https://images-platform.99static.com/3AFC42_lnlms4RS9XnBG72Fl21M=/109x130:909x930/500x500/top/smart/99designs-contests-attachments/88/88112/attachment_88112656' alt='' style='width: 80px; height: 80px;'>"*/."
+                                    <div class='col-sm-12 col-md-8 d-flex align-items-center'>"."
                                         <div class='text-start ps-4'>"."
                                             <h5 class='mb-3'>". $prax->Pozicia."</h5>"."
                                             <span class='text-truncate me-3'><i class='fa fa-map-marker-alt text-success me-2'></i>".$prax->Názov_firmy."</span>"."
-                                            <span class='text-truncate me-3'><i class='far fa-clock text-success me-2'></i>".$prax->Typ_zmluvy."</span>"/*."
-                                            <span class='text-truncate me-0'><i class='far fa-money-bill-alt text-success me-2'></i>$123 - $456</span>".*/."
+                                            <span class='text-truncate me-3'><i class='far fa-clock text-success me-2'></i>".$prax->Typ_zmluvy."</span>"."
                                         </div>"."
                                     </div>"."
                                     <div class='col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center'>"."
-                                        <div class='d-flex mb-3'>"."
-                                            <a class='btn btn-success' href='infopage'>Details</a>"."
-                                        </div>"."
                                         <small class='text-truncate'><i class='far fa-calendar-alt text-success me-2'></i>Date Line: ". $prax->Datum_start."</small>"."
                                     </div>"."
                                 </div>"."
@@ -77,24 +71,21 @@
                     <div id="tab-2" class="tab-pane fade show p-0">
                         <!-- Magister -->
                         <?php
-                        //use Illuminate\Support\Facades\DB;
                         $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 2)->get();
                         foreach ($praxy as $prax) {
                             echo"<div class='job-item p-4 mb-4'>"."
                                 <div class='row g-4'>"."
-                                    <div class='col-sm-12 col-md-8 d-flex align-items-center'>"/*."
-                                        <img class='flex-shrink-0 img-fluid border rounded' src='https://images-platform.99static.com/3AFC42_lnlms4RS9XnBG72Fl21M=/109x130:909x930/500x500/top/smart/99designs-contests-attachments/88/88112/attachment_88112656' alt='' style='width: 80px; height: 80px;'>"*/."
+                                    <div class='col-sm-12 col-md-8 d-flex align-items-center'>"."
                                         <div class='text-start ps-4'>"."
                                             <h5 class='mb-3'>". $prax->Pozicia."</h5>"."
                                             <span class='text-truncate me-3'><i class='fa fa-map-marker-alt text-success me-2'></i>".$prax->Názov_firmy."</span>"."
-                                            <span class='text-truncate me-3'><i class='far fa-clock text-success me-2'></i>".$prax->Typ_zmluvy."</span>"/*."
-                                            <span class='text-truncate me-0'><i class='far fa-money-bill-alt text-success me-2'></i>$123 - $456</span>".*/."
+                                            <span class='text-truncate me-3'><i class='far fa-clock text-success me-2'></i>".$prax->Typ_zmluvy."</span>"."
                                         </div>"."
                                     </div>"."
-                                    <div class='col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center'>"."
+                                    <div class='col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center'>"/*."
                                         <div class='d-flex mb-3'>"."
                                             <a class='btn btn-success' href='infopage'>Details</a>"."
-                                        </div>"."
+                                        </div>"*/."
                                         <small class='text-truncate'><i class='far fa-calendar-alt text-success me-2'></i>Date Line: ". $prax->Datum_start."</small>"."
                                     </div>"."
                                 </div>"."

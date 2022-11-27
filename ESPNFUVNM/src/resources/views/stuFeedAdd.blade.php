@@ -50,7 +50,16 @@
                             <tbody>
                             <tr>
                                 <th scope="row">#</th>
-                                <td><input type="text" name="Prax" size="10"></td>
+                                <td>
+                                    <select name="Prax" id="Prax">
+                                        <?php
+                                        $praxy = DB::table('Prax')->where('Student_idPouzivatel', Auth::user()->id)->get();
+                                        foreach ($praxy as $prax){
+                                            echo "<option value='".$prax->idPrax."'>".$prax->Pozicia."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </td>
                                 <td><input type="text" name="Spatna_vazba" size="50"></td>
                                 <td>
                                     <div class="d-flex mb-3">

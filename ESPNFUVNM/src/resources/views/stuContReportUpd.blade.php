@@ -61,14 +61,41 @@
                                     <?php
                                     foreach ($prax as $pr) echo"<input type='hidden' name='idPrax' value='".$pr->idPrax."'>
                                     <td><input type='text' name='Pozicia' size='8' value='".$pr->Pozicia."'></td>
-                                    <td><input type='text' name='Nazov_firmy' size='8' value='".$pr->Firma_idFirma."'></td>
-                                    <td><input type='text' name='Typ_Zmluvy' size='8' value='".$pr->Zmluva_idZmluva."'></td>
-                                    <td><input type='text' name='Datum_Zaciatku' size='8' value='".$pr->Datum_start."'></td>
-                                    <td><input type='text' name='Datum_Konca' size='8' value='".$pr->Datum_end."'></td>
-                                    <td><input type='text' name='Kontaktna_Osoba' size='8' value='".$pr->Kontaktna_osoba_idPouzivatel."'></td>
+                                    <td><select name='Nazov_firmy' id='Nazov_firmy' style='width: 100px;'>";
+                                    $firmy = DB::table('Firma')->get();
+                                    foreach ($firmy as $firma){
+                                        echo "<option value='".$firma->idFirma."'>".$firma->Názov_firmy."</option>";
+                                    }
+                                    echo"</select></td>
+                                    <td><select name='Typ_Zmluvy' id='Typ_Zmluvy' style='width: 100px;'>";
+                                    $zmluvy = DB::table('Zmluva')->get();
+                                    foreach ($zmluvy as $zmluva){
+                                        echo "<option value='".$zmluva->idZmluva."'>".$zmluva->Typ_zmluvy."</option>";
+                                    }
+                                    echo"</select></td>
+                                    <td><input type='date' id='Datum_Zaciatku' name='Datum_Zaciatku'
+                                           style='width: 110px;' value=".$pr->Datum_start."></td>
+                                    <td><input type='date' id='Datum_Konca' name='Datum_Konca'
+                                           style='width: 110px;' value=".$pr->Datum_end."></td>
+                                    <td><select name='Kontaktna_Osoba' id='Kontaktna_Osoba'>";
+                                    $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', "3")->get();
+                                    foreach ($osoby as $osoba){
+                                        echo "<option value='".$osoba->idPouzivatel."'>".$osoba->Meno." ".$osoba->Priezvisko."</option>";
+                                    }
+                                    echo"</select></td>
                                     <td><input type='text' name='Aktualny_stav' size='8' value='".$pr->Aktuálny_stav."'></td>
-                                    <td><input type='text' name='Predmety' size='8' value='".$pr->Predmety_idPredmety."'></td>
-                                    <td><input type='text' name='Pracovnik_FPVaI' size='8' value='".$pr->Pracovnik_FPVaI_idPouzivatel."'></td>
+                                    <td><select name='Predmety' id='Predmety'>";
+                                    $predmety = DB::table('Predmety')->get();
+                                    foreach ($predmety as $predmet){
+                                        echo "<option value='".$predmet->idPredmety."'>".$predmet->Nazov."</option>";
+                                    }
+                                    echo"</select></td>
+                                    <td><select name='Pracovnik_FPVaI' id='Pracovnik_FPVaI'>";
+                                    $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', "2")->get();
+                                    foreach ($osoby as $osoba){
+                                        echo "<option value='".$osoba->idPouzivatel."'>".$osoba->Meno." ".$osoba->Priezvisko."</option>";
+                                    }
+                                    echo"</select></td>
                                     <td>
                                         <div class='d-flex mb-3'>
                                             <button type='submit' class='btn btn-primary'>Confirm</button>

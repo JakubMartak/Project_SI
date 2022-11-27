@@ -55,12 +55,22 @@
                                 <tbody>
                                 <tr>
                                     <?php
+                                    $mesta = DB::table('Mesto')->get();
                                     foreach ($firma as $fr) echo"<th scope='row'>".$fr->idFirma."</th>
                                     <input type='hidden' name='idFirma' value='".$fr->idFirma."'>
                                     <td><input type='text' name='Nazov_firmy' size='10' value='".$fr->Názov_firmy."'></td>
                                     <td><input type='text' name='Skratka' size='10' value='".$fr->Skratka."'></td>
                                     <td><input type='text' name='Adresa' size='10' value='".$fr->Adresa."'></td>
-                                    <td><input type='text' name='Nazov' size='10' value='".$fr->Mesto_idMesto."'></td>
+                                    <td>
+                                    <select name='Nazov' id='Nazov'>";
+
+
+                                            foreach ($mesta as $mesto){
+                                                echo "<option value='".$mesto->idMesto."'>".$mesto->Nazov."</option>";
+                                            }
+                                            echo"
+                                        </select>
+                                    </td>
                                     <td>
                                         <div class='d-flex mb-3'>
                                             <button type='submit' class='btn btn-primary'>Confirm</button>
@@ -71,7 +81,7 @@
                                         <div class='d-flex mb-3'>
                                             <a class='btn btn-danger' href='/stuCompAdd'>Cancel</a>
                                         </div>
-                                    </td>"
+                                    </td>";
                                     ?>
                                 </tr>
                                 </tbody>

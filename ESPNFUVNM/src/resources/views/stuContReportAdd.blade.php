@@ -56,14 +56,61 @@
                             <tbody>
                             <tr>
                                 <td><input type="text" name="Pozicia" size="8"></td>
-                                <td><input type="text" name="Nazov_firmy" size="8"></td>
-                                <td><input type="text" name="Typ_Zmluvy" size="8"></td>
-                                <td><input type="text" name="Datum_Zaciatku" size="8"></td>
-                                <td><input type="text" name="Datum_Konca" size="8"></td>
-                                <td><input type="text" name="Kontaktna_Osoba" size="8"></td>
+                                <td>
+                                    <select name="Nazov_firmy" id="Nazov_firmy" style="width: 100px;">
+                                        <?php
+                                        $firmy = DB::table('Firma')->get();
+                                        foreach ($firmy as $firma){
+                                            echo "<option value='".$firma->idFirma."'>".$firma->Názov_firmy."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="Typ_Zmluvy" id="Typ_Zmluvy" style="width: 100px;">
+                                        <?php
+                                        $zmluvy = DB::table('Zmluva')->get();
+                                        foreach ($zmluvy as $zmluva){
+                                            echo "<option value='".$zmluva->idZmluva."'>".$zmluva->Typ_zmluvy."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </td>
+                                <td><input type="date" id="Datum_Zaciatku" name="Datum_Zaciatku"
+                                           style="width: 110px;" value=<?php echo date('Y-m-d');?> ></td>
+                                <td><input type="date" id="Datum_Konca" name="Datum_Konca"
+                                           style="width: 110px;" value=<?php echo date('Y-m-d');?> ></td>
+                                <td>
+                                    <select name="Kontaktna_Osoba" id="Kontaktna_Osoba">
+                                        <?php
+                                        $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', "3")->get();
+                                        foreach ($osoby as $osoba){
+                                            echo "<option value='".$osoba->idPouzivatel."'>".$osoba->Meno." ".$osoba->Priezvisko."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </td>
                                 <td><input type="text" name="Aktualny_stav" size="8"></td>
-                                <td><input type="text" name="Predmety" size="8"></td>
-                                <td><input type="text" name="Pracovnik_FPVaI" size="8"></td>
+                                <td>
+                                    <select name="Predmety" id="Predmety">
+                                        <?php
+                                        $predmety = DB::table('Predmety')->get();
+                                        foreach ($predmety as $predmet){
+                                            echo "<option value='".$predmet->idPredmety."'>".$predmet->Nazov."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="Pracovnik_FPVaI" id="Pracovnik_FPVaI">
+                                        <?php
+                                        $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', "2")->get();
+                                        foreach ($osoby as $osoba){
+                                            echo "<option value='".$osoba->idPouzivatel."'>".$osoba->Meno." ".$osoba->Priezvisko."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </td>
                                 <td>
                                     <div class="d-flex mb-3">
                                         <button type="submit" class="btn btn-primary">Add</button>

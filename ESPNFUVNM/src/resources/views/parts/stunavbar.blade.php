@@ -28,9 +28,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="stuPracCertRead">Moje osvedčenie o absolvovaní praxe</a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="myinfopage">Moja Prax</a>
-                    </li>
+                    </li>-->
                 </ul>
                 <!-- Prihlásený/neprihlásený používatel -->
                 <ul class="navbar-nav me-right mb-2 mb-md-0">
