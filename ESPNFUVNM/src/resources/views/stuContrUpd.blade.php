@@ -59,13 +59,13 @@
                                     <td><input type="text" size="10"> </input></td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="stuContrList">Confirm</a>
+                                            <a class="btn btn-primary" href="stuContrList">Potvrdiť</a>
                                         </div>
                                     </td>
 
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="stuContrList">Cancel</a>
+                                            <a class="btn btn-danger" href="stuContrList">Zrušiť</a>
                                         </div>
                                     </td>
                                 </form>

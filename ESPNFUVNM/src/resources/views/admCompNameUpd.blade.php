@@ -10,7 +10,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
@@ -23,7 +23,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.admnavbar')
+        @include('parts.admnavbarforupdate')
     </header>
     <!-- Navbar End -->
 
@@ -36,7 +36,8 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
+                        <form action="/admCompNameUpd2" method="POST">
+                            @csrf
                         <table class="table table-w">
                             <thead>
                             <tr>
@@ -51,27 +52,37 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <form>
-                                    <th scope="row">1</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td>Príklad</td>
-                                    <td>Príklad</td>
-                                    <td>Príklad</td>
+                                <?php
+
+                                foreach ($firma as $fr) {
+                                    $mesta = DB::table('Mesto')->where('idMesto', $fr->Mesto_idMesto)->get();
+                                    echo "<th scope='row'>" . $fr->idFirma . "</th>
+                                    <input type='hidden' name='idFirma' value='" . $fr->idFirma . "'>
+                                    <td><input type='text' name='Nazov_firmy' size='20' value='" . $fr->Názov_firmy . "'></td>
+                                    <td>" . $fr->Skratka . "</td>
+                                    <td>" . $fr->Adresa . "</td>
+                                    <td>";
+                                }
+                                foreach ($mesta as $mesto){
+                                    echo $mesto->Nazov;
+                                }
+                                echo"</td>
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="admCompList">Potvrdiť</a>
+                                        <div class='d-flex mb-3'>
+                                            <button type='submit' class='btn btn-primary'>Potvrdiť</button>
                                         </div>
                                     </td>
 
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="admCompList">Zrušiť</a>
+                                        <div class='d-flex mb-3'>
+                                            <a class='btn btn-danger' href='/stuCompAdd'>Zrušiť</a>
                                         </div>
-                                    </td>
-                                </form>
+                                    </td>";
+                                ?>
                             </tr>
                             </tbody>
                         </table>
+                        </form>
                     </div>
                 </div>
 
@@ -90,7 +101,7 @@
 
 <!-- Footer Start -->
 <footer>
-    @include('parts/footer')
+    @include('parts/footerforupdate')
 </footer>
 <!-- Footer End -->
 

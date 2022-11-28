@@ -63,12 +63,12 @@
                                 <td>".$firma->Nazov."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuCompUpd/".$firma->idFirma."'>Edit</a>
+                                        <a class='btn btn-primary' href='stuCompUpd/".$firma->idFirma."'>Editovať</a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-danger' href='stuCompDel/".$firma->idFirma."'>Remove</a>
+                                        <a class='btn btn-danger' href='stuCompDel/".$firma->idFirma."'>Odstrániť</a>
                                     </div>
                                 </td>"."
                             </tr>";
@@ -115,12 +115,12 @@
                                     </td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <button type="submit" class="btn btn-primary">Add</button>
+                                            <button type="submit" class="btn btn-primary">Pridať</button>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="stuPracList">Cancel</a>
+                                            <a class="btn btn-danger" href="stuPracList">Zrušiť</a>
                                         </div>
                                     </td>
                                 </tr>

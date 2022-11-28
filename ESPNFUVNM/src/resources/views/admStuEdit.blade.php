@@ -10,8 +10,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/footerstyle.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/footerstyle.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
@@ -24,7 +24,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.admnavbar')
+        @include('parts.admnavbarforupdate')
     </header>
     <!-- Navbar End -->
 
@@ -37,42 +37,45 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
+                        <form action="/admStuEdit2" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Meno</th>
+                                    <th scope="col">Priezvisko</th>
+                                    <th scope="col">Cislo</th>
+                                    <th scope="col">e-mail</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr><?php
+                                    foreach ($osoba as $os) echo"
+                                    <th scope='row'>".$os->idPouzivatel."</th>
+                                    <input type='hidden' name='idPouzivatel' value='".$os->idPouzivatel."'>
+                                    <td><input type='text' name='Meno' size='10' value='".$os->Meno."'></td>
+                                    <td><input type='text' name='Priezvisko' size='10' value='".$os->Priezvisko."'></td>
+                                    <td><input type='text' name='Cislo' size='10' value='".$os->Cislo."'></td>
+                                    <td><input type='text' name='Mail' size='30' value='".$os->Mail."'></td>
+                                    <td>
+                                        <div class='d-flex mb-3'>
+                                            <button type='submit' class='btn btn-primary'>Confirm</button>
+                                        </div>
+                                    </td>
 
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Meno</th>
-                                <th scope="col">Priezvisko</th>
-                                <th scope="col">Cislo</th>
-                                <th scope="col">Email</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form>
-                                <th scope="row">1</th>
-                                <td><input type="text" size="10"> </input></td>
-                                <td><input type="text" size="10"> </input></td>
-                                <td><input type="number" size="10"> </input></td>
-                                <td><input type="email" size="10"> </input></td>
-                                <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="admStuEdit">Potvrdiť</a>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="admStuLIst">Zrušiť</a>
-                                    </div>
-                                </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+                                    <td>
+                                        <div class='d-flex mb-3'>
+                                            <a class='btn btn-danger' href='/admStuLIst'>Cancel</a>
+                                        </div>
+                                     </td>"
+                                    ?>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
 

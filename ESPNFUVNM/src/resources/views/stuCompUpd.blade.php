@@ -73,13 +73,13 @@
                                     </td>
                                     <td>
                                         <div class='d-flex mb-3'>
-                                            <button type='submit' class='btn btn-primary'>Confirm</button>
+                                            <button type='submit' class='btn btn-primary'>Potvrdiť</button>
                                         </div>
                                     </td>
 
                                     <td>
                                         <div class='d-flex mb-3'>
-                                            <a class='btn btn-danger' href='/stuCompAdd'>Cancel</a>
+                                            <a class='btn btn-danger' href='/stuCompAdd'>Zrušiť</a>
                                         </div>
                                     </td>";
                                     ?>

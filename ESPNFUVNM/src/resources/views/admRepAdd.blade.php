@@ -38,42 +38,46 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
+                        <form action="admRepSave" method="POST">
+                            @csrf
                         <table class="table table-w">
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Názov reportu</th>
-                                <th scope="col">Popis reportu</th>
-                                <th scope="col">Aktivovaný</th>
-                                <th scope="col">Posledná zmena</th>
+                                <th scope="col">Prax</th>
+                                <th scope="col">Report</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <form>
-                                    <th scope="row">#</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="admRepList">Pridať</a>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="admRepList">Zrušiť</a>
-                                        </div>
-                                    </td>
-                                </form>
+                                <th scope="row">#</th>
+                                <td>
+                                    <select name="Prax" id="Prax">
+                                        <?php
+                                        $praxy = DB::table('Prax')->get();
+                                        foreach ($praxy as $prax){
+                                            echo "<option value='".$prax->idPrax."'>".$prax->Pozicia."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </td>
+                                <td><input type="text" name="Report" size="50"></td>
+                                <td>
+                                    <div class="d-flex mb-3">
+                                        <button type="submit" class="btn btn-primary">Pridať</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex mb-3">
+                                        <a class="btn btn-danger" href="stuFeedRead">Zrušiť</a>
+                                    </div>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
+                        </form>
                     </div>
                 </div>
 

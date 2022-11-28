@@ -63,12 +63,12 @@
                                 <td>".$osoba->Mail."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuPersUpd/".$osoba->idPouzivatel."'>Edit</a>
+                                        <a class='btn btn-primary' href='stuPersUpd/".$osoba->idPouzivatel."'>Editovať</a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-danger' href='stuPersDel/".$osoba->idPouzivatel."'>Remove</a>
+                                        <a class='btn btn-danger' href='stuPersDel/".$osoba->idPouzivatel."'>Odstrániť</a>
                                     </div>
                                 </td>"."
                             </tr>";
@@ -99,15 +99,15 @@
                                     <td><input type="text" name="Meno" size="10"></td>
                                     <td><input type="text" name="Priezvisko" size="10"></td>
                                     <td><input type="text" name="Cislo" size="10"></td>
-                                    <td><input type="text" name="Mail" size="10"></td>
+                                    <td><input type="text" name="Mail" size="30"></td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <button type="submit" class="btn btn-primary">Add</button>
+                                            <button type="submit" class="btn btn-primary">Pridať</button>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="stuPracList">Cancel</a>
+                                            <a class="btn btn-danger" href="stuPracList">Zrušiť</a>
                                         </div>
                                     </td>
 

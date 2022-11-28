@@ -120,7 +120,7 @@ class TestController extends Controller
     }
 
     public function stuPersDel($id){
-        DB::table('Firma')->where('idPouzivatel', $id)->delete();
+        DB::table('Pouzivatel')->where('idPouzivatel', $id)->delete();
         return redirect('stuPersAdd');
     }
 
@@ -267,14 +267,12 @@ class TestController extends Controller
         $skratka = $request->input('skratka');
         $adresa = $request->input('adresa');
         $mesto = $request->input('mesto');
-
         DB::table('Firma')->insert([
             'Názov_firmy' => $nazov,
             'Skratka' => $skratka,
             'Adresa' => $adresa,
             'Mesto_idMesto' => $mesto,
         ]);
-
         return redirect()->route("headCompList");
     }
 
@@ -313,7 +311,8 @@ class TestController extends Controller
     }
 
     public function headReportList(){
-        return view('headReportList');
+        $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Dokumenty_idDokumenty', '4')->orderBy('idPrax')->get();
+        return view('headReportList', ['praxy'=>$praxy]);
     }
 
     public function headReportAdd(){
@@ -338,7 +337,7 @@ class TestController extends Controller
             ->where('Student_idPouzivatel', Auth::user()->id )
             ->orderBy('idPrax')->get();
 
-        return view('headRespList', ['practise'=>$practise]);
+        return view('headRespList', ['practise'=>$heads]);
     }
 
     public function headRespUpd(){
@@ -433,14 +432,45 @@ class TestController extends Controller
 
     /* admin functions */
     public function admStuLIst(){
-        return view('admStuLIst');
+        $studenti = DB::table('Pouzivatel')->where('Rola_pouzivatela', '=', 1)->get();
+        return view('admStuLIst', ['studenti'=>$studenti]);
     }
-    public function admStuEdit(){
-        return view('admStuEdit');
+    public function admStuEdit($id){
+        $osoba = DB::table('Pouzivatel')->where('idPouzivatel', $id)->get();
+        return view('admStuEdit', ['osoba'=>$osoba]);
     }
+
+    public function admStuEdit2(Request $req){
+        DB::table('Pouzivatel')->where('idPouzivatel', $req->idPouzivatel)->update([
+            'Meno' => $req->Meno,
+            'Priezvisko' => $req->Priezvisko,
+            'Cislo' => $req->Cislo,
+            'Mail' => $req->Mail,
+            'Rola_pouzivatela' => "1",
+        ]);
+        return redirect('admStuLIst');
+    }
+
     public function admStuAdd(){
         return view('admStuAdd');
     }
+
+    public function admStuSave(Request $req){
+        DB::table('Pouzivatel')->insert([
+            'Meno' => $req->Meno,
+            'Priezvisko' => $req->Priezvisko,
+            'Cislo' => $req->Cislo,
+            'Mail' => $req->Mail,
+            'Rola_pouzivatela' => "1",
+        ]);
+        return redirect('admStuLIst');
+    }
+
+    public function admStuDel($id){
+        DB::table('Pouzivatel')->where('idPouzivatel', $id)->delete();
+        return redirect('admStuLIst');
+    }
+
     public function admWpList(){
         return view('admWpList');
     }
@@ -462,20 +492,58 @@ class TestController extends Controller
     }
 
     public function admCompList(){
-        return view('admCompList');
+        $firmy = DB::table('Firma')
+            ->join('Mesto', 'Firma.Mesto_idMesto', '=', 'Mesto.idMesto')
+            ->select('Firma.*', 'Mesto.*')
+            ->get();
+        return view('admCompList', ['firmy'=>$firmy]);
     }
-    public function admCompNameUpd(){
-        return view('admCompNameUpd');
+    public function admCompNameUpd($id){
+        $firmy = DB::table('Firma')->where('idFirma', $id)->get();
+        return view('admCompNameUpd', ['firma'=>$firmy]);
+    }
+
+    public function admCompNameUpd2(Request $req){
+        DB::table('Firma')->where('idFirma', $req->idFirma)->update([
+            'Názov_firmy' => $req->Nazov_firmy
+        ]);
+        return redirect('admCompList');
     }
 
     public function admRepList(){
-        return view('admRepList');
+        $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Dokumenty_idDokumenty', '4')->orderBy('idPrax')->get();
+        return view('admRepList', ['praxy'=>$praxy]);
     }
     public function admRepAdd(){
         return view('admRepAdd');
     }
-    public function admRepUdp(){
-        return view('admRepUdp');
+
+    public function admRepSave(Request $req){
+        DB::table('Prax_has_Dokumenty')->insert([
+            'Prax_idPrax' => $req->Prax,
+            'Dokumenty_idDokumenty' => "4",
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Report
+        ]);
+        return redirect('admRepList');
+    }
+
+    public function admRepUdp($id){
+        $prax = DB::table('Prax_has_Dokumenty')->join('Prax', 'Prax.idPrax', '=', 'Prax_has_Dokumenty.Prax_idPrax')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', "4")->get();
+        return view('admRepUdp', ['prax'=>$prax]);
+    }
+
+    public function admRepUdp2 (Request $req){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $req->PraxidPrax)->where('Dokumenty_idDokumenty', "4")->update([
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Report
+        ]);
+        return redirect('admRepList');
+    }
+
+    public function admRepDel($id){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', 4)->delete();
+        return redirect('admRepList');
     }
 
     public function admGraphList(){
@@ -513,91 +581,4 @@ class TestController extends Controller
     public function cmpFeedUpd(){
         return view('cmpFeedUpd');
     }
-
-    /*public function test4(){
-        $praxy = DB::table('Prax')->get();
-        foreach ($praxy as $prax) {
-            //echo $prax->pozicia;
-        }
-    }
-
-    public function insertHead(){
-        $prac = DB::table('Prax')->insert([
-            'Priezvisko' => '$Priezvisko2',
-            'Pozicia' => 'Pozicia2'
-        ]);
-        }
-    }*/
-
-
-/*    public function index($id=0){
-
-        // Fetch all records
-        $userData['data'] = Page::getuserData();
-
-        $userData['edit'] = $id;
-
-        // Fetch edit record
-        if($id>0){
-            $userData['editData'] = Page::getuserData($id);
-        }
-
-        // Pass to view
-        return view('index')->with("userData",$userData);
-    }
-
-    public function save(Request $request){
-
-        if ($request->input('submit') != null ){
-
-            // Update record
-            if($request->input('editid') !=null ){
-                $name = $request->input('name');
-                $email = $request->input('email');
-                $editid = $request->input('editid');
-
-                if($name !='' && $email != ''){
-                    $data = array('name'=>$name,"email"=>$email);
-
-                    // Update
-                    Page::updateData($editid, $data);
-
-                    Session::flash('message','Update successfully.');
-
-                }
-
-            }else{ // Insert record
-                $name = $request->input('name');
-                $username = $request->input('username');
-                $email = $request->input('email');
-
-                if($name !='' && $username !='' && $email != ''){
-                    $data = array('name'=>$name,"username"=>$username,"email"=>$email);
-
-                    // Insert
-                    $value = Page::insertData($data);
-                    if($value){
-                        Session::flash('message','Insert successfully.');
-                    }else{
-                        Session::flash('message','Username already exists.');
-                    }
-
-                }
-            }
-
-        }
-        return redirect()->action('PagesController@index',['id'=>0]);
-    }
-
-    public function deleteUser($id=0){
-
-        if($id != 0){
-            // Delete
-            Page::deleteData($id);
-
-            Session::flash('message','Delete successfully.');
-
-        }
-        return redirect()->action('PagesController@index',['id'=>0]);
-    }*/
 }

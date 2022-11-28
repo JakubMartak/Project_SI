@@ -57,7 +57,7 @@
                                 <td>".$zmluva->Typ_zmluvy."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuContrTypeUpd'>Edit</a>
+                                        <a class='btn btn-primary' href='stuContrTypeUpd'>Editovať</a>
                                     </div>
                                 </td>"."
                             </tr>";

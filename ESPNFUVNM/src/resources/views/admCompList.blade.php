@@ -55,14 +55,8 @@
                                         ->join('Mesto', 'Firma.Mesto_idMesto', '=', 'Mesto.idMesto')
                                         ->select('Firma.*', 'Mesto.*')
                                         ->get();
-                                    /*$mesto = DB::table('Mesto')
-                                        ->join('Firma','Mesto.idMesto', '=', 'Firma.Mesto_idMesto')
-                                        ->select('Mesto.Nazov')
-                                        ->get();*/
-
                                 foreach ($firmy as $firm) {
-                                    echo'
-                            <tr >
+                                    echo'<tr >
                                 <th >'. $firm->idFirma .' </th >
                                 <td >'. $firm->Názov_firmy  .'</td >
                                 <td >'. $firm->Skratka .'</td >
@@ -70,7 +64,7 @@
                                 <td >'. $firm->Nazov .'</td >
                                 <td >
                                     <div class="d-flex mb-3" >
-                                        <a class="btn btn-primary" href = "admCompNameUpd" >Editovať</a >
+                                        <a class="btn btn-primary" href = "admCompNameUpd/'.$firm->idFirma.'" >Editovať</a >
                                     </div >
                                 </td >
                             </tr >';

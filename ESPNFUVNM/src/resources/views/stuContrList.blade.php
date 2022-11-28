@@ -62,12 +62,12 @@
                                 <td>".$prax->Typ_zmluvy."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuContrUpd'>Edit</a>
+                                        <a class='btn btn-primary' href='stuContrUpd'>Editovať</a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-danger' href='stuContrDel/".$prax->idPrax."'>Remove</a>
+                                        <a class='btn btn-danger' href='stuContrDel/".$prax->idPrax."'>Odstrániť</a>
                                     </div>
                                 </td>"."
                             </tr>";

@@ -63,12 +63,12 @@
                                 <td><input type="text" name="Spatna_vazba" size="50"></td>
                                 <td>
                                     <div class="d-flex mb-3">
-                                        <button type="submit" class="btn btn-primary">Add</button>
+                                        <button type="submit" class="btn btn-primary">Pridať</button>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="stuFeedRead">Cancel</a>
+                                        <a class="btn btn-danger" href="stuFeedRead">Zrušiť</a>
                                     </div>
                                 </td>
                             </tr>

@@ -53,7 +53,6 @@
                             </thead>
                             <tbody>
                             <?php
-                                $studenti = DB::table('Pouzivatel')->where('Rola_pouzivatela', '=', 1)->get();
                                 foreach ($studenti as $student) {
                                     echo "<tr>
                                 <th scope='row'>".$student->idPouzivatel."</th>
@@ -63,13 +62,13 @@
                                 <td>".$student->Mail."</td>
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='admStuEdit'>Editovať</a>
+                                        <a class='btn btn-primary' href='admStuEdit/".$student->idPouzivatel."'>Editovať</a>
                                     </div>
                                 </td>
 
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-danger' href='admStuAdd'>Zmazať</a>
+                                        <a class='btn btn-danger' href='admStuDel/".$student->idPouzivatel."'>Zmazať</a>
                                     </div>
                                 </td>
                             </tr>";

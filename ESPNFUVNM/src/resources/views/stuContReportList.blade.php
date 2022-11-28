@@ -66,12 +66,12 @@
                                 <td>".$prax->Datum_end."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuContReportUpd/".$prax->idPrax."'>Edit</a>
+                                        <a class='btn btn-primary' href='stuContReportUpd/".$prax->idPrax."'>Editovať</a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-danger' href='stuContReportDel/".$prax->idPrax."'>Remove</a>
+                                        <a class='btn btn-danger' href='stuContReportDel/".$prax->idPrax."'>Odstrániť</a>
                                     </div>
                                 </td>"."
                             </tr>";

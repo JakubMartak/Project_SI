@@ -60,12 +60,12 @@
                                 <td>".$prax->Nazov."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='stuFeedUpd/".$prax->idPrax."'>Edit</a>
+                                        <a class='btn btn-primary' href='stuFeedUpd/".$prax->idPrax."'>Editovať</a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-danger' href='stuFeedDel/".$prax->idPrax."'>Remove</a>
+                                        <a class='btn btn-danger' href='stuFeedDel/".$prax->idPrax."'>Odstrániť</a>
                                     </div>
                                 </td>"."
                             </tr>";

@@ -36,7 +36,8 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
+                        <form action="admStuSave" method="POST">
+                            @csrf
                         <table class="table table-w">
                             <thead>
                             <tr>
@@ -51,27 +52,25 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <form>
                                     <th scope="row">#</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="number" size="10"> </input></td>
-                                    <td><input type="email" size="10"> </input></td>
+                                <td><input type="text" name="Meno" size="10"></td>
+                                <td><input type="text" name="Priezvisko" size="10"></td>
+                                <td><input type="text" name="Cislo" size="10"></td>
+                                <td><input type="text" name="Mail" size="30"></td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="admStuEdit">Vytvoriť</a>
+                                            <button type="submit" class="btn btn-primary">Vytvoriť</button>
                                         </div>
                                     </td>
-
                                     <td>
                                         <div class="d-flex mb-3">
                                             <a class="btn btn-danger" href="admStuLIst">Zrušiť</a>
                                         </div>
                                     </td>
-                                </form>
                             </tr>
                             </tbody>
                         </table>
+                        </form>
                     </div>
                 </div>
 

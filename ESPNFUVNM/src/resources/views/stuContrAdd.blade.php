@@ -59,12 +59,12 @@
                                     <td><input type="text" name="Typ_zmluvy" size="10"></td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="stuContrSave">Add</a>
+                                            <a class="btn btn-primary" href="stuContrSave">Pridať</a>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="stuContrList">Cancel</a>
+                                            <a class="btn btn-danger" href="stuContrList">Zrušiť</a>
                                         </div>
                                     </td>
                             </tr>

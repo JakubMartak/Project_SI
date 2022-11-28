@@ -113,7 +113,11 @@ Route::get('/respStuRatingDel', [TestController::class, 'respStuRatingDel']);
 /* admin routes */
 Route::get('/admStuLIst', [TestController::class, 'admStuLIst']);
 Route::get('/admStuAdd', [TestController::class, 'admStuAdd']);
-Route::get('/admStuEdit', [TestController::class, 'admStuEdit']);
+Route::post('/admStuSave', [TestController::class, 'admStuSave']);
+Route::get('/admStuEdit/{id}', [TestController::class, 'admStuEdit']);
+Route::post('/admStuEdit2', [TestController::class, 'admStuEdit2']);
+Route::get('/admStuDel/{id}', [TestController::class, 'admStuDel']);
+
 Route::get('/admWpList', [TestController::class, 'admWpList']);
 Route::get('/admWpAdd', [TestController::class, 'admWpAdd']);
 Route::get('/admWpUpd', [TestController::class, 'admWpUpd']);
@@ -121,11 +125,14 @@ Route::get('/admWkList', [TestController::class, 'admWkList']);
 Route::get('/admWkAdd', [TestController::class, 'admWkAdd']);
 Route::get('/admWkUpd', [TestController::class, 'admWkUpd']);
 Route::get('/admCompList', [TestController::class, 'admCompList']);
-Route::get('/admCompNameUpd', [TestController::class, 'admCompNameUpd']);
+Route::get('/admCompNameUpd/{id}', [TestController::class, 'admCompNameUpd']);
+Route::post('/admCompNameUpd2', [TestController::class, 'admCompNameUpd2']);
 Route::get('/admRepList', [TestController::class, 'admRepList']);
 Route::get('/admRepAdd', [TestController::class, 'admRepAdd']);
-Route::get('/admRepUdp', [TestController::class, 'admRepUdp']);
-
+Route::post('/admRepSave', [TestController::class, 'admRepSave']);
+Route::get('admRepUdp/{id}', [TestController::class, 'admRepUdp']);
+Route::post('admRepUdp2', [TestController::class, 'admRepUdp2']);
+Route::get('admRepDel/{id}', [TestController::class, 'admRepDel']);
 Route::get('/admGraphList', [TestController::class, 'admGraphList']);
 
 /* Zástupca firmy a organizácie */
