@@ -13,6 +13,15 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="respCompList">Zoznam firiem</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="respPracRead">Zoznam praxí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="respStuRatingList">Hodnotenie študentov</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="respPracArchRead">Archív</a>
+                    </li>
 
 
 
