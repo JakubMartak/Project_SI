@@ -23,7 +23,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.respnavbar')
+        @include('parts.respnavbarforupdate')
     </header>
     <!-- Navbar End -->
 
@@ -37,43 +37,82 @@
                 <div class="">
                     <div class="text-start ps-4">
 
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Pozícia</th>
-                                <th scope="col">Študent</th>
-                                <th scope="col">Firma</th>
-                                <th scope="col">Mesto</th>
-                                <th scope="col">Aktuálny stav</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form>
-                                    <th scope="row">1</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="respPracRead">Confirm</a>
-                                        </div>
-                                    </td>
+                        <form action="/respPracUpd2" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Pozícia</th>
+                                    <th scope="col">Názov Firmy</th>
+                                    <th scope="col">Typ Zmluvy</th>
+                                    <th scope="col">Dátum Začiatku</th>
+                                    <th scope="col">Dátum Konca</th>
+                                    <th scope="col">Kontaktná Osoba</th>
+                                    <th scope="col">Aktuálny stav</th>
+                                    <th scope="col">Predmety</th>
+                                    <th scope="col">Pracovník FPVaI</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <?php
+                                    foreach ($prax as $pr)
+                                        echo"<input type='hidden' name='idPrax' value='".$pr->idPrax."'>
+                                            <td><input type='text' name='Pozicia' size='8' value='".$pr->Pozicia."'></td>
+                                            <td><select name='Nazov_firmy' id='Nazov_firmy' style='width: 100px;'>";
+                                    $firmy = DB::table('Firma')->get();
+                                    foreach ($firmy as $firma){
+                                        echo "<option value='".$firma->idFirma."'>".$firma->Názov_firmy."</option>";
+                                    }
+                                    echo"</select></td>
+                                        <td><select name='Typ_Zmluvy' id='Typ_Zmluvy' style='width: 100px;'>";
+                                    $zmluvy = DB::table('Zmluva')->get();
+                                    foreach ($zmluvy as $zmluva){
+                                        echo "<option value='".$zmluva->idZmluva."'>".$zmluva->Typ_zmluvy."</option>";
+                                    }
+                                    echo"</select></td>
+                                        <td><input type='date' id='Datum_Zaciatku' name='Datum_Zaciatku'
+                                        style='width: 110px;' value=".$pr->Datum_start."></td>
+                                        <td><input type='date' id='Datum_Konca' name='Datum_Konca'
+                                        style='width: 110px;' value=".$pr->Datum_end."></td>
+                                        <td><select name='Kontaktna_Osoba' id='Kontaktna_Osoba'>";
+                                    $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', "3")->get();
+                                    foreach ($osoby as $osoba){
+                                        echo "<option value='".$osoba->idPouzivatel."'>".$osoba->Meno." ".$osoba->Priezvisko."</option>";
+                                    }
+                                    echo"</select></td>
+                                        <td><input type='text' name='Aktualny_stav' size='8' value='".$pr->Aktuálny_stav."'></td>
+                                        <td><select name='Predmety' id='Predmety'>";
+                                    $predmety = DB::table('Predmety')->get();
+                                    foreach ($predmety as $predmet){
+                                        echo "<option value='".$predmet->idPredmety."'>".$predmet->Nazov."</option>";
+                                    }
+                                    echo"</select></td>
+            <td><select name='Pracovnik_FPVaI' id='Pracovnik_FPVaI'>";
+                                    $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', "2")->get();
+                                    foreach ($osoby as $osoba){
+                                        echo "<option value='".$osoba->idPouzivatel."'>".$osoba->Meno." ".$osoba->Priezvisko."</option>";
+                                    }
+                                    echo"</select></td>
+            <td>
+                <div class='d-flex mb-3'>
+                    <button type='submit' class='btn btn-primary'>Confirm</button>
+                </div>
+            </td>
 
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="respPracRead">Cancel</a>
-                                        </div>
-                                    </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+            <td>
+                <div class='d-flex mb-3'>
+                    <a class='btn btn-danger' href='/respPracRead'>Cancel</a>
+                </div>
+            </td>"
+                                    ?>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+
                     </div>
                 </div>
 
