@@ -50,18 +50,6 @@
                             </thead>
                             <tbody >
                             <?php
-                            //use Illuminate\Support\Facades\DB;
-                            $prax = DB::table('Prax')
-                                //->join('Pouzivatel', 'Prax.Student_idPouzivatel', '=', 'Pouzivatel.idPouzivatel')
-                                ->join('Firma', 'Prax.Firma_idFirma', '=', 'Firma.idFirma')
-                                ->join('Mesto', 'Firma.Mesto_idMesto', '=', 'Mesto.idMesto')
-                                ->select('Firma.*', 'Mesto.*', 'Prax.*')
-                                ->get();
-                            /*$mesto = DB::table('Mesto')
-                                ->join('Firma','Mesto.idMesto', '=', 'Firma.Mesto_idMesto')
-                                ->select('Mesto.Nazov')
-                                ->get();*/
-
                             foreach ($prax as $prac) {
                                 echo'
                             <tr >
