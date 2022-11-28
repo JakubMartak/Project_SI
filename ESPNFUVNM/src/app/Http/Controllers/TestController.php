@@ -351,9 +351,14 @@ class TestController extends Controller
         return view('headRespList');
     }
 
-    /* responsible preson functions */
+    /* responsible person functions */
     public function respCompList(){
-        return view('respCompList');
+        $firmy = DB::table('Firma')
+            ->join('Mesto', 'Firma.Mesto_idMesto', '=', 'Mesto.idMesto')
+            ->select('Firma.*', 'Mesto.*')
+            ->orderBy('idFirma')
+            ->get();
+        return view('respCompList', ['firmy'=>$firmy]);
     }
 
     public function respCompAdd(){
@@ -369,12 +374,60 @@ class TestController extends Controller
     }
 
     public function respPracRead(){
-        return view('respPracRead');
+        $praxy = DB::table('Prax')
+            ->join('Firma', 'Prax.Firma_idFirma', '=', 'Firma.idFirma')
+            ->join('Mesto', 'Firma.Mesto_idMesto', '=', 'Mesto.idMesto')
+            ->select('Firma.*', 'Mesto.*', 'Prax.*')
+            ->orderBy('idPrax')
+            ->get();
+        return view('respPracRead', ['prax'=>$praxy]);
     }
 
-    public function respPracUpd(){
-        return view('respPracUpd');
+    public function respCompDelete($idFirma){
+        DB::delete('delete from Firma where idFirma = ?',[$idFirma]);
+        return redirect('respCompList');
     }
+
+    public function respCompSave(Request $req){
+        DB::table('Firma')->insert([
+            'Názov_firmy' => $req->nazov,
+            'Skratka' => $req->skratka,
+            'Adresa' => $req->adresa,
+            'Mesto_idMesto' => $req->mesto,
+        ]);
+        return redirect('respCompList');
+    }
+
+    /*public function respPracUpd(){
+        return view('respPracUpd');
+    }*/
+
+    public function respPracUpd($id){
+        $prax = DB::table('Prax')
+            ->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')
+            ->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')
+            ->where('idPrax', $id)
+            ->get();
+        return view('respPracUpd', ['prax'=>$prax]);
+    }
+
+    public function respPracUpd2 (Request $req){
+        DB::table('Prax')->where('idPrax', $req->idPrax)->update([
+            'Pozicia' => $req->Pozicia,
+            'Student_idPouzivatel' => Auth::user()->id,
+            'Datum_start' => $req->Datum_Zaciatku,
+            'Datum_end' => $req->Datum_Konca,
+            'Firma_idFirma' => $req->Nazov_firmy,
+            'Kontaktna_osoba_idPouzivatel' => $req->Kontaktna_Osoba,
+            'Aktuálny_stav' => $req->Aktualny_stav,
+            'Predmety_idPredmety' => $req->Predmety,
+            'Pracovnik_FPVaI_idPouzivatel' => $req->Pracovnik_FPVaI,
+            'Zmluva_idZmluva' => $req->Typ_Zmluvy
+        ]);
+        return redirect('respPracRead');
+    }
+
+
 
     public function respFeedList(){
         return view('respFeedList');
@@ -409,7 +462,14 @@ class TestController extends Controller
     }
 
     public function respPracArchRead(){
-        return view('respPracArchRead');
+        $praxy = DB::table('Prax')
+            ->join('Firma', 'Prax.Firma_idFirma', '=', 'Firma.idFirma')
+            ->join('Mesto', 'Firma.Mesto_idMesto', '=', 'Mesto.idMesto')
+            ->select('Firma.*', 'Mesto.*', 'Prax.*')
+            ->where('Prax.Aktuálny_stav', '=', 'done')
+            ->orderBy('idPrax')
+            ->get();
+        return view('respPracArchRead', ['prax'=>$praxy]);
     }
 
     public function respStuRatingList(){
