@@ -38,48 +38,41 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Skratka</th>
-                                <th scope="col">Adresa</th>
-                                <th scope="col">Mesto</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form action="respCompAdd.blade.php" method="POST">
-
-                                    <?php
-                                     $Company = DB::insert('insert into Firma (Názov_firmy, Skratka, Adresa, Mesto_idMesto) values (nazov,skratka,adresa,mesto)');
-
-                                     ?>
-
-                                    <th scope="row">#</th>
-                                    <td><input type="Názov_firmy" size="10" name="nazov"> </input></td>
-                                    <td><input type="Skratka" size="10" name="skratka"> </input></td>
-                                    <td><input type="Adresa" size="10" name="adresa"> </input></td>
-                                    <td><input type="Mesto_idMesto" size="10" name="mesto"> </input></td>
+                        <form action="respCompSave" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Názov Firmy</th>
+                                    <th scope="col">Skratka</th>
+                                    <th scope="col">Adresa</th>
+                                    <th scope="col">Mesto</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><input type="text" size="10" name="nazov"> </td>
+                                    <td><input type="text" size="10" name="skratka"> </td>
+                                    <td><input type="text" size="10" name="adresa"> </td>
+                                    <td><input type="text" size="10" name="mesto"> </td>
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="respCompList">Add</a>
-                                        </div>
-                                    </td>
 
+                                        <div class="d-flex mb-3">
+                                            <button type="submit" class="btn btn-primary"> Add </button>
+                                        </div>
+
+                                    </td>
                                     <td>
                                         <div class="d-flex mb-3">
                                             <a class="btn btn-danger" href="respCompList">Cancel</a>
                                         </div>
                                     </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
 
