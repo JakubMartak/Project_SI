@@ -92,9 +92,9 @@ Route::post('/headRespAddSave', [TestController::class, 'headRespAddSave'])->nam
 Route::get('/respCompList', [TestController::class, 'respCompList']);
 Route::get('/respCompAdd', [TestController::class, 'respCompAdd']);
 Route::get('/respCompUpd', [TestController::class, 'respCompUpd']);
-Route::get('/respCompDel', [TestController::class, 'respCompDel']);
+Route::get('/respCompDel/{idFirma}',[TestController::class, 'respCompDelete']);
 Route::get('/respPracRead', [TestController::class, 'respPracRead']);
-Route::get('/respPracUpd', [TestController::class, 'respPracUpd']);
+//Route::get('/respPracUpd', [TestController::class, 'respPracUpd']);
 Route::get('/respFeedList', [TestController::class, 'respFeedList']);
 Route::get('/respFeedAdd', [TestController::class, 'respFeedAdd']);
 Route::get('/respFeedUpd', [TestController::class, 'respFeedUpd']);
@@ -108,6 +108,11 @@ Route::get('/respStuRatingList', [TestController::class, 'respStuRatingList']);
 Route::get('/respStuRatingAdd', [TestController::class, 'respStuRatingAdd']);
 Route::get('/respStuRatingUpd', [TestController::class, 'respStuRatingUpd']);
 Route::get('/respStuRatingDel', [TestController::class, 'respStuRatingDel']);
+
+Route::POST('/respCompSave', [TestController::class, 'respCompSave']);
+Route::get('/respPracUpd/{id}', [TestController::class, 'respPracUpd']);
+Route::POST('/respPracUpd2', [TestController::class, 'respPracUpd2']);
+
 
 
 /* admin routes */
