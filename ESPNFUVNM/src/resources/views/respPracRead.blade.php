@@ -49,34 +49,21 @@
                             </tr>
                             </thead>
                             <tbody >
-                            <?php
-                            //use Illuminate\Support\Facades\DB;
-                            $prax = DB::table('Prax')
-                                //->join('Pouzivatel', 'Prax.Student_idPouzivatel', '=', 'Pouzivatel.idPouzivatel')
-                                ->join('Firma', 'Prax.Firma_idFirma', '=', 'Firma.idFirma')
-                                ->join('Mesto', 'Firma.Mesto_idMesto', '=', 'Mesto.idMesto')
-                                ->select('Firma.*', 'Mesto.*', 'Prax.*')
-                                ->get();
-                            /*$mesto = DB::table('Mesto')
-                                ->join('Firma','Mesto.idMesto', '=', 'Firma.Mesto_idMesto')
-                                ->select('Mesto.Nazov')
-                                ->get();*/
 
-                            foreach ($prax as $prac) {
-                                echo'
+                            @foreach ($prax as $prac)
+
                             <tr >
-                                <th >'. $prac->idPrax .' </th >
-                                <td >'. $prac->Pozicia  .'</td >
-                                <td >'. $prac->Názov_firmy .'</td >
-                                <td >'. $prac->Nazov .'</td >
+                                <th > {{$prac->idPrax}} </th >
+                                <td > {{$prac->Pozicia}} </td >
+                                <td > {{$prac->Názov_firmy}} </td >
+                                <td > {{$prac->Nazov}} </td >
                                 <td >
                                     <div class="d-flex mb-3" >
-                                        <a class="btn btn-primary" href = "respPracUpd" > Edit</a >
+                                        <a class='btn btn-primary' href="respPracUpd/{{$prac->idPrax}}">Edit</a>
                                     </div >
                                 </td >
-                            </tr >';
-                            }
-                            ?>
+                            </tr >
+                            @endforeach
                             </tbody >
                         </table>
                     </div>
