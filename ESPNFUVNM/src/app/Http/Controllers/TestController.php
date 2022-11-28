@@ -206,13 +206,11 @@ class TestController extends Controller
     public function stuPracReportRead(){
         $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Student_idPouzivatel', Auth::user()->id)->where('Dokumenty_idDokumenty', '1')->orderBy('idPrax')->get();
         return view('stuPracReportRead', ['praxy'=>$praxy]);
-        //return view('stuPracReportRead');
     }
 
     public function stuFeedRead(){
         $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Student_idPouzivatel', Auth::user()->id)->where('Dokumenty_idDokumenty', '2')->orderBy('idPrax')->get();
         return view('stuFeedRead', ['praxy'=>$praxy]);
-        //return view('stuFeedRead');
     }
 
     public function stuFeedAdd(){
@@ -554,24 +552,88 @@ class TestController extends Controller
     public function cmpRegDetail(){
         return view('cmpRegDetail');
     }
-    public function cmpAdd(){
-        return view('cmpAdd');
+    public function cmpAdd(Request $req){
+        DB::table('Firma')->insert([
+            'Názov_firmy' => $req->Nazov_firmy,
+            'Skratka' => $req->Skratka,
+            'Adresa' => $req->Adresa,
+            'Mesto_idMesto' => $req->Nazov,
+        ]);
+        return redirect('cmpRegDetail');
     }
     public function cmpStudRead(){
-        return view('cmpStudRead');
+        $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Dokumenty_idDokumenty', '3')->orderBy('idPrax')->get();
+        return view('cmpStudRead', ['praxy'=>$praxy]);
     }
     public function cmpStuAdd(){
         return view('cmpStuAdd');
     }
-    public function cmpStuUpd(){
-        return view('cmpStuUpd');
+
+    public function cmpStuSave (Request $req){
+        DB::table('Prax_has_Dokumenty')->insert([
+            'Prax_idPrax' => $req->Prax,
+            'Dokumenty_idDokumenty' => "3",
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Spatna_vazba
+        ]);
+        return redirect('cmpStudRead');
     }
+
+    public function cmpStuUpd($id){
+        $prax = DB::table('Prax_has_Dokumenty')->join('Prax', 'Prax.idPrax', '=', 'Prax_has_Dokumenty.Prax_idPrax')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', "3")->get();
+        return view('cmpStuUpd', ['prax'=>$prax]);
+    }
+
+    public function cmpStuUpd2 (Request $req){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $req->PraxidPrax)->where('Dokumenty_idDokumenty', "3")->update([
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Spatna_vazba
+        ]);
+        return redirect('cmpStudRead');
+    }
+
+    public function cmpStuDel($id){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', 3)->delete();
+        return redirect('cmpStudRead');
+    }
+
     public function cmpReporList(){
-        return view('cmpReporList');
+        $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Dokumenty_idDokumenty', '1')->orderBy('idPrax')->get();
+        return view('cmpReporList', ['praxy'=>$praxy]);
     }
-    public function cmpReportUpd(){
-        return view('cmpReportUpd');
+
+    public function cmpReportAdd(){
+        return view('cmpReportAdd');
     }
+
+    public function cmpReportSave (Request $req){
+        DB::table('Prax_has_Dokumenty')->insert([
+            'Prax_idPrax' => $req->Prax,
+            'Dokumenty_idDokumenty' => "1",
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Vykaz
+        ]);
+        return redirect('cmpReporList');
+    }
+
+    public function cmpReportUpd($id){
+        $prax = DB::table('Prax_has_Dokumenty')->join('Prax', 'Prax.idPrax', '=', 'Prax_has_Dokumenty.Prax_idPrax')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', "1")->get();
+        return view('cmpReportUpd', ['prax'=>$prax]);
+    }
+
+    public function cmpReportUpd2 (Request $req){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $req->PraxidPrax)->where('Dokumenty_idDokumenty', "1")->update([
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Vykaz
+        ]);
+        return redirect('cmpReporList');
+    }
+
+    public function cmpReportDel($id){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', 1)->delete();
+        return redirect('cmpReporList');
+    }
+
     public function cmpFeedList(){
         return view('cmpFeedList');
     }

@@ -35,14 +35,14 @@
                 <div class="d-flex mb-3">
                    <!-- <a class="btn btn-success" href="admStuAdd">Pridať Spätnú väzbu</a> -->
                 </div>
-                <form action="cmpStuSave" method="POST">
+                <form action="cmpReportSave" method="POST">
                     @csrf
                     <table class="table table-w">
                         <thead>
                         <tr>
                             <th scope="col">#id</th>
                             <th scope="col">Prax</th>
-                            <th scope="col">Spätná väzba</th>
+                            <th scope="col">Výkaz</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
@@ -60,7 +60,7 @@
                                     ?>
                                 </select>
                             </td>
-                            <td><input type="text" name="Spatna_vazba" size="50"></td>
+                            <td><input type="text" name="Vykaz" size="50"></td>
                             <td>
                                 <div class="d-flex mb-3">
                                     <button type="submit" class="btn btn-primary">Pridať</button>
@@ -68,7 +68,7 @@
                             </td>
                             <td>
                                 <div class="d-flex mb-3">
-                                    <a class="btn btn-danger" href="cmpStudRead">Zrušiť</a>
+                                    <a class="btn btn-danger" href="cmpReporList">Zrušiť</a>
                                 </div>
                             </td>
                         </tr>

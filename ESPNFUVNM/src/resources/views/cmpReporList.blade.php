@@ -33,7 +33,7 @@
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
                 <div class="d-flex mb-3">
-                    <!-- <a class="btn btn-success" href="admStuAdd">Pridať Spätnú väzbu</a> -->
+                    <a class="btn btn-success" href="cmpReportAdd">Pridať Výkaz</a>
                 </div>
                 <!-- Tabulka -->
                 <div class="">
@@ -44,20 +44,31 @@
                             <tr>
                                 <th scope="col">#id</th>
                                 <th scope="col">Pozícia</th>
-                                <th scope="col">Zmluva</th>
+                                <th scope="col">Výkaz</th>
+                                <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
-
-                            <th scope="row">1</th>
-                            <td>Príklad </td>
-                            <td>Príklad </td>
-                            <td>
-                                <div class="d-flex mb-3">
-                                    <a class="btn btn-primary" href="cmpReportUpd">Editovať</a>
-                                </div>
-                            </td>
+                            <?php
+                            foreach ($praxy as $prax) {
+                                echo"<tr>"."
+                                <th scope='row'>".$prax->idPrax."</th>"."
+                                <td>".$prax->Pozicia."</td>"."
+                                <td>".$prax->Nazov."</td>"."
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-primary' href='cmpReportUpd/".$prax->idPrax."'>Editovať</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-danger' href='cmpReportDel/".$prax->idPrax."'>Odstrániť</a>
+                                    </div>
+                                </td>"."
+                            </tr>";
+                            }
+                            ?>
 
                             </tbody>
                         </table>

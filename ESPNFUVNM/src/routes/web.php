@@ -137,13 +137,22 @@ Route::get('/admGraphList', [TestController::class, 'admGraphList']);
 
 /* Zástupca firmy a organizácie */
 Route::get('/cmpRegDetail', [TestController::class, 'cmpRegDetail']);
-Route::get('/cmpAdd', [TestController::class, 'cmpAdd']);
+Route::post('/cmpAdd', [TestController::class, 'cmpAdd']);
 Route::get('/cmpUpd', [TestController::class, 'cmpUpd']);
 Route::get('/cmpStudRead', [TestController::class, 'cmpStudRead']);
 Route::get('/cmpStuAdd', [TestController::class, 'cmpStuAdd']);
-Route::get('/cmpStuUpd', [TestController::class, 'cmpStuUpd']);
+Route::post('/cmpStuSave', [TestController::class, 'cmpStuSave']);
+Route::get('/cmpStuUpd/{id}', [TestController::class, 'cmpStuUpd']);
+Route::post('/cmpStuUpd2', [TestController::class, 'cmpStuUpd2']);
+Route::get('/cmpStuDel/{id}', [TestController::class, 'cmpStuDel']);
 Route::get('/cmpReporList', [TestController::class, 'cmpReporList']);
-Route::get('/cmpReportUpd', [TestController::class, 'cmpReportUpd']);
+Route::get('/cmpReportAdd', [TestController::class, 'cmpReportAdd']);
+Route::post('/cmpReportSave', [TestController::class, 'cmpReportSave']);
+
+Route::get('/cmpReportUpd/{id}', [TestController::class, 'cmpReportUpd']);
+Route::post('/cmpReportUpd2', [TestController::class, 'cmpReportUpd2']);
+Route::get('/cmpReportDel/{id}', [TestController::class, 'cmpReportDel']);
+
 Route::get('/cmpFeedList', [TestController::class, 'cmpFeedList']);
 Route::get('/cmpFeedAdd', [TestController::class, 'cmpFeedAdd']);
 Route::get('/cmpFeedUpd', [TestController::class, 'cmpFeedUpd']);

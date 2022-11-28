@@ -10,7 +10,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <style>
         /* Template Stylesheet */
@@ -23,7 +23,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.cmpnavbar')
+        @include('parts.cmpnavbarforupdate')
     </header>
     <!-- Navbar End -->
 
@@ -38,36 +38,41 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
+                        <form action="/cmpReportUpd2" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Pozícia</th>
+                                    <th scope="col">Výkaz</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <?php
+                                    foreach ($prax as $pr) echo"<th scope='row'>".$pr->Prax_idPrax."</th>
+                                    <input type='hidden' name='PraxidPrax' value='".$pr->Prax_idPrax."'>
+                                    <td>".$pr->Pozicia."</td>"."
+                                    <td><input type='text' name='Vykaz' size='50' value='".$pr->Nazov."'></td>
+                                    <td>
+                                        <div class='d-flex mb-3'>
+                                            <button type='submit' class='btn btn-primary'>Potvrdiť</button>
+                                        </div>
+                                    </td>
 
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Pozícia</th>
-                                <th scope="col">Zmluva</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            <th scope="row">1</th>
-                            <td><input type="text" size="10"> </input></td>
-                            <td><input type="text" size="10"> </input></td>
-                            <td>
-                                <div class="d-flex mb-3">
-                                    <a class="btn btn-primary" href="cmpReporList">Potvrdiť</a>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="d-flex mb-3">
-                                    <a class="btn btn-danger" href="cmpReporList">Zrušiť</a>
-                                </div>
-                            </td>
-
-                            </tbody>
-                        </table>
+                                    <td>
+                                        <div class='d-flex mb-3'>
+                                            <a class='btn btn-danger' href='/cmpStudRead'>Zrušiť</a>
+                                        </div>
+                                    </td>"
+                                    ?>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
 
@@ -86,7 +91,7 @@
 
 <!-- Footer Start -->
 <footer>
-    @include('parts.footer')
+    @include('parts.footerforupdate')
 </footer>
 <!-- Footer End -->
 

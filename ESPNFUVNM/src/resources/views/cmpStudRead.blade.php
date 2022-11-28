@@ -43,20 +43,29 @@
                         <th scope="col">Pozícia</th>
                         <th scope="col">Spätná väzba</th>
                         <th scope="col"></th>
-
+                        <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <th scope="row">1</th>
-                    <td>Príklad </td>
-                    <td>Príklad </td>
-                    <td>
-                        <div class="d-flex mb-3">
-                            <a class="btn btn-primary" href="cmpStuUpd">Editovať</a>
-                        </div>
-                    </td>
-
-
+                    <?php
+                    foreach ($praxy as $prax) {
+                        echo"<tr>"."
+                                <th scope='row'>".$prax->idPrax."</th>"."
+                                <td>".$prax->Pozicia."</td>"."
+                                <td>".$prax->Nazov."</td>"."
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-primary' href='cmpStuUpd/".$prax->idPrax."'>Editovať</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-danger' href='cmpStuDel/".$prax->idPrax."'>Odstrániť</a>
+                                    </div>
+                                </td>"."
+                            </tr>";
+                    }
+                    ?>
 
                     </tbody>
                 </table>

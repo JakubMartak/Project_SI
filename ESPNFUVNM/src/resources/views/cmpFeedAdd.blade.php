@@ -35,39 +35,46 @@
                 <div class="d-flex mb-3">
                  <!--   <a class="btn btn-success" href="cmpStuAdd">Pridať Spätnú väzbu</a> -->
                 </div>
-
-                <table class="table table-w">
-                    <thead>
-                    <tr>
-                        <th scope="col">#id</th>
-                        <th scope="col">Pozícia</th>
-                        <th scope="col">Spätná väzba</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <th scope="row">1</th>
-                    <td><input type="text" size="10"> </input></td>
-                    <td><input type="text" size="10"> </input></td>
-                    <td>
-                        <div class="d-flex mb-3">
-                            <a class="btn btn-primary" href="cmpFeedList">Pridať</a>
-                        </div>
-                    </td>
-
-                    <td>
-                        <div class="d-flex mb-3">
-                            <a class="btn btn-danger" href="cmpFeedList">Zrušiť</a>
-                        </div>
-                    </td>
-
-
-
-                    </tbody>
-                </table>
-
+                <form action="cmpAdd" method="POST">
+                    @csrf
+                    <table class="table table-w">
+                        <thead>
+                        <tr>
+                            <th scope="col">#id</th>
+                            <th scope="col">Prax</th>
+                            <th scope="col">Spätná väzba</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">#</th>
+                            <td>
+                                <select name="Prax" id="Prax">
+                                    <?php
+                                    $praxy = DB::table('Prax')->where('Firma_idFirma', Auth::user()->id)->get();
+                                    foreach ($praxy as $prax){
+                                        echo "<option value='".$prax->idPrax."'>".$prax->Pozicia."</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </td>
+                            <td><input type="text" name="Spatna_vazba" size="50"></td>
+                            <td>
+                                <div class="d-flex mb-3">
+                                    <button type="submit" class="btn btn-primary">Pridať</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex mb-3">
+                                    <a class="btn btn-danger" href="stuFeedRead">Zrušiť</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
             </div>
         </div>
 

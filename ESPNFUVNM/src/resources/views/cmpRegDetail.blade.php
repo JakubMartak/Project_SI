@@ -34,54 +34,45 @@
             <div class="row g-4">
 
 
-                <form method="POST" action="{{ route('register') }}">
+                <form action="cmpAdd" method="POST">
                     @csrf
                     <h2 class="fw-bold mb-2 text-uppercase flex items-center justify-center">Register</h2>
-                    <!-- Name -->
                     <div>
-                        <label for="name" class="form-label cmb-4">Meno</label>
-                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-
-                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        <label for="Nazov_firmy" class="">Názov firmy</label>
+                        <br>
+                        <input id="Nazov_firmy" class="block mt-1 w-full" type="text" name="Nazov_firmy" required autofocus />
                     </div>
 
-                    <!-- Email Address -->
                     <div class="mt-4">
-                        <label for="email" class="form-label cmb-4">Email</label>
-                        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        <label for="Skratka" class="">Skratka</label>
+                        <br>
+                        <input id="Skratka" class="block mt-1 w-full" type="text" name="Skratka" required />
                     </div>
 
-                    <!-- Password -->
                     <div class="mt-4">
-                        <label for="password" class="form-label cmb-4">Password</label>
-                        <x-text-input id="password" class="block mt-1 w-full"
-                                      type="password"
-                                      name="password"
-                                      required autocomplete="new-password" />
-
-                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                        <label for="Adresa" class="">Adresa</label>
+                        <br>
+                        <input id="Adresa" class="block mt-1 w-full" type="text" name="Adresa" required />
                     </div>
 
-                    <!-- Confirm Password -->
                     <div class="mt-4">
-                        <label for="password_confirmation" class="form-label cmb-4">Confirm Password</label>
-                        <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                      type="password"
-                                      name="password_confirmation" required />
-
-                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                        <label for="Mesto" class="">Mesto</label>
+                        <br>
+                        <select name="Nazov" id="Nazov">
+                            <?php
+                            $mesta = DB::table('Mesto')->get();
+                            foreach ($mesta as $mesto){
+                                echo "<option value='".$mesto->idMesto."'>".$mesto->Nazov."</option>";
+                            }
+                            ?>
+                        </select>
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
-                        <a class="underline form-text hover:text-gray-900" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
-                        </a>
-
-                        <button class="btn btn-outline-light btn-lg px-5 ml-4">
-                            {{ __('Register') }}
+                        <button type="submit" class="btn-success btn-lg px-5 ml-4">
+                            Registrovať
                         </button>
+                        <a class='btn-success btn-lg px-5 ml-4' href='cmpUpd'>Editovať</a>
                     </div>
                 </form>
 
