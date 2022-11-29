@@ -37,6 +37,8 @@ class DatabaseSeeder extends Seeder
             Dokumenty_Seed::class,
             Prax_has_Dokumenty_Seed::class,
             Dodatocne_Prax_Seed::class,
+            
+            Dokumenty2_Seed::class,
         ]);
     }
 }
