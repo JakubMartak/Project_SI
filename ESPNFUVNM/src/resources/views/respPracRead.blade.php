@@ -62,7 +62,7 @@
                                 <td > {{$prac->Nazov}} </td >
                                 <td >
                                     <div class="d-flex mb-3" >
-                                        <a class='btn btn-primary' href="respPracUpd/{{$prac->idPrax}}">Edit</a>
+                                        <a class='btn btn-primary' href="respPracUpd/{{$prac->idPrax}}">Upraviť</a>
                                     </div >
                                 </td >
                             </tr >
