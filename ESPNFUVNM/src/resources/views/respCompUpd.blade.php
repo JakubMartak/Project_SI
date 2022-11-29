@@ -23,7 +23,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.respnavbar')
+        @include('parts.respnavbarforupdate')
     </header>
     <!-- Navbar End -->
 
@@ -32,18 +32,16 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-                <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="#">Pridať Firmu</a>
-                </div>
+
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
+                        <form action="/respCompUpd2" method="POST">
+                            @csrf
                         <table class="table table-w">
                             <thead>
                             <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
+                                <th scope="col">Firma</th>
                                 <th scope="col">Skratka</th>
                                 <th scope="col">Adresa</th>
                                 <th scope="col">Mesto</th>
@@ -53,27 +51,38 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <form action="respCompAdd.blade.php" method="post">
-                                    <th scope="row">1</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="respCompList">Confirm</a>
-                                        </div>
-                                    </td>
+                                <?php
+                                    foreach ($firm as $firm)
+                                        echo"<input type='hidden' name='idFirma' value='".$firm->idFirma."'>
+                                            <td><input type='text' name='Firma' size='8' value='".$firm->Názov_firmy."'></td>
+                                            <td><input type='text' name='Skratka' size='8' value='".$firm->Skratka."'></td>
+                                            <td><input type='text' name='Adresa' size='8' value='".$firm->Adresa."'></td>
 
-                                    <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="respCompList">Cancel</a>
-                                        </div>
-                                    </td>
-                                </form>
+                                            <td><select name='Mesto' id='Mesto' style='width: 100px;'>";
+                                            $mesto = DB::table('Mesto')->get();
+                                    foreach ($mesto as $mesto){
+                                        echo "<option value='".$mesto->idMesto."'>".$mesto->Nazov."</option>";
+                                    }
+
+
+
+                                        echo"</select></td>
+            <td>
+                <div class='d-flex mb-3'>
+                    <button type='submit' class='btn btn-primary'>Potvrdiť</button>
+                </div>
+            </td>
+
+            <td>
+                <div class='d-flex mb-3'>
+                    <a class='btn btn-danger' href='/respCompList'>Zrušiť</a>
+                </div>
+            </td>"
+                                ?>
                             </tr>
                             </tbody>
                         </table>
+                        </form>
                     </div>
                 </div>
 
