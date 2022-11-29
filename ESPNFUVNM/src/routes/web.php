@@ -36,6 +36,7 @@ Route::get('/createprax', [TestController::class, 'createpraxpage']);
 /* student routes */
 Route::get('/stuPracList', [TestController::class, 'stuPracList']);
 Route::get('/stuPracProgList', [TestController::class, 'stuPracProgList']);
+Route::get('/stuPracProgListUpd/{id}', [TestController::class, 'stuPracProgListUpd']);
 Route::get('/stuCompAdd', [TestController::class, 'stuCompAdd']);
 Route::post('/stuCompSave', [TestController::class, 'stuCompSave']);
 Route::get('/stuCompUpd/{id}', [TestController::class, 'stuCompUpd']);
