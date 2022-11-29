@@ -112,6 +112,9 @@ Route::get('/respStuRatingDel', [TestController::class, 'respStuRatingDel']);
 Route::POST('/respCompSave', [TestController::class, 'respCompSave']);
 Route::get('/respPracUpd/{id}', [TestController::class, 'respPracUpd']);
 Route::POST('/respPracUpd2', [TestController::class, 'respPracUpd2']);
+Route::get('/respPracAdd', [TestController::class, 'respPracAdd']);
+Route::POST('/respPracSave', [TestController::class, 'respPracSave']);
+
 
 
 
