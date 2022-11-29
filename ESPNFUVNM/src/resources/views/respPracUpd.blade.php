@@ -98,13 +98,13 @@
                                     echo"</select></td>
             <td>
                 <div class='d-flex mb-3'>
-                    <button type='submit' class='btn btn-primary'>Confirm</button>
+                    <button type='submit' class='btn btn-primary'>Potvrdiť</button>
                 </div>
             </td>
 
             <td>
                 <div class='d-flex mb-3'>
-                    <a class='btn btn-danger' href='/respPracRead'>Cancel</a>
+                    <a class='btn btn-danger' href='/respPracRead'>Zrušiť</a>
                 </div>
             </td>"
                                     ?>
