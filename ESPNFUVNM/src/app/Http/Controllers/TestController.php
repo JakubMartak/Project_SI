@@ -365,8 +365,23 @@ class TestController extends Controller
         return view('respCompAdd');
     }
 
-    public function respCompUpd(){
-        return view('respCompUpd');
+    public function respCompUpd($id){
+        $firm = DB::table('Firma')
+            ->join('Mesto', 'Firma.Mesto_idMesto', '=', 'Mesto.idMesto')
+            ->where('idFirma', $id)
+            ->get();
+        return view('respCompUpd', ['firm'=>$firm]);
+    }
+
+    public function respCompUpd2 (Request $req){
+        DB::table('Firma')->where('idFirma', $req->idFirma)->update([
+            'Názov_firmy' => $req->Firma,
+            'Skratka' => $req->Skratka,
+            'Adresa' => $req->Adresa,
+            'Mesto_idMesto' => $req->Mesto,
+
+        ]);
+        return redirect('respCompList');
     }
 
     public function respCompDel(){
