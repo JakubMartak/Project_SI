@@ -393,7 +393,7 @@ class TestController extends Controller
             'Názov_firmy' => $req->nazov,
             'Skratka' => $req->skratka,
             'Adresa' => $req->adresa,
-            'Mesto_idMesto' => $req->mesto,
+            'Mesto_idMesto' => $req->Nazov,
         ]);
         return redirect('respCompList');
     }
@@ -427,7 +427,21 @@ class TestController extends Controller
         return redirect('respPracRead');
     }
 
+    public function respPracAdd(){
+        return view('respPracAdd');
+    }
 
+    public function respPracSave (Request $req){
+        DB::table('Prax')->insert([
+            'Pozicia' => $req->pozicia,
+            'Firma_idFirma' => $req->firma,
+            'Kontaktna_osoba_idPouzivatel' => $req->Kontaktna_Osoba,
+            'Predmety_idPredmety' => $req->Predmety,
+            'Pracovnik_FPVaI_idPouzivatel' => $req->Pracovnik_FPVaI,
+            'Zmluva_idZmluva' => $req->Typ_Zmluvy
+        ]);
+        return redirect('respPracRead');
+    }
 
     public function respFeedList(){
         return view('respFeedList');
@@ -487,6 +501,7 @@ class TestController extends Controller
     public function respStuRatingDel(){
         return view('respStuRatingDel');
     }
+    
 
     /* admin functions */
     public function admStuLIst(){
