@@ -56,7 +56,16 @@
                                     <td><input type="text" size="10" name="nazov"> </td>
                                     <td><input type="text" size="10" name="skratka"> </td>
                                     <td><input type="text" size="10" name="adresa"> </td>
-                                    <td><input type="text" size="10" name="mesto"> </td>
+                                    <td>
+                                        <select name="Nazov" id="Nazov">
+                                            <?php
+                                            $mesta = DB::table('Mesto')->get();
+                                            foreach ($mesta as $mesto){
+                                                echo "<option value='".$mesto->idMesto."'>".$mesto->Nazov."</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </td>
                                     <td>
 
                                         <div class="d-flex mb-3">
