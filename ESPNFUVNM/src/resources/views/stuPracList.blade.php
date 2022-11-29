@@ -49,7 +49,7 @@
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <!-- Bakalár -->
                         <?php
-                        $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 1)->get();
+                        $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 1)->where('Student_idPouzivatel', null )->get();
                         foreach ($praxy as $prax) {
                             echo"<div class='job-item p-4 mb-4'>"."
                                 <div class='row g-4'>"."
@@ -71,7 +71,7 @@
                     <div id="tab-2" class="tab-pane fade show p-0">
                         <!-- Magister -->
                         <?php
-                        $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 2)->get();
+                        $praxy = DB::table('Prax')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->where('Predmety_idPredmety', '=', 2)->where('Student_idPouzivatel', null )->get();
                         foreach ($praxy as $prax) {
                             echo"<div class='job-item p-4 mb-4'>"."
                                 <div class='row g-4'>"."

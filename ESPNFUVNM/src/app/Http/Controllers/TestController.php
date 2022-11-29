@@ -48,8 +48,15 @@ class TestController extends Controller
     }
 
     public function stuPracProgList(){
-        $praxy = DB::table('Prax')->select('*', 'Predmety.Nazov as X', 'Studijny_program.Nazov as Y')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->join('Predmety', 'Predmety.idPredmety', '=', 'Prax.Predmety_idPredmety')->join('Studijny_program', 'Studijny_program.idStudijny_program', '=', 'Predmety.Studijny_program_idStudijny_program')->orderBy('Y')->orderBy('X')->orderBy('idPrax')->get();
+        $praxy = DB::table('Prax')->select('*', 'Predmety.Nazov as X', 'Studijny_program.Nazov as Y')->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')->join('Predmety', 'Predmety.idPredmety', '=', 'Prax.Predmety_idPredmety')->join('Studijny_program', 'Studijny_program.idStudijny_program', '=', 'Predmety.Studijny_program_idStudijny_program')->where('Student_idPouzivatel', null )->orderBy('Y')->orderBy('X')->orderBy('idPrax')->get();
         return view('stuPracProgList', ['praxy'=>$praxy]);
+    }
+
+    public function stuPracProgListUpd($id){
+        DB::table('Prax')->where('idPrax', $id)->update([
+            'Student_idPouzivatel' => Auth::user()->id
+        ]);
+        return redirect('stuPracProgList');
     }
 
     public function stuCompAdd(){
@@ -516,7 +523,7 @@ class TestController extends Controller
     public function respStuRatingDel(){
         return view('respStuRatingDel');
     }
-    
+
 
     /* admin functions */
     public function admStuLIst(){

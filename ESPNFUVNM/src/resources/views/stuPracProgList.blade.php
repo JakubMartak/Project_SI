@@ -52,6 +52,7 @@
                                 <th scope="col">Dátum konca</th>
                                 <th scope="col">Stupeň štúdia</th>
                                 <th scope="col">Študijný program</th>
+                                <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -66,6 +67,11 @@
                                 <td>".$prax->Datum_end."</td>"."
                                 <td>".$prax->X."</td>"."
                                 <td>".$prax->Y."</td>"."
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-primary' href='stuPracProgListUpd/".$prax->idPrax."'>Prihlásiť sa</a>
+                                    </div>
+                                </td>
                             </tr>";
                             }
                             ?>
