@@ -33,7 +33,7 @@
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
                 <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="respCompAdd">Pridať Firmu</a>
+                    <a class="btn btn-success" href="respCompAdd">Pridať firmu</a>
                 </div>
 
                 <!-- Tabulka -->
@@ -64,13 +64,13 @@
                                     <td >{{$firm->Nazov}}</td >
                                     <td >
                                         <div class="d-flex mb-3" >
-                                            <a class="btn btn-primary" href = "respCompUpd" > Edit</a >
+                                            <a class='btn btn-primary' href="/respCompUpd/{{$firm->idFirma}}">Upraviť</a>
                                         </div >
                                     </td >
 
                                     <td >
                                         <div class="d-flex mb-3" >
-                                            <a href = "/respCompDel/{{ $firm->idFirma }}" class="btn btn-danger" > Remove</a >
+                                            <a href = "/respCompDel/{{ $firm->idFirma }}" class="btn btn-danger" > Odstrániť</a >
                                         </div >
                                     </td >
                                 </tr >
