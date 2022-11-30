@@ -1,7 +1,7 @@
 <head>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-fixed/">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 
 <section class="">
@@ -11,31 +11,31 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <!--Tlačidlo Zoznam praxí, ktoré smeruje na dashboard-->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headCompList">Zoznam firiem a organizácií</a>
+                        <a class="nav-link active" aria-current="page" href="/headCompList">Zoznam firiem a organizácií</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headStudList">Zoznam študentov na praxi podľa odborov</a>
+                        <a class="nav-link active" aria-current="page" href="/headStudList">Zoznam študentov na praxi podľa odborov</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headPracList">Aktuálny stav praxe</a>
+                        <a class="nav-link active" aria-current="page" href="/headPracList">Aktuálny stav praxe</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headPracFinishList">Zoznam schválených a ukončených praxí</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headReportList">Report za pracovisko</a>
+                        <a class="nav-link active" aria-current="page" href="/headPracFinishList">Zoznam schválených a ukončených praxí</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headFeedRead">Spätná väzba</a>
+                        <a class="nav-link active" aria-current="page" href="/headReportList">Report za pracovisko</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headCertList">Zoznam osvedčení</a>
+                        <a class="nav-link active" aria-current="page" href="/headFeedRead">Spätná väzba</a>
+                    </li>
+
+                    <li class="nav-item">
+                       <a class="nav-link active" aria-current="page" href="/headCertList">Zoznam osvedčení</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headRespList">Poverení pracovníci pracoviska</a>
+                        <a class="nav-link active" aria-current="page" href="/headRespList">Poverení pracovníci pracoviska</a>
                     </li>
 
 

@@ -38,42 +38,46 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Skratka</th>
-                                <th scope="col">Adresa</th>
-                                <th scope="col">Mesto</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form>
+                        <form action="headReportSave" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Prax</th>
+                                    <th scope="col">Report</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
                                     <th scope="row">#</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
+                                    <td>
+                                        <select name="Prax" id="Prax">
+                                            <?php
+                                            $praxy = DB::table('Prax')->get();
+                                            foreach ($praxy as $prax){
+                                                echo "<option value='".$prax->idPrax."'>".$prax->Pozicia."</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="Report" size="50"></td>
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="respCompList">Add</a>
+                                            <button type="submit" class="btn btn-primary">Pridať</button>
                                         </div>
                                     </td>
-
                                     <td>
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="respCompList">Cancel</a>
+                                            <a class="btn btn-danger" href="headReportList">Zrušiť</a>
                                         </div>
                                     </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
 

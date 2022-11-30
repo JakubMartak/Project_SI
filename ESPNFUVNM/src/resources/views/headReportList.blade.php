@@ -33,7 +33,7 @@
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
                 <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="headCompAdd">Pridať Report</a>
+                    <a class="btn btn-success" href="headReportAdd">Pridať Report</a>
                 </div>
                 <!-- Tabulka -->
                 <div class="">
@@ -43,33 +43,34 @@
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Názov reportu</th>
-                                <th scope="col">Popis reportu</th>
-                                <th scope="col">Aktivovaný</th>
+                                <th scope="col">Prax</th>
+                                <th scope="col">Report</th>
                                 <th scope="col">Posledná zmena</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
+                            <?php
+                            foreach ($praxy as $prax) {
+                                echo"<tr>"."
+                                <th scope='row'>".$prax->idPrax."</th>"."
+                                <td>".$prax->Pozicia."</td>"."
+                                <td>".$prax->Nazov."</td>"."
+                                <td>".$prax->Datum_pridania."</td>"."
                                 <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="respCompUpd">Editovať</a>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-primary' href='headReportUdp/".$prax->idPrax."'>Editovať</a>
                                     </div>
                                 </td>
-
                                 <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="#">Zmazať</a>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-danger' href='headReportDel/".$prax->idPrax."'>Odstrániť</a>
                                     </div>
-                                </td>
-                            </tr>
+                                </td>"."
+                            </tr>";
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>

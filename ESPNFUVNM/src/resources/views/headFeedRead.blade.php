@@ -14,8 +14,10 @@
 
     <style>
         /* Template Stylesheet */
-        <?php //include __DIR__ .'/../css/style.css'; ?>
-        /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
+        <?php
+            //$praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Student_idPouzivatel', Auth::user()->id)->where('Dokumenty_idDokumenty', '3')->orderBy('idPrax')->get();
+        ?>
+         /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
     </style>
 </head>
 
@@ -32,9 +34,9 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-{{--                <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="respCompAdd">Pridať Firmu</a>
-                </div>--}}
+                {{--                <div class="d-flex mb-3">
+                                    <a class="btn btn-success" href="respCompAdd">Pridať Firmu</a>
+                                </div>--}}
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
@@ -43,33 +45,21 @@
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Meno</th>
-                                <th scope="col">Text komentára</th>
-                                <th scope="col">Dátum vytvorenia</th>
-                                <th scope="col">Iné</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
+                                <th scope="col">Pozícia</th>
+                                <th scope="col">Spätná väzba</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>
-  {{--                                  <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="respCompUpd">Edit</a>
-                                    </div>--}}
-                                </td>
+                            <?php
+                            foreach ($praxy as $prax) {
+                                echo"<tr>"."
+                                <th scope='row'>".$prax->idPrax."</th>"."
+                                <td>".$prax->Pozicia."</td>"."
+                                <td>".$prax->Nazov."</td>"."
+                            </tr>";
+                            }
+                            ?>
 
-                                <td>
-{{--                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="#">Remove</a>
-                                    </div>--}}
-                                </td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -90,7 +80,7 @@
 
 <!-- Footer Start -->
 <footer>
-    @include('parts/footer')
+    @include('parts.footer')
 </footer>
 <!-- Footer End -->
 
@@ -105,6 +95,3 @@
 <!-- Template Javascript -->
 <script src="/../js/main.js"></script>
 </body>
-
-
-

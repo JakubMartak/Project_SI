@@ -13,9 +13,9 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        /* Template Stylesheet */
-        <?php //include __DIR__ .'/../css/style.css'; ?>
-        /* Customized Bootstrap Stylesheet <link href="css/bootstrap.min.css" rel="stylesheet"> */
+        <?php
+        //$osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', '3')->orderBy('idPouzivatel')->get();
+        ?>
     </style>
 </head>
 
@@ -29,63 +29,95 @@
 
     <!-- Container -->
     <div class="container">
+
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-{{--                <div class="d-flex mb-3">--}}
-{{--                    <a class="btn btn-success" href="#">Pridať Firmu</a>--}}
-{{--                </div>--}}
-{{--                TEST Zaciatok--}}
-                <form action="headRespAddSave" method="POST">
-                    @csrf
-                    <table class="table table-w">
-                        <thead>
-                        <tr>
-                            <th scope="col">Poverenie na pracovisko</th>
-                            <th scope="col">Priezvisko vedúceho pracovníka</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <?php
-                                $companies = DB::table('Firma')->get();
-//                            echo "<label for=''>Meno:</label>";
-                                echo "<select name='Meno' id='color'>";
-                                echo "	<option value=''>--- Choose a color ---</option>";
-                                foreach ($companies as $comp) {
-                                    echo "<option value='$comp->idFirma' name='uidFirma'>$comp->Názov_firmy</option>";
-                                }
-                                echo " </select>";
-                                ?>
-                            </td>
+                <div class="d-flex mb-3">
 
+                </div>
 
-                            <td>
-                                <?php
-                                $users = DB::table('Pouzivatel')->where('Rola_pouzivatela', '2')->get();
-//                            echo "<label for=''>Meno:</label>";
-                                echo "<select name='Meno' id='color'>";
-                                echo "	<option value=''>--- Choose a color ---</option>";
-                                foreach ($users as $user) {
-                                    echo "<option value='$user->idPouzivatel' name=uidPouzivatel>$user->Priezvisko</option>";
-                                }
-                                echo " </select>";
-                                ?>
-                            </td>
+                <!-- Tabulka -->
+                <div class="">
+                    <div class="text-start ps-4">
 
-                            <td>
-{{--                                <div class="d-flex mb-3">--}}
-                                    <button type="submit" class="btn btn-primary">Add</button>
-{{--                                </div>--}}
+                        <table class="table table-w">
+                            <thead>
+                            <tr>
+                                <th scope="col">#id</th>
+                                <th scope="col">Meno</th>
+                                <th scope="col">Priezvisko</th>
+                                <th scope="col">Cislo</th>
+                                <th scope="col">e-mail</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach ($osoby as $osoba) {
+                                echo"<tr>"."
+                                <th scope='row'>".$osoba->idPouzivatel."</th>"."
+                                <td>".$osoba->Meno."</td>"."
+                                <td>".$osoba->Priezvisko."</td>"."
+                                <td>".$osoba->Cislo."</td>"."
+                                <td>".$osoba->Mail."</td>"."
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-primary' href='headPersUpd/".$osoba->idPouzivatel."'>Editovať</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-danger' href='stuPersDel/".$osoba->idPouzivatel."'>Odstrániť</a>
+                                    </div>
+                                </td>"."
+                            </tr>";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Tabulka -->
+                <div class="">
+                    <div class="text-start ps-4">
+                        <form action="stuPersSave" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Meno</th>
+                                    <th scope="col">Priezvisko</th>
+                                    <th scope="col">Cislo</th>
+                                    <th scope="col">e-mail</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">#</th>
+                                    <td><input type="text" name="Meno" size="10"></td>
+                                    <td><input type="text" name="Priezvisko" size="10"></td>
+                                    <td><input type="text" name="Cislo" size="10"></td>
+                                    <td><input type="text" name="Mail" size="30"></td>
+                                    <td>
+                                        <div class="d-flex mb-3">
+                                            <button type="submit" class="btn btn-primary">Pridať</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex mb-3">
+                                            <a class="btn btn-danger" href="stuPracList">Zrušiť</a>
+                                        </div>
+                                    </td>
 
-{{--                                <div class="d-flex mb-3">--}}
-                                    <a class="btn btn-danger" href="headRespList">Cancel</a>
-{{--                                </div>--}}
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </form>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                <!-- buttons -->
 
             </div>
         </div>

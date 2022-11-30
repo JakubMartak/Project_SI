@@ -255,7 +255,6 @@ class TestController extends Controller
     public function stuPracCertRead(){
         $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Student_idPouzivatel', Auth::user()->id)->where('Dokumenty_idDokumenty', '3')->orderBy('idPrax')->get();
         return view('stuPracCertRead', ['praxy'=>$praxy]);
-        //return view('stuPracCertRead');
     }
 
     /* head of workplace functions */
@@ -321,36 +320,80 @@ class TestController extends Controller
     }
 
     public function headReportAdd(){
-        return view('headReportAdd');
+        $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', '3')->orderBy('idPouzivatel')->get();
+        return view('headReportAdd', ['osoby'=>$osoby]);
     }
 
-    public function headReportUpd(){
-        return view('headReportUpd');
+    public function headReportSave(Request $req){
+        DB::table('Prax_has_Dokumenty')->insert([
+            'Prax_idPrax' => $req->Prax,
+            'Dokumenty_idDokumenty' => "4",
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Report
+        ]);
+        return redirect('headReportList');
+    }
+
+    public function headReportUdp($id){
+        $prax = DB::table('Prax_has_Dokumenty')->join('Prax', 'Prax.idPrax', '=', 'Prax_has_Dokumenty.Prax_idPrax')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', "4")->get();
+        return view('headReportUpd', ['prax'=>$prax]);
+    }
+
+    public function headReportUpd2 (Request $req){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $req->PraxidPrax)->where('Dokumenty_idDokumenty', "4")->update([
+            'Datum_pridania' => date("Y-m-d"),
+            'Nazov' => $req->Report
+        ]);
+        return redirect('headReportList');
+    }
+
+    public function headReportDel($id){
+        DB::table('Prax_has_Dokumenty')->where('Prax_idPrax', $id)->where('Dokumenty_idDokumenty', 4)->delete();
+        return redirect('headReportList');
     }
 
     public function headFeedRead(){
-        return view('headFeedRead');
+        $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Dokumenty_idDokumenty', '2')->orderBy('idPrax')->get();
+        return view('headFeedRead', ['praxy'=>$praxy]);
     }
 
     public function headCertList(){
-        return view('headCertList');
+        $praxy = DB::table('Prax')->join('Prax_has_Dokumenty', 'Prax_has_Dokumenty.Prax_idPrax', '=', 'Prax.idPrax')->join('Dokumenty', 'Dokumenty.idDokumenty', '=', 'Prax_has_Dokumenty.Dokumenty_idDokumenty')->where('Dokumenty_idDokumenty', '3')->orderBy('idPrax')->get();
+        return view('headCertList', ['praxy'=>$praxy]);
     }
 
     public function headRespList(){
-        $heads = DB::table('Prax')
-            ->join('Firma', 'Firma_idFirma', '=', 'Prax.Zmluva_idZmluva')->join('Názov_firmy', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')
-            ->where('Student_idPouzivatel', Auth::user()->id )
+        $praxy = DB::table('Prax')
+            ->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')
+            ->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')
+            ->join('Pouzivatel', 'Kontaktna_osoba_idPouzivatel', '=', 'idPouzivatel')
             ->orderBy('idPrax')->get();
-
-        return view('headRespList', ['practise'=>$heads]);
+        /*$heads = DB::table('Prax')
+            ->join('Pouzivatel', 'Kontaktna_osoba_idPouzivatel', '=', 'idPouzivatel')
+            //->where('Student_idPouzivatel', Auth::user()->id )
+            ->orderBy('idPrax')->get();*/
+        return view('headRespList', ['practise'=>$praxy]);
     }
 
-    public function headRespUpd(){
-        return view('headRespUpd');
+    public function headRespUpd($id){
+        $praxy = DB::table('Prax')
+            ->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')
+            ->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')
+            ->join('Pouzivatel', 'Kontaktna_osoba_idPouzivatel', '=', 'idPouzivatel')
+            ->where('idPrax', $id)->get();
+        return view('headRespUpd', ['practise'=>$praxy]);
+    }
+
+    public function headRespUpd2(Request $request){
+        DB::table('Prax')->where('idPrax', $request->idPrax)->update([
+            'Kontaktna_osoba_idPouzivatel' => $request->Kontaktna_Osoba
+        ]);
+        return redirect('headRespList');
     }
 
     public function headRespAdd(){
-        return view('headRespAdd');
+        $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', '3')->orderBy('idPouzivatel')->get();
+        return view('headRespAdd', ['osoby'=>$osoby]);
     }
 
     public function headRespAddSave(Request $request) {

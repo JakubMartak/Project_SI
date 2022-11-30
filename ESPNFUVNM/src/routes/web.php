@@ -81,11 +81,15 @@ Route::get('/headPracList', [TestController::class, 'headPracList']);
 Route::get('/headPracFinishList', [TestController::class, 'headPracFinishList']);
 Route::get('/headReportList', [TestController::class, 'headReportList']);
 Route::get('/headReportAdd', [TestController::class, 'headReportAdd']);
-Route::get('/headReportUpd', [TestController::class, 'headReportUpd']);
+Route::post('/headReportSave', [TestController::class, 'headReportSave']);
+Route::get('/headReportUdp/{id}', [TestController::class, 'headReportUdp']);
+Route::post('/headReportUpd2', [TestController::class, 'headReportUpd2']);
+Route::get('/headReportDel/{id}', [TestController::class, 'headReportDel']);
 Route::get('/headFeedRead', [TestController::class, 'headFeedRead']);
 Route::get('/headCertList', [TestController::class, 'headCertList']);
 Route::get('/headRespList', [TestController::class, 'headRespList']);
-Route::get('/headRespUpd', [TestController::class, 'headRespUpd']);
+Route::get('/headRespUpd/{id}', [TestController::class, 'headRespUpd']);
+Route::post('/headRespUpd2', [TestController::class, 'headRespUpd2']);
 Route::get('/headRespAdd', [TestController::class, 'headRespAdd']);
 Route::post('/headRespAddSave', [TestController::class, 'headRespAddSave'])->name("headRespAddSave");
 

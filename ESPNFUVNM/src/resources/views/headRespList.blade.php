@@ -32,39 +32,41 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-                <div class="d-flex mb-3">
+                <!--<div class="d-flex mb-3">
                     <a class="btn btn-success" href="headRespAdd">Pridať povereného pracovníka</a>
-                </div>
+                </div>-->
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
                         <table class="table table-w">
                             <thead>
                             <tr>
-                                <th scope="col">Poverenie na pracovisko</th>
-                                <th scope="col">Priezvisko vedúceho pracovníka</th>
+                                <th scope="col">#id</th>
+                                <th scope="col">Pozícia</th>
+                                <th scope="col">Názov Firmy</th>
+                                <th scope="col">Typ zmluvy</th>
+                                <th scope="col">Kontaktná osoba</th>
+                                <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
-                                <td>Príklad </td>
+                            <?php
+                            foreach ($practise as $prax) {
+                                echo"<tr>"."
+                                <th scope='row'>".$prax->idPrax."</th>"."
+                                <td>".$prax->Pozicia."</td>"."
+                                <td>".$prax->Názov_firmy."</td>"."
+                                <td>".$prax->Typ_zmluvy."</td>"."
+                                <td>".$prax->Priezvisko."</td>"."
                                 <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-primary" href="headRespUpd">Editovať</a>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-primary' href='headRespUpd/".$prax->idPrax."'>Editovať</a>
                                     </div>
                                 </td>
-
                                 <td>
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-danger" href="#">Zmazať</a>
-                                    </div>
-                                </td>
-                            </tr>
+                            </tr>";
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>
