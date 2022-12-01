@@ -19,7 +19,8 @@ class CreatePouzivatelTable extends Migration
             $table->string('Priezvisko', 45);
             $table->string('Cislo', 45)->nullable();
             $table->string('Mail', 45);
-            $table->string('Rola_pouzivatela', 45);
+            $table->string('Rola_pouzivatela')->index('fk_Pouzivatel_Rola1_idx');
+            $table->string('Firma_idFirma')->nullable()->index('fk_Pouzivatel_Firma1_idx');
         });
     }
 
