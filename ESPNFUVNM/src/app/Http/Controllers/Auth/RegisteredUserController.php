@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\DB;
 
 class RegisteredUserController extends Controller
 {
@@ -43,6 +44,12 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            
+            DB::table('Pouzivatel')->insert([
+                'Meno' => $request->name,
+                'Priezvisko' => $request->name,
+                'Mail' => $request->email,
+                'Rola_pouzivatela' => '1',
         ]);
 
         event(new Registered($user));
