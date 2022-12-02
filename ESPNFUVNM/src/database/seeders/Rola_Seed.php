@@ -17,5 +17,11 @@ class Rola_Seed extends Seeder
         DB::table('Rola')->insert([
             'Rola'=> 'Kontaktná osoba',
         ]);
+        DB::table('Rola')->insert([
+            'Rola'=> 'Veduci pracoviska',
+        ]);
+        DB::table('Rola')->insert([
+            'Rola'=> 'Admin',
+        ]);
     }
 }
