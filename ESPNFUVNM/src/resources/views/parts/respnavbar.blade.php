@@ -17,6 +17,9 @@
                         <a class="nav-link active" aria-current="page" href="respPracRead">Zoznam praxí</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="respReportRead">Vytváranie reportov</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="respStuRatingList">Hodnotenie študentov</a>
                     </li>
                     <li class="nav-item">
@@ -38,7 +41,7 @@
                                 @csrf
                                 <a :href="route('logout')"
                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();" class="dropdown-item" >Log Out</a>
+                                                this.closest('form').submit();" class="dropdown-item" >Odhlásiť sa</a>
                             </form>
                         </div>
                     </div>

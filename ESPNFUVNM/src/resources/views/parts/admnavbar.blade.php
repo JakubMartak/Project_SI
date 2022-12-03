@@ -11,7 +11,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <!--Tlačidlo Zoznam študentov-->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admStuLIst">Správa študentov</a>
+                        <a class="nav-link active" aria-current="page" href="admStuLIst">Správa osôb</a>
                     </li>
 
                     <!--<li class="nav-item">
@@ -48,7 +48,7 @@
                                 @csrf
                                 <a :href="route('logout')"
                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();" class="dropdown-item" >Log Out</a>
+                                                this.closest('form').submit();" class="dropdown-item" >Odhlásiť sa</a>
                             </form>
                         </div>
                     </div>

@@ -44,7 +44,7 @@
                                 @csrf
                                 <a :href="route('logout')"
                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();" class="dropdown-item" >Log Out</a>
+                                                this.closest('form').submit();" class="dropdown-item" >Odhlásiť sa</a>
                             </form>
                         </div>
                     </div>

@@ -73,16 +73,14 @@ Route::get('/stuPracCertRead', [TestController::class, 'stuPracCertRead']);
 /* head of workplace routes */
 Route::get('/headCompList', [TestController::class, 'headCompList']);
 Route::get('/headCompAdd', [TestController::class, 'headCompAdd']);
-
 Route::post('/headCompSave', [TestController::class, 'headCompSave'])->name("headCompSave");
-
 Route::get('/headStudList', [TestController::class, 'headStudList']);
 Route::get('/headPracList', [TestController::class, 'headPracList']);
 Route::get('/headPracFinishList', [TestController::class, 'headPracFinishList']);
 Route::get('/headReportList', [TestController::class, 'headReportList']);
 Route::get('/headReportAdd', [TestController::class, 'headReportAdd']);
 Route::post('/headReportSave', [TestController::class, 'headReportSave']);
-Route::get('/headReportUdp/{id}', [TestController::class, 'headReportUdp']);
+Route::get('/headReportUpd/{id}', [TestController::class, 'headReportUpd']);
 Route::post('/headReportUpd2', [TestController::class, 'headReportUpd2']);
 Route::get('/headReportDel/{id}', [TestController::class, 'headReportDel']);
 Route::get('/headFeedRead', [TestController::class, 'headFeedRead']);
@@ -96,22 +94,26 @@ Route::post('/headRespAddSave', [TestController::class, 'headRespAddSave'])->nam
 /* responsible person functions */
 Route::get('/respCompList', [TestController::class, 'respCompList']);
 Route::get('/respCompAdd', [TestController::class, 'respCompAdd']);
-//Route::get('/respCompUpd', [TestController::class, 'respCompUpd']);
+Route::get('/respCompUpd', [TestController::class, 'respCompUpd']);
 Route::get('/respCompDel/{idFirma}',[TestController::class, 'respCompDelete']);
 Route::get('/respPracRead', [TestController::class, 'respPracRead']);
+Route::get('/respReportRead', [TestController::class, 'respReportRead']);
+Route::get('/respReportAdd', [TestController::class, 'respReportAdd']);
+Route::post('/respReportSave', [TestController::class, 'respReportSave']);
+Route::get('/respReportUpd/{id}', [TestController::class, 'respReportUpd']);
+Route::post('/respReportUpd2', [TestController::class, 'respReportUpd2']);
+Route::get('/respReportDel/{id}', [TestController::class, 'respReportDel']);
+Route::get('/respPracArchRead', [TestController::class, 'respPracArchRead']);
+Route::get('/respStuRatingList', [TestController::class, 'respStuRatingList']);
+Route::get('/respStuRatingAdd', [TestController::class, 'respStuRatingAdd']);
+Route::post('/respStuRatingSave', [TestController::class, 'respStuRatingSave']);
+Route::get('/respStuRatingUpd/{id}', [TestController::class, 'respStuRatingUpd']);
+Route::post('/respStuRatingUpd2', [TestController::class, 'respStuRatingUpd2']);
+Route::get('/respStuRatingDel', [TestController::class, 'respStuRatingDel']);
 Route::get('/respFeedList', [TestController::class, 'respFeedList']);
 Route::get('/respFeedAdd', [TestController::class, 'respFeedAdd']);
 Route::get('/respFeedUpd', [TestController::class, 'respFeedUpd']);
 Route::get('/respFeedDel', [TestController::class, 'respFeedDel']);
-Route::get('/respReportRead', [TestController::class, 'respReportRead']);
-Route::get('/respReportAdd', [TestController::class, 'respReportAdd']);
-Route::get('/respReportUpd', [TestController::class, 'respReportUpd']);
-Route::get('/respReportDel', [TestController::class, 'respReportDel']);
-Route::get('/respPracArchRead', [TestController::class, 'respPracArchRead']);
-Route::get('/respStuRatingList', [TestController::class, 'respStuRatingList']);
-Route::get('/respStuRatingAdd', [TestController::class, 'respStuRatingAdd']);
-Route::get('/respStuRatingUpd', [TestController::class, 'respStuRatingUpd']);
-Route::get('/respStuRatingDel', [TestController::class, 'respStuRatingDel']);
 
 Route::POST('/respCompSave', [TestController::class, 'respCompSave']);
 Route::get('/respPracUpd/{id}', [TestController::class, 'respPracUpd']);
@@ -152,7 +154,7 @@ Route::get('/admGraphList', [TestController::class, 'admGraphList']);
 /* Zástupca firmy a organizácie */
 Route::get('/cmpRegDetail', [TestController::class, 'cmpRegDetail']);
 Route::post('/cmpAdd', [TestController::class, 'cmpAdd']);
-Route::get('/cmpUpd', [TestController::class, 'cmpUpd']);
+Route::post('/cmpUpd', [TestController::class, 'cmpUpd']);
 Route::get('/cmpStudRead', [TestController::class, 'cmpStudRead']);
 Route::get('/cmpStuAdd', [TestController::class, 'cmpStuAdd']);
 Route::post('/cmpStuSave', [TestController::class, 'cmpStuSave']);

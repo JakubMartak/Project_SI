@@ -47,6 +47,8 @@
                                     <th scope="col">Priezvisko</th>
                                     <th scope="col">Cislo</th>
                                     <th scope="col">e-mail</th>
+                                    <th scope="col">Rola</th>
+                                    <th scope="col">Firma</th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                 </tr>
@@ -60,6 +62,19 @@
                                     <td><input type='text' name='Priezvisko' size='10' value='".$os->Priezvisko."'></td>
                                     <td><input type='text' name='Cislo' size='10' value='".$os->Cislo."'></td>
                                     <td><input type='text' name='Mail' size='30' value='".$os->Mail."'></td>
+                                    <td><select name='Rola' id='Rola' style='width: 150px;'>";
+                                    $role = DB::table('Rola')->get();
+                                    foreach ($role as $rola){
+                                        echo "<option value='".$rola->idRola."'>".$rola->Rola."</option>";
+                                    }
+                                    echo"</select></td>
+                                    <td><select name='Firma' id='Firma' style='width: 150px;'>
+                                        <option value='0'></option>";
+                                    $firmy = DB::table('Firma')->get();
+                                    foreach ($firmy as $firma){
+                                        echo "<option value='".$firma->idFirma."'>".$firma->Názov_firmy."</option>";
+                                    }
+                                    echo"</select></td>
                                     <td>
                                         <div class='d-flex mb-3'>
                                             <button type='submit' class='btn btn-primary'>Confirm</button>

@@ -41,32 +41,33 @@
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Meno</th>
-                                <th scope="col">Priezvisko</th>
-                                <th scope="col">Cislo</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Edit</th>
-
+                                <th scope="col">Prax</th>
+                                <th scope="col">Report</th>
+                                <th scope="col">Posledná zmena</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                                $studenti = DB::table('Pouzivatel')->where('Rola_pouzivatela', '=', 1)->get();
-                                foreach ($studenti as $student) {
-                                    echo "<tr>
-                                <th scope='row'>".$student->idPouzivatel."</th>
-                                <td>".$student->Meno."</td>
-                                <td>".$student->Priezvisko."</td>
-                                <td>".$student->Cislo."</td>
-                                <td>".$student->Mail."</td>
+                            foreach ($praxy as $prax) {
+                                echo"<tr>"."
+                                <th scope='row'>".$prax->idPrax."</th>"."
+                                <td>".$prax->Pozicia."</td>"."
+                                <td>".$prax->Nazov."</td>"."
+                                <td>".$prax->Datum_pridania."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='respStuRatingUpd'>Edit</a>
+                                        <a class='btn btn-primary' href='respStuRatingUdp/".$prax->idPrax."'>Editovať</a>
                                     </div>
                                 </td>
-
+                                <td>
+                                    <div class='d-flex mb-3'>
+                                        <a class='btn btn-danger' href='respStuRatingDel/".$prax->idPrax."'>Odstrániť</a>
+                                    </div>
+                                </td>"."
                             </tr>";
-                                }
+                            }
                             ?>
                             </tbody>
                         </table>

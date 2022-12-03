@@ -33,7 +33,7 @@
             <div class="job-item p-4 mb-4">
             <div class="row g-4">
                 <div class="d-flex mb-3">
-                    <a class="btn btn-success" href="admStuAdd">Pridať študenta</a>
+                    <!--<a class="btn btn-success" href="admStuAdd">Pridať študenta</a>-->
                 </div>
                 <!-- Tabulka -->
                 <div class="">
@@ -47,6 +47,8 @@
                                 <th scope="col">Priezvisko</th>
                                 <th scope="col">Cislo</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Rola</th>
+                                <th scope="col">Názov firmy</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
@@ -60,6 +62,8 @@
                                 <td>".$student->Priezvisko."</td>
                                 <td>".$student->Cislo."</td>
                                 <td>".$student->Mail."</td>
+                                <td>".$student->Rola."</td>
+                                <td>".$student->Názov_firmy."</td>
                                 <td>
                                     <div class='d-flex mb-3'>
                                         <a class='btn btn-primary' href='admStuEdit/".$student->idPouzivatel."'>Editovať</a>

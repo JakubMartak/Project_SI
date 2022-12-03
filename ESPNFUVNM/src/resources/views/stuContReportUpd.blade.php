@@ -59,7 +59,8 @@
                                 <tbody>
                                 <tr>
                                     <?php
-                                    foreach ($prax as $pr) echo"<input type='hidden' name='idPrax' value='".$pr->idPrax."'>
+                                    foreach ($prax as $pr)
+                                        echo"<input type='hidden' name='idPrax' value='".$pr->idPrax."'>
                                     <td><input type='text' name='Pozicia' size='8' value='".$pr->Pozicia."'></td>
                                     <td><select name='Nazov_firmy' id='Nazov_firmy' style='width: 100px;'>";
                                     $firmy = DB::table('Firma')->get();

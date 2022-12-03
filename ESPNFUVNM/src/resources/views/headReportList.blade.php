@@ -60,7 +60,7 @@
                                 <td>".$prax->Datum_pridania."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='headReportUdp/".$prax->idPrax."'>Editovať</a>
+                                        <a class='btn btn-primary' href='headReportUpd/".$prax->idPrax."'>Editovať</a>
                                     </div>
                                 </td>
                                 <td>
@@ -106,6 +106,5 @@
 <!-- Template Javascript -->
 <script src="/../js/main.js"></script>
 </body>
-
 
 

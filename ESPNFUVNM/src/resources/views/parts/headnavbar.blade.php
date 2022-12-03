@@ -22,15 +22,12 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="headPracFinishList">Zoznam schválených a ukončených praxí</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="headReportList">Report za pracovisko</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="headFeedRead">Spätná väzba</a>
+                       <a class="nav-link active" aria-current="page" href="headFeedRead">Spätná väzba</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="headCertList">Zoznam osvedčení</a>
                     </li>
@@ -52,7 +49,7 @@
                                 @csrf
                                 <a :href="route('logout')"
                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();" class="dropdown-item" >Log Out</a>
+                                                this.closest('form').submit();" class="dropdown-item" >Odhlásiť sa</a>
                             </form>
                         </div>
                     </div>

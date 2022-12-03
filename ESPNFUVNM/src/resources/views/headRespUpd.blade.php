@@ -32,30 +32,30 @@
 
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
-{{--                <div class="d-flex mb-3">--}}
-{{--                    <a class="btn btn-success" href="#">Pridať Firmu</a>--}}
-{{--                </div>--}}
+                {{--                <div class="d-flex mb-3">--}}
+                {{--                    <a class="btn btn-success" href="#">Pridať Firmu</a>--}}
+                {{--                </div>--}}
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
                         <form action="/headRespUpd2" method="POST">
                             @csrf
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Pozícia</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Typ zmluvy</th>
-                                <th scope="col">Kontaktná osoba</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <?php
-                                foreach ($practise as $prax) echo"
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Pozícia</th>
+                                    <th scope="col">Názov Firmy</th>
+                                    <th scope="col">Typ zmluvy</th>
+                                    <th scope="col">Kontaktná osoba</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <?php
+                                    foreach ($practise as $prax) echo"
                                     <th scope='row'>".$prax->idPrax."</th>
                                     <input type='hidden' name='idPrax' value='".$prax->idPrax."'>
                                     <td>".$prax->Pozicia."</td>
@@ -72,16 +72,15 @@
                                             <button type='submit' class='btn btn-primary'>Potvrdiť</button>
                                         </div>
                                     </td>
-
                                     <td>
                                         <div class='d-flex mb-3'>
                                             <a class='btn btn-danger' href='/headRespList'>Zrušiť</a>
                                         </div>
                                      </td>"
-                                ?>
-                            </tr>
-                            </tbody>
-                        </table>
+                                    ?>
+                                </tr>
+                                </tbody>
+                            </table>
                         </form>
                     </div>
                 </div>
@@ -116,6 +115,4 @@
 <!-- Template Javascript -->
 <script src="/../js/main.js"></script>
 </body>
-
-
 

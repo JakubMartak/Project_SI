@@ -36,47 +36,43 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-
-                        <table class="table table-w">
-                            <thead>
-                            <tr>
-                                <th scope="col">#id</th>
-                                <th scope="col">Názov Firmy</th>
-                                <th scope="col">Skratka</th>
-                                <th scope="col">Adresa</th>
-                                <th scope="col">Mesto</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <form>
-                                    <th scope="row">1</th>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
-                                    <td><input type="text" size="10"> </input></td>
+                        <form action="/respStuRatingUdp2" method="POST">
+                            @csrf
+                            <table class="table table-w">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#id</th>
+                                    <th scope="col">Prax</th>
+                                    <th scope="col">Report</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <?php
+                                    foreach ($prax as $pr) echo"<th scope='row'>".$pr->Prax_idPrax."</th>
+                                    <input type='hidden' name='PraxidPrax' value='".$pr->Prax_idPrax."'>
+                                    <td>".$pr->Pozicia."</td>"."
+                                    <td><input type='text' name='Report' size='50' value='".$pr->Nazov."'></td>
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="respStuRatingList">Confirm</a>
+                                        <div class='d-flex mb-3'>
+                                            <button type='submit' class='btn btn-primary'>Potvrdiť</button>
                                         </div>
                                     </td>
-
                                     <td>
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-danger" href="respStuRatingList">Cancel</a>
+                                        <div class='d-flex mb-3'>
+                                            <a class='btn btn-danger' href='/respStuRatingList'>Zrušiť</a>
                                         </div>
-                                    </td>
-                                </form>
-                            </tr>
-                            </tbody>
-                        </table>
+                                    </td>"
+                                    ?>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
-
                 <!-- buttons -->
-
             </div>
         </div>
 

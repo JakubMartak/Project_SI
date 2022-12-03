@@ -43,11 +43,12 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
-            
+            'password' => Hash::make($request->password)
+        ]);
+
             DB::table('Pouzivatel')->insert([
-                'Meno' => $request->name,
-                'Priezvisko' => $request->name,
+                'Meno' => explode(' ',$request->name)[0],
+                'Priezvisko' => explode(' ',$request->name)[1],
                 'Mail' => $request->email,
                 'Rola_pouzivatela' => '1',
         ]);

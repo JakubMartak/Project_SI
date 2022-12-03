@@ -25,7 +25,7 @@
                     </li>
                     <!--Tlačidlo na zobrazenie poverený pracovník  pracoviska -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="respCompList">poverený pracovník zobrazenie</a>
+                        <a class="nav-link active" aria-current="page" href="respCompList">Poverený pracovník zobrazenie</a>
                     </li>
                     <!--Tlačidlo na zobrazenie Zástupca firmy a organizácie -->
                     <li class="nav-item">
@@ -46,7 +46,7 @@
                                 @csrf
                                 <a :href="route('logout')"
                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();" class="dropdown-item" >Log Out</a>
+                                                this.closest('form').submit();" class="dropdown-item" >Odhlásiť sa</a>
                             </form>
                         </div>
                     </div>

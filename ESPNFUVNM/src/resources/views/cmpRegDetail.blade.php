@@ -33,26 +33,45 @@
         <div class="job-item p-4 mb-4">
             <div class="row g-4">
 
-
-                <form action="cmpAdd" method="POST">
+                <?php
+                if (Session::get('firma') == "null") {
+                    $id = "";
+                    $nazov = "";
+                    $skratka = "";
+                    $adresa = "";
+                    $adresa = "";
+                    $action = "cmpAdd";
+                    $actionnazov = "Registrovať";
+                }
+                else foreach ($firma as $fr):
+                    $id = $fr->idFirma;
+                    $nazov = $fr->Názov_firmy;
+                    $skratka = $fr->Skratka;
+                    $adresa = $fr->Adresa;
+                    $action = "cmpUpd";
+                    $actionnazov = "Editovať";
+                    endforeach;
+                ?>
+                <form action="<?php echo $action ?>" method="POST">
                     @csrf
                     <h2 class="fw-bold mb-2 text-uppercase flex items-center justify-center">Register</h2>
+                    <input type='hidden' name='idFirma' value='<?php echo $id ?>'>
                     <div>
                         <label for="Nazov_firmy" class="">Názov firmy</label>
                         <br>
-                        <input id="Nazov_firmy" class="block mt-1 w-full" type="text" name="Nazov_firmy" required autofocus />
+                        <input id="Nazov_firmy" class="block mt-1 w-full" type="text" name="Nazov_firmy" value = "<?php echo $nazov ?>" required autofocus />
                     </div>
 
                     <div class="mt-4">
                         <label for="Skratka" class="">Skratka</label>
                         <br>
-                        <input id="Skratka" class="block mt-1 w-full" type="text" name="Skratka" required />
+                        <input id="Skratka" class="block mt-1 w-full" type="text" name="Skratka" value = "<?php echo $skratka ?>" required />
                     </div>
 
                     <div class="mt-4">
                         <label for="Adresa" class="">Adresa</label>
                         <br>
-                        <input id="Adresa" class="block mt-1 w-full" type="text" name="Adresa" required />
+                        <input id="Adresa" class="block mt-1 w-full" type="text" name="Adresa"  value = "<?php echo $adresa ?>" required />
                     </div>
 
                     <div class="mt-4">
@@ -69,10 +88,10 @@
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
-                        <button type="submit" class="btn-success btn-lg px-5 ml-4">
-                            Registrovať
+                        <button type='submit' class='btn-success btn-lg px-5 ml-4'>
+                            <?php echo $actionnazov ?>
                         </button>
-                        <a class='btn-success btn-lg px-5 ml-4' href='cmpUpd'>Editovať</a>
+                        <!--<a class='btn-success btn-lg px-5 ml-4' href='cmpUpd'>Editovať</a>-->
                     </div>
                 </form>
 

@@ -62,7 +62,6 @@
                                             <button type='submit' class='btn btn-primary'>Potvrdiť</button>
                                         </div>
                                     </td>
-
                                     <td>
                                         <div class='d-flex mb-3'>
                                             <a class='btn btn-danger' href='/headReportList'>Zrušiť</a>
@@ -106,6 +105,3 @@
 <!-- Template Javascript -->
 <script src="/../js/main.js"></script>
 </body>
-
-
-
