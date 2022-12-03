@@ -26,16 +26,16 @@ class Pouzivatel_Seed extends Seeder
         ]);
         //id3
         DB::table('Pouzivatel')->insert([
-            'Meno'=> 'Peter',
-            'Priezvisko' => 'Dobrý',
-            'Mail' => 'peter@ukf.sk',
+            'Meno'=> 'Marek',
+            'Priezvisko' => 'Hrabcak',
+            'Mail' => 'marek.hrabcak@student.ukf.sk',
             'Rola_pouzivatela' => 2,
         ]);
         //id4
         DB::table('Pouzivatel')->insert([
-            'Meno'=> 'Adam',
-            'Priezvisko' => 'Zlý',
-            'Mail' => 'adam973@gmail.com',
+            'Meno'=> 'Mario',
+            'Priezvisko' => 'Belansky',
+            'Mail' => 'mario.belansky@student.ukf.sk',
             'Rola_pouzivatela' => 3,
             'Firma_idFirma' => 1,
         ]);
