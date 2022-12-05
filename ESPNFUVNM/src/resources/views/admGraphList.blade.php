@@ -42,18 +42,50 @@
             <div class="grid-container">
                 <div class="grid-item"><canvas id="myChart" style="width:100%;max-width:600px"></canvas></div>
                 <div class="grid-item"><canvas id="myChart1" style="width:100%;max-width:300px;max-height: 300px"></canvas></div>
-                <div class="grid-item">3</div>
-                <div class="grid-item">4</div>
-
             </div>
+            <?php
+            $praxy = DB::table('Prax')
+                ->select(DB::raw('Názov_firmy, count(*) as prax_count'))
+                ->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')
+                ->groupBy('Názov_firmy')->get();
+            $praxy2 = DB::table('Prax')
+                ->select(DB::raw('Nazov, count(*) as prax_count'))
+                ->join('Predmety', 'Predmety.idPredmety', '=', 'Prax.Predmety_idPredmety')
+                ->groupBy('Nazov')->get();
+            echo "<script>
+                var xValues = ['";
+            $count = count($praxy);
+            foreach ($praxy as $prax) {
+                echo $prax->Názov_firmy;
+                if (--$count <= 0) {
+                    break;
+                }
+                echo"', '";
+            }
+            echo"'];
+                var yValues = [";
+            $count = count($praxy);
+            foreach ($praxy as $prax) {
+                echo $prax->prax_count;
+                if (--$count <= 0) {
+                    break;
+                }
+                echo", ";
+            }
+            echo"];
+                var barColors = ['";
+            $count = count($praxy);
+            foreach ($praxy as $prax) {
+                echo "blue";
+                if (--$count <= 0) {
+                    break;
+                }
+                echo"', '";
+            }
+            echo"'];
 
-            <script>
-                var xValues = ["Italy", "FRance", "Spain", "USA", "Argentina"];
-                var yValues = [55, 49, 44, 24, 15];
-                var barColors = ["red", "green","blue","orange","brown"];
-
-                new Chart("myChart", {
-                    type: "bar",
+                new Chart('myChart', {
+                    type: 'bar',
                     data: {
                         labels: xValues,
                         datasets: [{
@@ -65,25 +97,40 @@
                         legend: {display: false},
                         title: {
                             display: true,
-                            text: "World Wine Production 2018"
+                            text: 'Počet praxí na firmu'
                         }
                     }
                 });
             </script>
 
             <script>
-                var aValues = ["Italy", "France", "sPain", "USA", "Argentina"];
-                var bValues = [55, 49, 44, 24, 15];
+                var aValues = ['";
+            $count = count($praxy2);
+            foreach ($praxy2 as $prax2) {
+                echo $prax2->Nazov;
+                if (--$count <= 0) {
+                    break;
+                }
+                echo"', '";
+            }
+            echo"'];
+                var bValues = [";
+            $count = count($praxy2);
+            foreach ($praxy2 as $prax2) {
+                echo $prax2->prax_count;
+                if (--$count <= 0) {
+                    break;
+                }
+                echo", ";
+            }
+            echo"];
                 var barColors = [
-                    "#b91d47",
-                    "#00aba9",
-                    "#2b5797",
-                    "#e8c3b9",
-                    "#1e7145"
-                ];
+                    '#b91d47',
+                    '#00aba9',
 
-                new Chart("myChart1", {
-                    type: "pie",
+                ];
+                new Chart('myChart1', {
+                    type: 'pie',
                     data: {
                         labels: aValues,
                         datasets: [{
@@ -94,16 +141,12 @@
                     options: {
                         title: {
                             display: true,
-                            text: "World Wide Wine Production 2018"
+                            text: 'Pomer praxí medzi stupňami štúdia'
                         }
                     }
                 });
-            </script>
-
-
-
-
-
+            </script>"
+            ?>
         </div>
     </div>
 

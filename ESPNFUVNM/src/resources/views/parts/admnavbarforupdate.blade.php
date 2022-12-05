@@ -30,9 +30,9 @@
                         <a class="nav-link active" aria-current="page" href="/admRepList">Reporty za fakultu</a>
                     </li>
 
-                    <!--<li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/admGraphList">Grafy o aspektoch praxe</a>
-                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admGraphList">Grafy o praxi</a>
+                    </li>
 
 
                 </ul>
