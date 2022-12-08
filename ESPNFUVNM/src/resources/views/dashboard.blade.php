@@ -40,7 +40,7 @@
 
 <body class="gradient-custom">
 <header>
-    @include('parts.tempnavbar')
+{{--    @include('parts.tempnavbar')--}}
 </header>
 <!-- Profile Container -->
 <div class="container emp-profile">
