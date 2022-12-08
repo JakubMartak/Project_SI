@@ -58,7 +58,7 @@
                                 <td>".$prax->Datum_pridania."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='respStuRatingUdp/".$prax->idPrax."'>Editovať</a>
+                                        <a class='btn btn-primary' href='respStuRatingUpd/".$prax->idPrax."'>Editovať</a>
                                     </div>
                                 </td>
                                 <td>

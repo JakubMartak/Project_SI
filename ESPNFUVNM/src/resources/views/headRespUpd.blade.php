@@ -44,9 +44,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">#id</th>
-                                    <th scope="col">Pozícia</th>
                                     <th scope="col">Názov Firmy</th>
-                                    <th scope="col">Typ zmluvy</th>
                                     <th scope="col">Kontaktná osoba</th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
@@ -58,9 +56,7 @@
                                     foreach ($practise as $prax) echo"
                                     <th scope='row'>".$prax->idPrax."</th>
                                     <input type='hidden' name='idPrax' value='".$prax->idPrax."'>
-                                    <td>".$prax->Pozicia."</td>
                                     <td>".$prax->Názov_firmy."</td>
-                                    <td>".$prax->Typ_zmluvy."</td>
                                     <td><select name='Kontaktna_Osoba' id='Kontaktna_Osoba'>";
                                     $osoby = DB::table('Pouzivatel')->where('Rola_pouzivatela', "3")->get();
                                     foreach ($osoby as $osoba){

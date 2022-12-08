@@ -42,9 +42,7 @@
                             <thead>
                             <tr>
                                 <th scope="col">#id</th>
-                                <th scope="col">Pozícia</th>
                                 <th scope="col">Názov Firmy</th>
-                                <th scope="col">Typ zmluvy</th>
                                 <th scope="col">Kontaktná osoba</th>
                                 <th scope="col"></th>
                             </tr>
@@ -53,14 +51,12 @@
                             <?php
                             foreach ($practise as $prax) {
                                 echo"<tr>"."
-                                <th scope='row'>".$prax->idPrax."</th>"."
-                                <td>".$prax->Pozicia."</td>"."
+                                <th scope='row'>".$prax->idPouzivatel."</th>"."
                                 <td>".$prax->Názov_firmy."</td>"."
-                                <td>".$prax->Typ_zmluvy."</td>"."
                                 <td>".$prax->Priezvisko."</td>"."
                                 <td>
                                     <div class='d-flex mb-3'>
-                                        <a class='btn btn-primary' href='headRespUpd/".$prax->idPrax."'>Editovať</a>
+                                        <a class='btn btn-primary' href='headRespUpd/".$prax->idPouzivatel."'>Editovať</a>
                                     </div>
                                 </td>
                                 <td>

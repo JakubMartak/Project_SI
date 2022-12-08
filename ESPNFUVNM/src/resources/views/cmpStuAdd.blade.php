@@ -53,7 +53,10 @@
                             <td>
                                 <select name="Prax" id="Prax">
                                     <?php
-                                    $praxy = DB::table('Prax')->get();
+                                    $praxy = DB::table('Prax')
+                                        ->where('Firma_idFirma', '=', Session::get('firma'))
+                                        ->get();
+
                                     foreach ($praxy as $prax){
                                         echo "<option value='".$prax->idPrax."'>".$prax->Pozicia."</option>";
                                     }

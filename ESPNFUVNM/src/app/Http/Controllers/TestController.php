@@ -498,11 +498,11 @@ class TestController extends Controller
 
     public function headRespList(){
         if (Session::get("role") == 4) {
-            $praxy = DB::table('Prax')
-                ->join('Zmluva', 'Zmluva.idZmluva', '=', 'Prax.Zmluva_idZmluva')
-                ->join('Firma', 'Firma.idFirma', '=', 'Prax.Firma_idFirma')
-                ->join('Pouzivatel', 'Kontaktna_osoba_idPouzivatel', '=', 'idPouzivatel')
-                ->orderBy('idPrax')->get();
+            $praxy = DB::table('Pouzivatel')
+                ->join('Firma', 'idFirma', '=', 'Firma_idFirma')
+                ->where('Rola_pouzivatela', '=', 3)
+                ->orderBy('idPouzivatel')
+                ->get();
             return view('headRespList', ['practise'=>$praxy]);
         }
         else die("acces denied");

@@ -23,7 +23,7 @@
 <div class="container-xxl bg-white p-0">
     <!-- Navbar Start -->
     <header>
-        @include('parts.respnavbar')
+        @include('parts.respnavbarforupdate')
     </header>
     <!-- Navbar End -->
 
@@ -36,7 +36,7 @@
                 <!-- Tabulka -->
                 <div class="">
                     <div class="text-start ps-4">
-                        <form action="/respStuRatingUdp2" method="POST">
+                        <form action="/respStuRatingUpd2" method="POST">
                             @csrf
                             <table class="table table-w">
                                 <thead>

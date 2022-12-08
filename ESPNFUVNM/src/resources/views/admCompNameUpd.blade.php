@@ -75,7 +75,7 @@
 
                                     <td>
                                         <div class='d-flex mb-3'>
-                                            <a class='btn btn-danger' href='/stuCompAdd'>Zrušiť</a>
+                                            <a class='btn btn-danger' href='/admCompList'>Zrušiť</a>
                                         </div>
                                     </td>";
                                 ?>
